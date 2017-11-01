@@ -12,7 +12,7 @@ User Manual and Reference Material
 
 | **Authors**          Mike Brinson (mbrin72043@yahoo.co.uk) and Vadim Kusnetsov (ra3xdh@gmail.com)
 |
-| **Copyright**  2015, 2016 
+| **Copyright**  2015, 2016 ,2017
 |
 | Permission is granted to copy, distribute and/or modify this document under the terms of the
 | GNU Free Documentation License, Version 1.1 or any later version published by the Free 
@@ -48,9 +48,9 @@ Contents:
 
 A "Technical Description" of the Qucs simulator and implemented device models are available online at http://qucs.sourceforge.net/tech/technical.html. 
 
-Spice4qucs example schematics can be found in the spice4qucs source code "examples" directory.
+Qucs-S  example schematics can be found in the Qucs-S v0.0.20 source code "examples" directory.
 
-Unofficial Qucs build with spice4qucs features enabled called release candidate 6 (rc6) can be downloaded from https://github.com/ra3xdh/qucs/releases/tag/0.0.19S-rc6.
+Qucs_S v0.0.20  build  can be downloaded from https://ra3xdh.github.io/.
 
 .. only:: html
 
