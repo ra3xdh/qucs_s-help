@@ -43,6 +43,7 @@ Contents:
    VerilogA
    RF
    ParameterExt
+   Measurements
    Ref
   
 
