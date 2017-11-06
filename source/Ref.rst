@@ -41,11 +41,20 @@ Munich, September, 2007. <Available from http://www.mos-ak.org/munich/posters/P0
 Brinson M., and Jahn S.,Qucs: A GPL software package for circuit simulation, compact device modeling and circuit macromodeling from DC to RF and beyond,
 MOS-AK meeting , MiPlaza, HighTech Campus, Eindhoven, the Netherlands, 4 April 	2008, Available from <http://www.mos-ak.org/eindhoven/papers/06_Qucs_MOS-AK_Eindhoven.pdf>.
 
+Bah Mamadou, "Modeling and Simulation of The Transistor BFG425W_ NPN_WideBand", The Second International Symposium on Electrical and Electronics Engineering (ISEEE), Galaţi (Romania), Sep. 2008.
+Link: <http://www.fie.ugal.ro/iseee2008.htm>.
+
+D. Céli, "HICUM/L0 v1.2 Parameter Extraction and Validation", 21st Bipolar Arbeitskreis (BipAK), Hamburg, Oct. 2008.
+Link: <http://www.iee.et.tu-dresden.de/iee/eb/tagung_e.html> (BIPOLAR Working Group)
+
 Jahn S., and Brinson M., Interactive compact device modelling using Qucs equation defined devices, International Journal of Numerical Modelling: 
 Electronic Networks, Devices and Fields, September/October 2008, 21(5), pp 335-349, DOI:10.1002/jnm.676.
 
 Brinson. M, and Jahn S., Compact macromodelling of operational amplifiers with 	equation defined devices, International Journal of Electronics, 
 February 2009, 96(2), pp. 109-122. DOI:/10.1080/002007210802580288.
+
+Makoto Mita and Hiroshi Toshiyoshi, "An equivalent-circuit model for MEMS electrostatic actuator using open-source software Qucs", IEICE Electronics Express, vol. 6, no. 5, Mar. 2009, pages 256-263.
+Link: <http://www.jstage.jst.go.jp/article/elex/6/5/6_256/_article>.
 
 Brinson M.E. and H. Nabijou, Z domain subcircuits and compact Verilog-A macromodels for mixed-mode sampled data circuit simulation, 
 Radioelectronics & Informatics Journal, Test Technology Technical Council (TTTC) of the IEEE Computer 	Society. Vol. 2, pp. 14-20, 2009. ISSN 1563-0064. Available from 	
@@ -62,10 +71,10 @@ Brinson M., Qucs: Report; Verilog-A implementation of the EKV v2.6 long and shor
 
 Brinson M., Qucs: Report; Verilog-A compact device models for GaAs MESFETS, 2008, <http://qucs.sourceforge.net/docs/report/MESFET.pdf>.
 
+Brinson M., Qucs: Report; Compact Verilog-A pn junction photodiode model, 2008, Available from <http://qucs.sourceforge.net/docs/report/photodiode.pdf>.
+
 Brinson M. and Jahn S, Modelling of high-frequency inductance with Qucs non-linear radio frequency equation defined devices, International Journal of Electronics, 
 March 2009, 96(3), pp. 307-321, DOI:/10.1080/002007210802640603.
-
-Brinson M., Qucs: Report; Compact Verilog-A pn junction photodiode model, 2008, Available from <http://qucs.sourceforge.net/docs/report/photodiode.pdf>.
 
 Brinson M., Jahn S. and Cullinan M., Advances in compact semiconductor device modelling and circuit macromodelling with the Qucs GPL circuit simulator, MOS-AK meeting,
 IHP Frankfurt/Oder, Germany,3 April 2009. Available  from <http://www.mos-ak.org/frankfurt_o/papers/P_7_Brinson_MOS-AK_April_2009_final.pdf>.
@@ -76,12 +85,30 @@ Conference on Mixed Design of Integrated Circuits and Systems-MIXDES, IEEE Confe
 Brinson. M, and H. Nabijou, Adaptive subcircuits and compact Verilog-A 	macromodels as integrated design and analysis blocks in Qucs circuit simulation, 
 International Journal of Electronics, February 2009, 96(2), pp. 631-645 DOI:/10.1080/0020072172011.562452.
 
+T. Takahashi, S. Maruyama, M. Mita, H. Fujita and H. Toshiyoshi, A mixed-signal analysis tool for MOEMS based on circuit simulator, Prcoceedings of Optical 
+MEMS and Nanophotonics, 2009 IEEE/LEOS International Conference on,  17-20 Au. 2009. DOI: 10.1109/OMEMS.2009.5338613. 
+Available from <http://ieeexplore.ieee.org/abstract/document/5338613/>.  
+
+A. Zonca, B. Roucaries, B. Williams, I. Rubin, O. D'Arcangelo, P. Meinhold, P. Lubin, C. Franceschet, S. Jahn, A. Mennella, M. Bersanelli, "Modeling the frequency response 
+of microwave radiometers with QUCS", ArXiv e-prints: 1011.6363, Astrophysics - Journal of Instrumentation (JINST), vol. 5, December 2010, DOI 10.1088/1748-0221/5/12/T12001.
+Link: <http://arxiv.org/abs/1011.6363>.
+
+Yang-Che Chen, Chao Min Chang, Rongshun Chen, Max Ti-Kuang Hou, Hiroshi Toshiyoshi and Hiroyuki Fujita, "On the symmetry of electric fields exerting on interdigitated structures: 
+Qucs equivalent circuit model and experiment", Journal of Micromechanics and Microengineering, Volume 21, Number 4, March 2011, IOP Publishing Ltd. 
+
 Brinson M., Jahn S and H. Nabijou, A tabular source approach to modelling and simulating device and circuit noise in the time domain, 
 International Journal of Numerical Modelling: Electronic Networks, Devices and Fields, November/December 2011, 24(6), pp 555-567, DOI:10.1002/jnm.801.
 
 Brinson M., Jahn S. and H. Nabijou, Qucs, SPICE and Modelica equation-defined modelling techniques for the construction of compact device models based on a 
 common model template structure, MOS-AK/GSA Workshop on "Frontiers of the Compact Modeling for Advanced Analog/RF Applications", Université Pierre et Marie Curie (UPMC), 
 Paris, 7-8 April 2011. Available from <http://www.mos- ak.org/paris/papers/P06_Brinson_MOS-AK_Paris.pdf>.
+
+Marat Yakupov, Daniel Tomaszewski, "Stand-alone application for parameter extraction and statistical evaluation of FinFET Verilog-A models", MOS-AK/GSA Workshop on "Frontiers of 
+the Compact Modeling for Advanced Analog/RF Applications", Université Pierre et Marie Curie (UPMC), Paris, 7-8 April 2011. 
+Available from <http://www.mos-ak.org/paris/posters/P04_Yakupov_MOS-AK_Paris.pdf>.
+
+Kazunori Matsuda, "Equivalent-circuit model for electrostatic micro-torsion mirror", Journal of Computational Electronics, June 2011, Volume 10, Issue 1–2, pp 136–140,
+DOI https://doi.org/10.1007/s10825-011-0353-z.  Available from <https://link.springer.com/article/10.1007/s10825-011-0353-z>.  
 
 Mike Brinson, S. Jahn and H Nabijou, A hybrid Verilog-A and equation-defined subcircuit approach to mos switched current analog cell modeling and simulation in the 
 transient and large signal AC domains, Proceedings of the 17th International Conference Mixed Design of Integrated Circuits and Systems-MIXDES, IEEE Conference Publication, 
@@ -125,10 +152,14 @@ Vol. 4, No. 3, pp. 92-97, Dec. 2013. ISSN 2080-8755, eISSN 2353-9607, Available 
 Mike Brinson, OPEN SOURCE TCAD/EDA FOR COMPACT MODELING, Chapter 4: Schematic entry and circuit simulation with Qucs, and Chapter 5: Qucs modeling and imulation of analog/RF devices and circuits. 
 Editors: Wladek Grabinski and Daniel Tomaszewski, Publisher: Mark de Jongh [Mark.deJongh@springer-sbm.com],1st Edition., 2017, Hardcover; ISBN: xxx-xx-xxx-nnnn-n, see www.springer-sbm.com. In press.
 
+Maria Helena Fino, "Using an integrated inductor model in Qucs", 2014 Proceedings of the 21st International Conference Mixed Design of Integrated Circuits and Systems (MIXDES), 19-21 June, Lublin Poland,
+DOI: 10.1109/MIXDES.2014.6872155. Available from <http://ieeexplore.ieee.org/abstract/document/6872155/>. 
 
-
-16.3 Qucs-S references
-----------------------------
+Daniel Tomaszewski, Krzysztof Domański, Piotr Prokaryn, "Qucs-based Development of an Energy Harvester Compact Model", 2015 Proceedings of the 22st International 
+Conference Mixed Design of Integrated Circuits and Systems (MIXDES), Torun Ploand,  DOI: 10.1109/MIXDES.2015.7208510, Available from <http://ieeexplore.ieee.org/abstract/document/7208510/>.
+ 
+16.3 Later Qucs/Qucs-S references
+------------------------------------
 Mike Brinson, Richard Crozier, Clemens Novak, Bastien Roucaries, Frans Schreuder, and Guilherme Brondani Torri. Building a second generation Qucs GPL circuit simulator: package structure, 
 simulation features and compact device modelling capabilities,  MOS-AK Workshop on compact device modelling at London Metropolitan University on March 28 and 29, 2014, London, (UK). 
 Available from 
@@ -136,6 +167,8 @@ Available from
 
 M.E. Brinson, R. Crozier, C. Novak, B. Roucaries, F. Schreuder, G.B. Torri, Qucs Roadmap: Background to the New Features in Release 0.0.18 and an Outline of Future Software 
 Development Directions, MOS-AK Workshop, ESSDERC/ESSCIR,Venice, Sep. 2014. Available from <http://www.mos-ak.org/venice_2014/publications/T_4_Brinson_MOS-AK_Venice_2014.pdf>.
+
+V Kuznetsov, "Qucsactivefilter—Active filter synthesis subsystem of Qucs", 2014. Available from <https://www.researchgate.net/profile/Vadim_Kuznetsov5/publication/275053492_Qucsactivefilter_-_Active_filter_synthesis_subsystem_of_Qucs/links/5531ff810cf2f2a588ad645d.pdf>. 
 
 Mike Brinson, Richard Crozier, Clemens Novak, Bastien Roucaries, Frans Schreuder, Guilherme B. Torri, W. Grabinski, QUCS/ADMS/Verilog-A Update: MOS-AK Workshop on compact device 
 modelling, December 12, 2014, Berkeley, (US). Available from <http://www.mosak.org/berkeley_2014/presentations/04_Wladek_Grabinski_MOS-AK_Berkeley_2014.pdf>.
@@ -155,11 +188,16 @@ DOI: 10.1109/MIXDES.2015.7208509.
 M.E. Brinson, A Unified Approach to Compact Device Modelling with the Open Source Packages Qucs/ADMS and MAPP/Octave, IEEE EDS Mini-Colloquim-Training Course on Compact Modeling (TCCM), 
 Torun, Poland, 24 June, 2015.
 
+MS Endiz, M ÖZCAN, MA ERİŞMİŞ, "The simulation and production of glow plugs based on thermal modeling", Turk J Elec Eng & Comp Sci, (2015) 23: 2197-2207, doi:10.3906/elk-1307-5.
+Available from <http://journals.tubitak.gov.tr/elektrik/issues/elk-15-23-sup.1/elk-23-sup.1-13-1307-5.pdf>.
+
 M.E. Brinson, R. Crozier, V. Kuznetsov, C. Novak, B. Roucaries, F. Schreuder, G.B. Torri, Qucs: An Introduction to the New Simulation and Compact Device Modelling Features 
 Implemented in Release 0.0.19/0.0.19Src2 of the Popular GPL Circuit Simulator, MOS-AK Workshop, Graz, Sep. 2015. 
 Available from <http://www.mos-ak.org/graz_2015/presentations/T_5_Brinson_MOS-AK_Graz_2015.pdf>.
 
 Mike Brinson and Vadim Kuznetsov, Qucs Equation-Defined and Verilog-A Higher Order Behavioral Device Models for Harmonic Balance Circuit Simulation, International Journal of Microelectronics and Computer Science, Vol. 6 No. 2, pp. 49-58, 2015. ISSN 2080-0758, eISSN 2353-9607. Available from <http://journal.dmcs.pl/documents/10630/116343/IJMCS_2_2015_4.pdf>. 
+
+E Frenski, "SIMULATING DIGITAL FILTERS WITH Qucs/QucsStudio", 2015,. Available from <https://ideas.repec.org/a/neo/journl/v11y2015i2p137-142.html>.
 
 Mike Brinson, Vadim Kuznetsov and Wladek Grabinski, Qucs Equation-Defined Device modelling with a Verilog-A Prototyping Platform, Presented at the 8th International MOS-AK Workshop, 
 Washington DC, December 9 2015. Available from <http://www.mos-ak.org/washington_dc_2015/presentations/T14_Mike_Brinson_MOS-AK_Washington_DC_2015.pdf>. 
@@ -171,7 +209,10 @@ Available from
 
 Mike Brinson and Vadim Kuznetsov, Qucs-0.0.19S: A new open-source circuit simulator and its application for hardware design, Control and Communications (SIBCON), 
 2016 International Siberian Conference on Control and Communications, IEEE Conference Publication, 12-14 May 2016, pp. 1-5, Moscow ,Russia, 
-INSPEC Accession Number: 16090578 DOI: 10.1109/SIBCON.2016.7491696. 
+INSPEC Accession Number: 16090578 DOI: 10.1109/SIBCON.2016.7491696.
+
+Leonid Kechiev, Nicolay Kruchkov, Vadim Kuznetsov, "New active filter synthesis tool for Qucs open-source circuit simulator",Control and Communications (SIBCON), 
+2016 International Siberian Conference on Control and Communications, IEEE Conference Publication, 12-14 May 2016, pp. 1-4, Moscow ,Russia, DOI: 10.1109/SIBCON.2016.7491787.  
 
 Mike Brinson and Vadim Kuznetsov, Current conveyor macromodels for wideband RF circuit design, Mixed Design of Integrated Circuits and Systems, Proceedings of the 23rd 
 International Conference Mixed Design of Integrated Circuits and Systems. IEEE Conference Publication, 23-25 June 2016. pp. 62-67, Lodz, Poland. 
@@ -190,6 +231,10 @@ Available from <http://www.mos-ak.org/lausanne_2016/presentations/T04_Brinson_MO
 
 Mike Brinson and Vadim Kuznetsov, A new approach to compact semiconductor device modelling with Qucs Verilog-A analogue module synthesis, 
 International Journal of Numerical Modelling: Electronic Networks, Devices and Fields, Volume 29, Issue 6 November-December 2016, Pages 1070–1088, DOI: 10.1002/jnm.2166.
+
+Alex Anderson Lima, Lucas Monteiro Torres, Muthupandian Cheralathan and Stefan Blawid, "A modified Shichman-Hodges model for OTFTs usable in the Quite Universal Circuit Simulator".
+ICCEEg: 1 (14) – Dezembro 2016. Available from <https://www.researchgate.net/profile/Stefan_Blawid/publication/313479426_A_modified_Shichman-Hodges_model_for_OTFTs_usable_in_the_Quite_Universal_Circuit_Simulator/links/589c673baca2721ae1bc3c54/A-modified-Shichman-Hodges-model-
+for-OTFTs-usable-in-the-Quite-Universal-Circuit-Simulator.pdf>. 
 
 M. Arendall, Simulating the Knowm M-MSS Memristor Model Using Qucs-S with Xyce, Knowm, 5 March 2017. Available from 
 <https://knowm.org/simulating-the-knowm-m-mss-memristor-model-using-qucs-s-with-xyce/>.
