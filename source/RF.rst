@@ -407,6 +407,9 @@ from a spiral with a cut traversing the resistor material four times, set by :ma
 	Lstrip \approx  2.0 \cdot \pi \cdot Bradius \cdot Ns 
 .. math::
 	Wstrip \approx  0.75 \cdot \frac {Blength}{Ns} 
+.. math::
+        Rstrip \approx Wstrip/2.0
+
 
 Where :math:`Blength` and :math:`Bradius` are the physical body length and body radius of the thin-film resistor in metres, respectively.
 To take account of the thin-film resistor end-caps, that connect the thin-film resistor to the component leads, the body length of the resistor is estimated 
@@ -415,11 +418,11 @@ to be roughly 0.75 times the external component length.
 2.	The thin-film resistor capacitors :math:`Cp` and :math:`Cpad` can also be estimated using the following equations
 
 .. math::
-	Cp \approx \frac{Erb \cdot \epsilon o \cdot \pi \cdot Bradius \cdot Bradius }{0.75 \cdot Blength}
+	Cp \approx \left [ \frac{5.5e-11} {log( \frac{2.0 \cdot Lstrip} {Rstrip}) -0.75} \right]\cdot 1e-3
 
 	Cpad \approx \frac{Erp \cdot \epsilon o \cdot 1.5 \cdot Blength \cdot Bradius}{H}
  
-Where :math:`Erb` is the relative permeability of the resistor substrate, :math:`Erp` is the relative permeability of the PCB and :math:`H` is the distance below the resistor to
+Where :math:`Erb` is the relative permittivity of the resistor substrate, :math:`Erp` is the relative permittivity of the PCB and :math:`H` is the distance below the resistor to
 ground. If :math:`H` is greater than the PCB thickness it implies that there is no ground plane on the underside of the PCB and as a consequence capacitor :math:`Cp` becomes 
 very small or goes to zero.
 
@@ -445,8 +448,72 @@ Figure 13.18.4  A set of resistor impedance data generated using the test bench 
 
 Notice that in Figure 13.18.4 a resistor value of around 200 :math:`\Omega` gives the widest AC bandwidth, in this example approaching 1GHz.  
 Hence, it is better to build a 50 :math:`\Omega` RF axial resistor from four parallel 200 :math:`\Omega` components rather than use a single 50 :math:`\Omega` resistor.
+A second and important observation concerning the axial RF resistor model concerns the fact that the inductors in the model are considered to be linear and non-linear effects
+such as frequency dependent inductance changes due to high frequency "skin effect" are not included. For signal frequencies in the lower RF band this can be considered to be
+a minor error. It also allows the axial RF resistor model to be included in transient simulations without substantial changes.  It is also possible to add the frequency dependent
+"skin effect" to the axial RF resistor model.  However, such models are normally restricted to the AC simulation domain. 
+
+13.8.3 Surface mount chip resistors
+====================================
+Figure 13.18.1 (b) shows the structure and a simulation model for a typical surface-mount resistor.
+Surface-mount resistors are intentionally made smaller than axial components in order to reduce their package L and C
+parasitics.  Table 13.1 lists a number of a current range of popular components that are regularly
+employed in printed circuit board production. These packages have a thickness of approximately 0.5 mm
+or slightly less, depending on size/power dissipation.
 
 
+		Table 13.1 Dimensions of typical surface mount packages
+		
+		+----------+-----------+-----------+-----------------------+
+		| Package  | Length mm |  Width mm |  Max Dissipation mW   |
+		+==========+===========+===========+=======================+
+		|   0402   |  1.0      |  0.5      |	   60              |
+		+----------+-----------+-----------+-----------------------+
+		|   0603   |  1.6      |  0.8      |	   60              |
+		+----------+-----------+-----------+-----------------------+
+		|   0805   |  2.0      |  1.25     |       100             |
+		+----------+-----------+-----------+-----------------------+
+		|   1206   |  3.2      |  1.6      |       125             |
+		+----------+-----------+-----------+-----------------------+
+		|   1210   |  3.2      |  2.5      |       250             |
+		+----------+-----------+-----------+-----------------------+
+		|   1812   |  4.5      |  3.2      |       500             |
+		+----------+-----------+-----------+-----------------------+
+		|   2512   |  6.4      |  3.2      |       1000            |
+		+----------+-----------+-----------+-----------------------+
+
+As a general rule the smaller the dimensions of a resistor package the lower its L and C parasitics
+will be. Conversely, the smaller the package the lower the maximum power dissipation. To demonstrate
+the operation of surface-mount resistors at RF a fundamental model for an 0805 component has been developed. This is introduced
+in Figure 13.8.5 and represents a simplified surface-mount chip resistor model.  In this model the axial resistor inductors :math:`L1` and :math:`L2` and the parasitic
+capacitance :math:`Cpad` are assumed to be very small and have been neglected. 
+
+.. image:: _static/en/chapter13/ResFig1385.png
+
+Figure 13.18.5  An RF surface-mount resistor model: (a) a debug version which estimates the model parameters from the component physical dimensions and material properties, and (b)
+a simulation version of the model that has the :math:`L`, :math:`C` and :math:`R` values as parameters. 
+
+Very approximate values for the surface-mount chip resistor model components are given by the following equations:
+
+.. math::
+        Rstrip \approx Wstrip/2.0
+.. math::
+        Ls \approx  2.0e-7  \cdot Lstrip \left [0.5 \cdot \ln \left ( \frac{ 2.0 \cdot Lstrip}{Wstrip} \right)+\frac{Wstrip}{3.0 \cdot Lstrip} \right]
+.. math::
+        Cp \approx \left [ \frac{5.5e-11} {log( \frac{2.0 \cdot Lstrip} {Rstrip}) -0.75} \right ] *1e-3
+
+where :math:`Lstrip`, :math:`Wstrip` and :math:`Rstrip` are chip resistor dimensions in mm.  Figures 13.18.6 and 13.18.7 show the test circuit and impedance plots for
+a series of 0805 chip resistors. Notice how similar these are to previous axial resistor data. One obvious, but expected, difference is that the surface-mount chip resistor
+performs as a pure ohmic resistance to a much higher frequency than the axial resistor. In these reported model and simulation results roughly a maximum of around 2 GHz for a 200 :math:`\Omega` axial resistor compared to roughly 20 GHz for the similar 0805 chip resistor.  The resistor models and test circuits can be found in the Qucs-S 
+~/qucs-s/examples/ngspice directory.  To use the these models copy the RFLumpedComponents.lib file into directory ~/.qucs/user_lib.
+
+.. image:: _static/en/chapter13/ResFig1386.png
+
+Figure 13.18.6  A basic test bench for simulating the small signal AC performance of a surface-mount chip resistor. 
+
+.. image:: _static/en/chapter13/ResFig1387.png
+
+Figure 13.18.7  A set of resistor impedance data generated using the test bench shown in Figure 13.18.6.
 
 
 
