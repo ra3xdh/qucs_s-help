@@ -12,7 +12,7 @@ User Manual and Reference Material
 
 | **Authors**          Mike Brinson (mbrin72043@yahoo.co.uk) and Vadim Kusnetsov (ra3xdh@gmail.com)
 |
-| **Copyright**  2015, 2016, 2017
+| **Copyright**  2015, 2016, 2017, 2018
 |
 | Permission is granted to copy, distribute and/or modify this document under the terms of the
 | GNU Free Documentation License, Version 1.1 or any later version published by the Free 
@@ -27,7 +27,7 @@ User Manual and Reference Material
 Contents:
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 16
 
    Intro
    BasSim
@@ -49,9 +49,9 @@ Contents:
 
 A "Technical Description" of the Qucs simulator and implemented device models are available online at http://qucs.sourceforge.net/tech/technical.html. 
 
-Qucs-S  example schematics can be found in the Qucs-S V0.0.20 source code "examples" directory.
+Qucs-S  example schematics can be found in the Qucs-S V0.0.21 source code "examples" directory.
 
-Qucs_S V0.0.20  build can be downloaded from https://ra3xdh.github.io/.
+Qucs_S V0.0.21  build can be downloaded from https://ra3xdh.github.io/.
 
 .. only:: html
 

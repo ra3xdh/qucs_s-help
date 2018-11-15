@@ -201,7 +201,7 @@ B source example 2: Simulation of the properties of a high power half-wave recti
 |image28_EN|
 
 
-6.3 Linear and non-linear transformer models
+7.3 Linear and non-linear transformer models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Qucs release 0.0.18, and earlier versions of the software, includes a number of transformer and coupled inductance models. These
 models are linear with none of the important non-linear effects found in real transformers, including for example, winding resistance,

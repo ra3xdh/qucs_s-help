@@ -265,5 +265,8 @@ IEEE Conference Proceedings, 22-24 June 2017. pp. 62-67, Bydgoszcz, Poland. DOI:
 Mike Brinson and Vadim Kuznetsov, Extended behavioural device modelling and circuit simulation with Qucs-S, International Journal of Electronics, Published online on 29 July 2017. 
 <http://dx.doi.org/10.1080/00207217.2017.1357764>. 
 
+Mike Brinson,  Frequency Domain Non-Linear Compact Modelling and Simulation of IC Spiral Inductors on Silicon,  International Journal of Microelectronics and Computer Science, Vol. 9. No. 1. 2018,
+ISSN 2080-8755.
+
    `back to the top <#top>`__	
 
