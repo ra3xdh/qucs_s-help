@@ -41,7 +41,7 @@ Munich, September, 2007. <Available from http://www.mos-ak.org/munich/posters/P0
 Brinson M., and Jahn S.,Qucs: A GPL software package for circuit simulation, compact device modeling and circuit macromodeling from DC to RF and beyond,
 MOS-AK meeting , MiPlaza, HighTech Campus, Eindhoven, the Netherlands, 4 April 	2008, Available from <http://www.mos-ak.org/eindhoven/papers/06_Qucs_MOS-AK_Eindhoven.pdf>.
 
-Bah Mamadou, "Modeling and Simulation of The Transistor BFG425W_ NPN_WideBand", The Second International Symposium on Electrical and Electronics Engineering (ISEEE), Galaţi (Romania), Sep. 2008.
+Bah Mamadou, "Modeling and Simulation of The Transistor BFG425W_NPN_WideBand", The Second International Symposium on Electrical and Electronics Engineering (ISEEE), Galaţi (Romania), Sep. 2008.
 Link: <http://www.fie.ugal.ro/iseee2008.htm>.
 
 D. Céli, "HICUM/L0 v1.2 Parameter Extraction and Validation", 21st Bipolar Arbeitskreis (BipAK), Hamburg, Oct. 2008.
@@ -168,7 +168,8 @@ Available from
 M.E. Brinson, R. Crozier, C. Novak, B. Roucaries, F. Schreuder, G.B. Torri, Qucs Roadmap: Background to the New Features in Release 0.0.18 and an Outline of Future Software 
 Development Directions, MOS-AK Workshop, ESSDERC/ESSCIR,Venice, Sep. 2014. Available from <http://www.mos-ak.org/venice_2014/publications/T_4_Brinson_MOS-AK_Venice_2014.pdf>.
 
-V Kuznetsov, "Qucsactivefilter—Active filter synthesis subsystem of Qucs", 2014. Available from <https://www.researchgate.net/profile/Vadim_Kuznetsov5/publication/275053492_Qucsactivefilter_-_Active_filter_synthesis_subsystem_of_Qucs/links/5531ff810cf2f2a588ad645d.pdf>. 
+V Kuznetsov, "Qucsactivefilter—Active filter synthesis subsystem of Qucs", 2014. Available from <https://www.researchgate.net/profile/Vadim_Kuznetsov5/publication/
+275053492_{-}Qucsactivefilter_{-}-_{-}Active_{-}filter_synthesis_{-}subsystem_{-}of_{-}Qucs/links/5531ff810cf2f2a588ad645d.pdf>. 
 
 Mike Brinson, Richard Crozier, Clemens Novak, Bastien Roucaries, Frans Schreuder, Guilherme B. Torri, W. Grabinski, QUCS/ADMS/Verilog-A Update: MOS-AK Workshop on compact device 
 modelling, December 12, 2014, Berkeley, (US). Available from <http://www.mosak.org/berkeley_2014/presentations/04_Wladek_Grabinski_MOS-AK_Berkeley_2014.pdf>.
@@ -233,8 +234,8 @@ Mike Brinson and Vadim Kuznetsov, A new approach to compact semiconductor device
 International Journal of Numerical Modelling: Electronic Networks, Devices and Fields, Volume 29, Issue 6 November-December 2016, Pages 1070–1088, DOI: 10.1002/jnm.2166.
 
 Alex Anderson Lima, Lucas Monteiro Torres, Muthupandian Cheralathan and Stefan Blawid, "A modified Shichman-Hodges model for OTFTs usable in the Quite Universal Circuit Simulator".
-ICCEEg: 1 (14) – Dezembro 2016. Available from <https://www.researchgate.net/profile/Stefan_Blawid/publication/313479426_A_modified_Shichman-Hodges_model_for_OTFTs_usable_in_the_Quite_Universal_Circuit_Simulator/links/589c673baca2721ae1bc3c54/A-modified-Shichman-Hodges-model-
-for-OTFTs-usable-in-the-Quite-Universal-Circuit-Simulator.pdf>. 
+ICCEEg: 1 (14) – Dezembro 2016. Available from <https://www.researchgate.net/profile/Stefan_Blawid/publication/313479426_A_modified_Shichman-Hodges_model_for_OTFTs_usable_in_the_Quite_Universal_Circuit_Simulator/
+links/589c673baca2721ae1bc3c54/A-modified-Shichman-Hodges-model-for-OTFTs-usable-in-the-Quite-Universal-Circuit-Simulator.pdf>. 
 
 M. Arendall, Simulating the Knowm M-MSS Memristor Model Using Qucs-S with Xyce, Knowm, 5 March 2017. Available from 
 <https://knowm.org/simulating-the-knowm-m-mss-memristor-model-using-qucs-s-with-xyce/>.
@@ -247,16 +248,13 @@ Lausanne, March, 31, 2017. Available from <http://www.mos-ak.org/lausanne_2017/p
 
 Mike Brinson and Vadim Kuznetsov, An outline of Qucs-S compact device modelling: History and capabilities. Part 1: Equation-Defined Device (EDD) modelling to 
 Verilog-A module synthesis. presented at IEEE EDS Distinguished Lecturer Mini-Colloquium on Characterization and SPICE Modeling for Nanoscaled IC Designs, June 21, 2017, 
-Bydgoszcz, Poland. Available from 
-<https://www.researchgate.net/publication/318099550_An_outline_of_Qucs-
-S_compact_device_modelling_History_and_capabilities_Part_1_Equation-
-efined_Device_EDD_modelling_to_Verilog-A_module_synthesis>.
+Bydgoszcz, Poland. Available from <https://www.researchgate.net/publication/318099550_An_outline_of_Qucs-S_compact_device_modelling_History_and_capabilities_Part_1_
+Equation-defined_Device_EDD_modelling_to_Verilog-A_module_synthesis>.
 
-Mike Brinson and Vadim Kuznetsov, An outline of Qucs-S compact device modelling: History and capabilities. Part 2: XSPICE Code Models; basic 	properties to model synthesis, 
+Mike Brinson and Vadim Kuznetsov, An outline of Qucs-S compact device modelling: History and capabilities. Part 2: XSPICE Code Models; basic properties to model synthesis, 
 and beyond, presented at IEEE EDS Distinguished Lecturer Mini-Colloquium on Characterization and SPICE Modeling for Nanoscaled IC Designs, June 21, 2017, Bydgoszcz, Poland. Available from
-<https://www.researchgate.net/publication/318099462_An_outline_of_Qucs-
-S_compact_device_modelling_History_and_capabilities_Part_2_XSPICE_Code_Models_bas
-ic_properties_to_model_synthesis_and_beyond>.
+<https://www.researchgate.net/publication/318099462_An_outline_of_Qucs-S_compact_device_modelling_History_and_capabilities_
+Part_2_XSPICE_Code_Models_basic_properties_to_model_synthesis_and_beyond>.
 
 Mike Brinson and Vadim Kuznetsov, Improvements in Qucs-S Equation-Defined modelling of semiconductor devices and IC’s, Proceedings of the 24th International Conference-MIXDES, 
 IEEE Conference Proceedings, 22-24 June 2017. pp. 62-67, Bydgoszcz, Poland. DOI: 10.23919/MIXDES.2017.8005170. 
@@ -265,8 +263,15 @@ IEEE Conference Proceedings, 22-24 June 2017. pp. 62-67, Bydgoszcz, Poland. DOI:
 Mike Brinson and Vadim Kuznetsov, Extended behavioural device modelling and circuit simulation with Qucs-S, International Journal of Electronics, Published online on 29 July 2017. 
 <http://dx.doi.org/10.1080/00207217.2017.1357764>. 
 
-Mike Brinson,  Frequency Domain Non-Linear Compact Modelling and Simulation of IC Spiral Inductors on Silicon,  International Journal of Microelectronics and Computer Science, Vol. 9. No. 1. 2018,
-ISSN 2080-8755.
+Mike Brinson, Verilog-A compact modelling of SiC devices with Qucs-S, QucsStudio and MAPP/Octave FOSS tools, presented at IEEE EDS Distinguished Lecturer 
+Mini-Colloquium on SiC: technology, devices, modeling, June 20, 2018, Gdynia, Poland. Available from <https://www.researchgate.net/publication/325988612_Verilog-A_compact_modelling_of_SiC_devices_with_Qucs-S_QucsStudio_and_MAPPOctave_FOSS_tools>.
+
+
+Mike Brinson,  Qucs Frequency Domain Non-Linear Compact Modelling and Simulation of IC Spiral Inductors on Silicon. Proceedings of the 25th International Conference-MIXDES, 
+21-23 June 2018, Gdynia, Poland. DOI: 10.23919/MIXDES.2018.8444556.
+
+Mike Brinson,  Frequency Domain Non-Linear Compact Modelling and Simulation of IC Spiral Inductors on Silicon,  International Journal of Microelectronics and Computer Science, 
+Vol. 9. No. 1, pp. 19-26, 2018, ISSN 2080-8755.
 
    `back to the top <#top>`__	
 

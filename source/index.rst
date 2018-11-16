@@ -3,12 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-|image0_EN|
+===============================================================
+Qucs-S Help documentation : User Manual and Reference Material
+=============================================================== 
 
-Qucs-S Help documentation
-========================================== 
-User Manual and Reference Material
-==========================================
 
 | **Authors**          Mike Brinson (mbrin72043@yahoo.co.uk) and Vadim Kusnetsov (ra3xdh@gmail.com)
 |
@@ -18,8 +16,7 @@ User Manual and Reference Material
 | GNU Free Documentation License, Version 1.1 or any later version published by the Free 
 | Software Foundation. A copy of the license is included in the section entitled "GNU Free 
 | Documentation License". 
-|
-|
+
  
 
 ****
@@ -61,5 +58,4 @@ Qucs_S V0.0.21  build can be downloaded from https://ra3xdh.github.io/.
   * :ref:`genindex`
   * :ref:`search`
 
-.. |image0_EN| image::  _static/en/Qucs.png
 
