@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Chapter 7. Qucs and SPICE simulation models that work with ngspice, Xyce and SPICE OPUS
+Chapter 7. Qucs and SPICE simulation models that work with Ngspice, Xyce and SPICE OPUS
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 7.1 Introduction
@@ -41,151 +41,271 @@ reviewed in later releases of Qucs.
 
 The models shown in Figure 7.1 are the original Qucs-0.18 models which can be included in ngspice and Xyce simulations. Please
 NOTE that for those Qucs users who do not wish to simulate circuits with either ngspice or Xyce all the models distributed with 
-Qucs-0.0.18 work with Qucs-0.0.19S without any modification via the usual *Simulation* (key F2) command. So far no attempt 
+Qucs-0.0.18 work with Qucs-0.0.21S without any modification via the usual *Simulation* (key F2) command. So far no attempt 
 has been
 made to interface Qucs Verilog-A models with ngspice or Xyce. This task is scheduled for a later spice4qucs development phase. 
 
-|image1_EN| 
+.. figure:: _static/en/chapter7/Fig71.png
+	:align: center
+	:scale: 70
+	:figclass: align-center
 
-Figure 7.1. Qucs-0.0.18 models that work with ngspice and (sometimes) Xyce.
-
+	Figure 7.1. Qucs-0.0.18 models that work with Ngspice and (sometimes) Xyce.
+	
+	
 7.2 Spice4qucs component specifications and technical reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-^^^^^^^^^^^^^^^^^^
-**Capacitor (C)**
-^^^^^^^^^^^^^^^^^^
-|image3_EN|
+^^^^^^^^^^^^^^^^^^^^^
+7.2.1 Capacitor (C)
+^^^^^^^^^^^^^^^^^^^^^
+.. figure::  _static/en/chapter7/Capacitor.png
+	:align: center
+	:scale: 60
+	:figclass: align-center
+
+	Linear capacitor.
+	
+
+^^^^^^^^^^^^^^^^^^^^^
+7.2.2 Inductor (L)
+^^^^^^^^^^^^^^^^^^^^^
+
+.. figure::  _static/en/chapter7/Inductor.png
+	:align: center
+	:scale: 65
+	:figclass: align-center
+
+	Linear inductor.
 
 
 ^^^^^^^^^^^^^^^^^^
-**Inductor (L)**
+7.2.3 Resistor (R)
 ^^^^^^^^^^^^^^^^^^
-|image4_EN|
 
+.. figure::  _static/en/chapter7/Resistor.png
+	:align: center
+	:scale: 60
+	:figclass: align-center
 
-^^^^^^^^^^^^^^^^^^
-**Resistor (R)**
-^^^^^^^^^^^^^^^^^^
-|image2_EN|
+	Linear resistor.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.4 Independent AC Current Source (I)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure::  _static/en/chapter7/ACCurrentSource.png
+	:align: center
+	:scale: 50
+	:figclass: align-center
+
+	Linear AC current source.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Independent AC Current Source (I)**
+7.2.5 Independent AC Voltage Source (V)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image15_EN|
 
+.. figure:: _static/en/chapter7/ACVoltageSource.png
+	:align: center
+	:scale: 50
+	:figclass: align-center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Independent AC Voltage Source (V)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image13_EN|
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Independent DC Current Source (I)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image14_EN|
+	Linear AC voltage source.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Independent DC Voltage Source (V)**
+7.2.6 Independent DC Current Source (I)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image5_EN|
+.. figure::  _static/en/chapter7/DCCurrentSource.png
+	:align: center
+	:scale: 60
+	:figclass: align-center
 
+	Linear DC current source.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Linear Current Controlled Current Source (F)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image9_EN|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.7 Independent DC Voltage Source (V)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure::  _static/en/chapter7/DCVoltageSource.png
+	:align: center
+	:scale: 60
+	:figclass: align-center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Linear Current Controlled Voltage Source (H)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image8_EN|
-
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Linear Voltage Controlled Current Source (G)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image6_EN|
-
+	Linear DC voltage source.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Linear Voltage Controlled Voltage Source (E)**
+7.2.8 Linear Current Controlled Current Source (F)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image7_EN|
+.. figure::  _static/en/chapter7/ICIS.png
+	:align: center
+	:scale: 60
+	:figclass: align-center
 
-^^^^^^^^^^^^^
-**Probes**
-^^^^^^^^^^^^^
-|image10_EN|
-
-^^^^^^^^^^^^^^^^^
-**Qucs Netlist**
-^^^^^^^^^^^^^^^^^
-|image11_EN|
-
-^^^^^^^^^^^^^^^^^^^^^^
-**Ngspice Netlist**
-^^^^^^^^^^^^^^^^^^^^^^
-|image12_EN|
-
-NOTE: To make the Qucs and ngspice netlists readable single lines of width greater than a page width have been
-indented and continued on one or more lines after the initial entry. 
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Relay (Voltage controlled switch) (S)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image16_EN|
+	Linear current controlled current source.
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Diode (D)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image17_EN|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.9 Linear Current Controlled Voltage Source (H)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure::  _static/en/chapter7/ICVS.png
+	:align: center
+	:scale: 60
+	:figclass: align-center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**BJT npn (Qucs T, ngspice Q)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image18_EN|
-
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Ngspice diode (D)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image19_EN|
+	Linear current controlled voltage source.
 
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Ngspice resistor (R)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image20_EN|
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.10 Linear Voltage Controlled Current Source (G)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Ngspice capacitor (C)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-|image21_EN|
+.. figure::  _static/en/chapter7/VCIS.png
+	:align: center
+	:scale: 60
+	:figclass: align-center
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Ngspice inductor (L)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	Linear voltage controlled current source.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.11 Linear Voltage Controlled Voltage Source (E)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure::   _static/en/chapter7/VCVS.png
+	:align: center
+	:scale: 60
+	:figclass: align-center
+
+	Linear voltage controlled voltage source.
+
+
+^^^^^^^^^^^^^^^
+7.2.12 Probes
+^^^^^^^^^^^^^^^
+.. figure::   _static/en/chapter7/Probes.png
+	:align: center
+	:scale: 70
+	:figclass: align-center
+
+	Voltage and current probe examples.
+
+
+^^^^^^^^^^^^^^^^^^^
+7.2.13 Qucs Netlist
+^^^^^^^^^^^^^^^^^^^
+.. figure::   _static/en/chapter7/Probesb.png
+	:align: center
+	:scale: 70
+	:figclass: align-center
+
+	Qucs netlist generated by Qucs-S for the 7.2.12 probe example circuit.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.14 Ngspice Netlist
+^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure::  _static/en/chapter7/Probesc.png
+	:align: center
+	:scale: 70
+	:figclass: align-centre
+
+	Ngspice netlist generated by Qucs-S for the 7.2.12 probe example circuit.
+	
+	
+NOTES:
+ 
+1. To make the Qucs and Ngspice netlists readable, single lines of width greater
+than a page width have been indented and continued on one or more lines after the initial entry.
+
+2. The Qucs-S Xyce generated netlist has a different structure to the conventional SPICE 3f5 format
+adopted by Ngspice and SPICE OPUS. 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2 15 Relay (Voltage controlled switch) (S)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure::   _static/en/chapter7/Relay.png
+	:align: center
+	:scale: 50
+	:figclass: align-centre
+
+	Voltage controlled switch (S) - Qucs relay component.
+
+
+^^^^^^^^^^^^^^^^^^
+7.2.16 Diode (D)
+^^^^^^^^^^^^^^^^^^
+.. figure::   _static/en/chapter7/Diode.png
+	:align: center
+	:scale: 70
+	:figclass: align-centre
+
+	Diode (D).
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.17 BJT npn (Qucs T, ngspice Q)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure::   _static/en/chapter7/npn.png
+	:align: center
+	:scale: 60
+	:figclass: align-centre
+
+	BJT npn (Qucs T, Ngspice, Xyce and SPICE OPUS Q).
+
+^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.18 Ngspice diode (D)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure::   _static/en/chapter7/ngspiceD.png
+	:align: center
+	:scale: 70
+	:figclass: align-centre
+
+	Ngspice diode (D) model and parameters.
+	
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.19 Ngspice linear resistor (R)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure::   _static/en/chapter7/ngspiceR.png
+	:align: center
+	:scale: 60
+	:figclass: align-centre
+
+	Ngspice Linear resister (R) device details.
+	
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.20 Ngspice linear capacitor (C)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure::   _static/en/chapter7/ngspiceC.png
+	:align: center
+	:scale: 60
+	:figclass: align-centre
+
+	Ngspice Linear capacitor (C) device details.
+	
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.21 Ngspice linear inductor (L)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |image22_EN|
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Ngspice mutual inductor (K)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.22 Ngspice mutual inductor (K)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |image24_EN|
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Ngspice independent AC voltage source (V)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+7.2.23 Ngspice independent AC voltage source (V)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |image23_EN|
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Ngspice non-linear dependent voltage and current sources (B)**
+7.2.24 Ngspice non-linear dependent voltage and current sources (B)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |image25_EN|
 
