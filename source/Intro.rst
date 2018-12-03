@@ -1,13 +1,27 @@
 
----------------------------------
+--------------------------
 Chapter 1. Introduction                 
----------------------------------    
+--------------------------  
  
-Following the release of Qucs-0.0.18 in August 2014 the Qucs Development Team considered in detail a number of possible directions that future versions of the software could take. Spice4qucs is one of these routes. It addresses a number of problems observed with the current version of Qucs while attempting to combine  some of the best features of other GPL circuit simulation packages. The project also aims to add additional model development tools to those currently available in Qucs-0.0.18. Qucs was originally written as an RF and microwave engineering design tool which provided features not found in SPICE, like S parameter simulation, two and multiport small signal AC circuit analysis and RF network synthesis.  Since it was first release under the General Public License (GPL) in 2003 Qucs has provided users with a relatively stable, flexible and reasonably functional circuit simulation package which is particularly suited to high frequency circuit simulation. In the years following 2003 the Qucs Development team added a number of additional simulation facilities, including for example, transient simulation,  device parameter sweep capabilities and single tone Harmonic Balance simulation, making Qucs functionality comparable to SPICE at low frequencies and significantly extended at high frequencies.  Considerable effort has also been made to improve the device modelling tools distributed with Qucs. The recent versions of the software include code for algebraic equation manipulation, Equation-Defined Device (EDD) modelling, Radio Frequency Equation-Defined Device (RFEDD) simulation and Verilog-A synthesised model development plus a range of compact and behavioural device modelling and post simulation data analysis tools that have become central features in an open source software package of surprising power and utility. 
+Following the release of Qucs-0.0.18 in August 2014 the Qucs Development Team considered in detail a number of possible directions that 
+future versions of the software could take. Spice4qucs is one of these routes. It addresses a number of problems observed with the current 
+version of Qucs while attempting to combine  some of the best features of other GPL circuit simulation packages. The project also aims to 
+add additional model development tools to those currently available in Qucs-0.0.18. Qucs was originally written as an RF and microwave 
+engineering design tool which provided features not found in SPICE, like S parameter simulation, two and multiport small signal AC 
+circuit analysis and RF network synthesis.  Since it was first release under the General Public License (GPL) in 2003 Qucs has 
+provided users with a relatively stable, flexible and functional circuit simulation package which is particularly suited to 
+high frequency circuit simulation. In the years following 2003 the Qucs Development team has added a number of additional simulation facilities, 
+including for example, transient simulation,  device parameter sweep capabilities and single tone Harmonic Balance simulation, making Qucs 
+functionality comparable to SPICE at low frequencies and significantly extended at high frequencies.  Considerable effort has also been 
+made to improve the device modelling tools distributed with Qucs. The recent versions of the software include code for algebraic equation 
+manipulation, Equation-Defined Device (EDD) modelling, Radio Frequency Equation-Defined Device (RFEDD) simulation and Verilog-A synthesised 
+model development plus a range of compact and behavioural device modelling and post simulation data analysis tools that have become central 
+features in this open source software package of surprising power and utility. 
 
-One of the most often requested new Qucs features is "better documentation", especially documentation outlining the use and limitations of the simulation and the modelling features built into Qucs.  Qucs is a large and complex package which is very flexible in the way that it can be used as a circuit design aid. Hence, however much documentation is written describing its functionality there are always likely be simulation and modelling examples that are missing from the Qucs documentation. In future Qucs releases will be accompanied by two or more basic Qucs documents. The first of these, simply called "Qucs-Help", provides introductory information for beginners and indeed any other users, who require help in starting to use Qucs. The second Qucs document, called "Spice4qucs-Help", introduces more advanced simulation and modelling topics.  Both documents present a large number of typical circuit simulation and compact device modelling examples. In the text these are also linked to sets of Qucs reference material.  Since 2003 the Qucs Development Team, and other authors, have published a body of work concerning Qucs and its applications. A bibliography of these publications can be found at the end of this document. Anyone interested in learning about Qucs is recommended to read these publications as they provide a wealth of information on basic and advanced Qucs topics.  Both the "Qucs_Help" and "Spice4qucs-Help" documents are very much work in progress.  Updated versions will be published with each new Qucs release. Moreover, to keep everyone up to date with Qucs current developments it is planned to updated them during future Qucs development phases.  The latest documentation can be found at https://github.com/Qucs/qucs-help. 
+One of the most often requested new Qucs features is "better documentation", especially documentation outlining the use and limitations of the 
+simulation and the modelling features built into Qucs.  Qucs is a large and complex package which is very flexible in the way that it can be used as a circuit design aid. Hence, however much documentation is written there are always likely be simulation and modelling examples that are missing from the Qucs documentation. In future Qucs releases will be accompanied by two or more basic Qucs documents. The first of these, simply called "Qucs-Help", provides introductory information for beginners and indeed any other users, who require help in starting to use Qucs. The second Qucs document, called "Qucs-S-Help", introduces more advanced simulation and modelling topics.  Since 2003 the Qucs Development Team, and other authors, have published a body of work concerning Qucs and its applications. A bibliography of these publications can be found at the end of this document. Anyone interested in learning about Qucs/Qucs-S is recommended to read these publications as they provide a wealth of information on basic and advanced topics.  Both the "Qucs_Help" and "Qucs-S-Help" documents are very much work in progress.  Updated versions will be published with each new Qucs release. Moreover, to keep everyone up to date with Qucs current developments it is planned to updated them during future Qucs development phases.  The latest documentation can be found at https://qucs-s-help.readthedocs.io/en/latest/. 
 
-1.1 Background
+Background
 ~~~~~~~~~~~~~~~~
 The current rate of Qucs downloads from http://qucs.sourceforge.net/ is around 3000 per week with a total of roughly 1.5 million downloads since Qucs was first released in 2003. This figure does not however, imply that 1.5 million copies of Qucs are currently in regular use. It does perhaps give an indication of the popularity of the software, particularly amongst users interested in RF circuit design and simulation. For a high percentage of regular Qucs users the current distribution version (Qucs 0.0.18) provides a reasonably stable and accurate simulation tool equipped with more than enough facilities to meet their everyday needs. In reality Qucs is not perfect but includes a number of weaknesses and known limitations. The onward march of technology also makes it imperative that Qucs evolves from a traditional circuit simulator to a design tool that can handle modelling and simulation of circuits which include devices from new emerging technologies. Today Qucs includes an extensive range of component, device and circuit modelling tools, allowing it to model and simulate circuits built from standard components and new production devices.  
 
@@ -27,7 +41,7 @@ The spice4qucs initiative is an ongoing project which attempts to:
 
 The spice4qucs initiative is an on going project and must be considered as very much work in progress. In its early releases not all the features listed above will be available for public use. It is however, the intention of the Qucs Development Team to introduce them as quickly as possible. Other features not listed in the previous entries may also be introduced.   
 
-1.2 Qucs-0.0.18 Structure
+Qucs-0.0.18 Structure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A block diagram showing the main analogue modelling and simulation functions of the Qucs-0.0.18 package is illustrated in Figure 1.1.  For convenience, particularly easy identification, blocks with  similar modelling or similar simulation functions have been coded with identical colours, for example dark red indicates the GUI and qucsator analogue simulation engine and dark green major component and device modelling tools. The direction of the flow of data between blocks are also shown with directed arrows. Central to the operation of the Qucs-0.0.18 package is the Qucs graphical user interface (GUI), the qucsator simulation engine and a post simulation data processing feature (indicated by the yellow block in Figure 1.1) for the extraction of device and circuit parameters and the visualisation of simulated signal waveforms. Cyan blocks in Figure 1.1 identify the well known Octave numerical analysis package ( https://www.gnu.org/software/octave/ ). Qucs employs Octave for additional post simulation data processing and waveform visualisation plus an experimental circuit simulation process where qucsator and Octave undertake cooperative transient circuit simulation (cyan coloured blocks).  The single light brown block in Figure 1.1 represents the ASCO optimisation package which is used by Qucs for determining circuit component values and device parameters which result in specific circuit performance criteria.
 
@@ -37,15 +51,15 @@ Readers who are not familiar with the basic operation and use of the Qucs GUI, c
 
 Figure 1.1.  A block diagram showing the analogue modelling and simulation facilities provided by Qucs-0.0.18.   
 
-1.3 Qucs future capabilities
+Qucs future capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Figure 1.2. presents an extended version of the Qucs-0.0.18 functional diagram where the added blocks indicate areas chosen for current and future Qucs development. Two major extension to Qucs functionality are obvious, namely the addition of the Ngspice, Xyce and SPICE OPUS circuit simulators to the Qucs package and the increase in the Qucs device modelling capabilities through the addition of the XSPICE Code Modelling software. Figure 1.2. only gives a rough picture of the proposed changes to Qucs under development by the spice4qucs project.  Much of the detail will become clearer later in the manual text and reference sections.
  
-|image1_EN|
+.... |image1_EN| 
 
 Figure 1.2. An block diagram outlining the extended Qucs-S simulation and modelling tools under development by the spice4qucs initiative. 
 
-1.4 A first view of the extended spice4qucs device modelling and simulation features
+A first view of the extended spice4qucs device modelling and simulation features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 At this point it seems appropriate to introduce a short example which demonstrates how much Qucs has evolved since the release of version 0.0.18. This example has been deliberately chosen to present an overview of the major new Qucs features either already developed by the spice4qucs project or planned for future releases. To provide readers with adequate information on how to make the best use of the new spice4qucs features they are described in detail in later chapters of this document. 
 
@@ -109,6 +123,8 @@ Figure 1.8. XSPICE Code Model tunnel diode model, test circuit and Ngspice simul
 .. only:: html
 
    `back to the top <#top>`__
+
+
 
 .. |imageQ_EN| image::  _static/en/Qucs.png
 .. |image0_EN| image::  _static/en/Spice4qucsFig1.png
