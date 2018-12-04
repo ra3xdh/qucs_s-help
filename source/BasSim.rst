@@ -2,7 +2,7 @@
 Chapter 2. Basic Ngspice, Xyce and SPICE OPUS simulation
 ----------------------------------------------------------------
 
-2.1 Introduction
+Introduction
 ~~~~~~~~~~~~~~~~
 
 This section describes a number of fundamental methods for launching circuit simulations from the Qucs GUI  using
@@ -11,7 +11,7 @@ subsystem specifically designed for this purpose.
 The Ngspice, Xyce and SPICE OPUS simulators are not embedded in Qucs but operate as independent external simulators. 
 Before use they must be installed on the computer operating system that you are running Qucs. 
 
-2.2 Supported simulators
+Supported simulators
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ngspice is a mixed-level/mixed-signal circuit simulator implemented from
@@ -42,14 +42,18 @@ to correct such problems as quickly as possible.  Please note this may take some
 inform us by sending in a bug report to the Qucs web site (with an example test schematic if possible) describing the problem you have identified.  
 
 
-2.3 General simulation methods
+General simulation methods
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The starting point for understanding how the ``spice4qucs`` extensions are built into the Qucs GUI is to study the basic operations 
 needed to simulate Qucs circuit schematics with external simulators. 
 For this purpose consider the simple RCL circuit shown in Figure 2.1.
 
-|RCL_sch_EN|
+	.. image::  _static/en/chapter2/RCL.png
+		:scale: 80
+		:align: center
+
+
 
 Figure 2.1. A simple RCL test circuit for demonstrating  Ngspice, Xyce and SPICE OPUS simulation controlled from Qucs.
 
@@ -75,7 +79,10 @@ Following placement and wiring of components, plus the addition of one or more s
 launched using the Qucs menu sequence  *Simulation* -> *Simulate* or by pressing key F2.  
 An  *External simulator* dialogue  then appears.  This is illustrated in Figure 2.2.
 
-|ExtSimDlg_EN|
+	.. image::   _static/en/chapter2/Ext_sim_dlg.png
+		:scale: 80
+		:align: center
+
 
 Figure 2.2. External simulator dialogue: where button *Simulate* launches a circuit simulation, button *Stop* causes a running simulation to finish; button
 *Save netlist* generates, and stores, the netlist of the circuit being simulated and button *Exit* closes the external simulator dialogue.
@@ -89,7 +96,11 @@ from the keyboard or by pressing the appropriate *Open File Select button*..
 In the case of the Xyce Parallel simulator the number of processors installed in your computer system, 
 must also be entered from the keyboard or selected using the dialogue up-down arrow controls.
 
-|Simset_EN|
+
+	.. image::    _static/en/chapter2/Simsett.png
+		:scale: 80
+		:align: center
+
 
 Figure 2.3. *Setup simulator executable locations* dialogue. 
 
@@ -117,7 +128,9 @@ The Log text can be viewed and using the drop down menue sequence *Simulation->S
 If the Ngspice simulation fails, any errors reported by Ngspice during simulation are listed in simulation Log window.
 Similarly, a successful completion of a Qucs/Ngspice simulation is reported.
 
-|ngsp_EN|
+	.. image::    _static/en/chapter2/Ngspice_exec.png
+		:scale: 80
+		:align: center
 
 Figure 2.4. A section of an Ngspice execution Log displayed in the *Simulate with an external simulator* dialogue window.
 
@@ -139,7 +152,10 @@ Qucs schematic window or onto the associated Qucs display page.
 After a diagram or table is placed a *Diagram properties* dialog appears. 
 On selecting the dataset for the current simulation the simulation output quantities become available for plotting or tabulating in a similar fashion to standard Qucs.
 
-|diagr_dlg_EN|
+	.. image::    _static/en/chapter2/Diagr_dlg.png
+		:scale: 80
+		:align: center
+
 
 Figure 2.5. *Diagram properties* dialogue, listing the selected simulator and the available simulation data names.
 
@@ -186,14 +202,18 @@ Like standard Qucs one or more variable items may be selected for plotting on th
 Finally pressing the *Apply* button shown at the bottom of Figure 2.5. causes the selected variable items to be plotted. 
 The plotted simulation results for the external Ngspice AC simulation of the RCL test circuit are shown in Figure 2.6.
 
-|RCL_ac_EN|
+	.. image::    _static/en/chapter2/RCL_ac.png
+		:scale: 80
+		:align: center
 
 Figure 2.6.  External SPICE AC simulation magnitude response for the current flowing in RCL circuit with a series resonant peak of roughly 8 MHz .
 
 Plotting the transient simulation data for the RCL test example follows the same procedure as the sequence described for the AC simulation except that in the transient plot
 variables with ``tran`` in their name are selected, see Figure 2.7.
 
-|RCL_tran_EN|
+	.. image::    _static/en/chapter2/RCL_tran.png
+		:scale: 80
+		:align: center
 
 Figure 2.7. Transient simulation voltage waveforms at the input and output nodes of the RCL circuit.
 
@@ -218,7 +238,7 @@ techniques for post processing, plotting and undertaking a range of different vi
 ..  |RCL_tran_EN| image:: _static/en/chapter2/RCL_tran.png
 
 
-2.4 Variable names
+Variable names
 ~~~~~~~~~~~~~~~~~~~~~
 
 As part of the ``spice4qucs`` extensions Ngspice and Xyce simulation variable names are converted from Qucs 
@@ -270,7 +290,7 @@ Table 2.2 Qucs and SPICE variable name prefixes
 +----------------------------------+-----------------------------------------+
 
 
-2.5 DC simulation
+DC simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -287,12 +307,16 @@ Schematics which include the ``spice4qucs`` DC icon do not however, list a simil
 and currents in the *Simulate with an external Simulator" dialogue window. A DC voltage and current list is output when a schematic includes
 a transient simulation icon, see Figure 2.9.
 
-|DC_list|
+	.. image::    _static/en/chapter2/DC_list.png
+		:scale: 80
+		:align: center
 
 Figure 2.8 A simple linear resistive electrical network driven by single DC voltage and current sources: DC node voltages (V) and voltage
 probe values (V) are illustrated in blue and current probe values (A) in green.
 
-|tran_DC_list|
+	.. image::    _static/en/chapter2/tran_DC_list.png
+		:scale: 80
+		:align: center
 
 Figure 2.9 A screen dump showing transient simulation initial DC simulation voltage and current values in (V) and (A) respectively
 for the resistive circuit given in Figure 2.8: NOTE that the voltage and current variable names are output in SPICE style syntax.
@@ -307,7 +331,9 @@ This procedure is demonstrated in Figure 2.10. where  the test circuit consists 
 simulating the non-linear DC current-voltage characteristic of a 1N4148 diode. This example can be found in the Qucs examples directory tree 
 listed as ``examples\ngspice\diode.sch`` .
 
-|ngspice_DC|
+	.. image::    _static/en/chapter2/Diode_DC.png
+		:scale: 80
+		:align: center
 
 Figure 2.10. Test circuit and simulated DC current-voltage characteristics for a 1N4148 silicon diode.
 
@@ -323,7 +349,7 @@ PLease note the following differences between SPICE and Qucs DC-sweep simulation
 ..  |DC_EX1_EN| image:: _static/en/chapter2/DC_EX1.png
 ..  |DC_EX2_EN| image:: _static/en/chapter2/DC_EX2.png
 
-2.6 AC simulation
+AC simulation
 ~~~~~~~~~~~~~~~~~~~
 
 Small signal AC simulation is fully supported by the ``spice4qucs`` subsystem. It doesn't require any special adaptation. Just simple place the ``AC simulation`` component icon on a 
@@ -332,7 +358,7 @@ an AC simulation.
 
 Ngspice, Xyce and SPICE OPUS small signal frequency domain AC simulations use linear, decade or octave frequency scales. Adaptive frequency steps are not implemented. 
 
-2.7 TRANsient simulation
+TRANsient simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Transient simulation is also fully supported by the ``spice4qucs`` subsystem. Just place the ``Transient simulation`` component icon on a schematic and simulate it. 
@@ -343,7 +369,7 @@ The number of simulation points output during a simulation will only be approxim
 For example, in an example test circuit 200 time points are specified on the schematic. However, due to the fact that the SPICE simulators use adaptive time steps, Ngspice employs 213 simulation points, 
 and Xyce employs 799 time points. This difference should be taken into account during simulation data post processing and when comparing simulation results. 
 
-2.8 Other forms of simulation
+Other forms of simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In contrast to SPICE 3f5, the parameter sweep facility found in Qucs has also been implemented with Ngspice, Xyce and SPICE OPUS where the parameter sweep setup and control
@@ -377,7 +403,7 @@ Table 2.3  ``Spice4qucs`` simulation types additional to DC, AC and TRAN
 Fourier, distortion pole-zero circuit simulation require special GUI icons. These can be found in the Qucs *Spice simulations* group. 
 In contrast sensitivity, the SPICE OPUS tran shooting method is accessed by ``spice4qucs`` via the Custom simulation technique, see section 8.0. 
 
-2.9 ``Spice4qucs`` circuit simulation components
+``Spice4qucs`` circuit simulation components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Qucs is released with a good selection of passive and active component models.  This selection includes both fundamental circuit components, like R, C and L and
@@ -388,14 +414,16 @@ models which do not work with the chosen circuit simulation engine. This policy 
 the chosen simulator, **ONLY** those models which work with the selected simulator become available for drawing circuit schematics and simulation.  
 The same approach applies to the components held in the ``spice4qucs`` libraries.
 
-2.10 More basic simulation examples
+More basic simulation examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-2.10.1 DC Example 1: Calculating circuit input resistance and power dissipation in a resistor.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DC Example 1: Calculating circuit input resistance and power dissipation in a resistor.
+----------------------------------------------------------------------------------------
 
-|DC_EX1_EN|
+	.. image::    _static/en/chapter2/DC_EX1.png
+		:scale: 80
+		:align: center
 
 Figure 2.11 DC resistive test network.
 
@@ -405,10 +433,12 @@ Figure 2.11 DC resistive test network.
 *	Determine DC Rin = V(Pr3)/I(Pr1) = 10/1.66667 = 6 Ohm,
 *	Determine the power dissipated in R4 = V(Pr4)*I(Pr2) = 1.66667*0.277778 = 0.463 W.
 
-2.10.2 DC Example 2: Variation of power dissipation with varying DC input voltage.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DC Example 2: Variation of power dissipation with varying DC input voltage.
+-----------------------------------------------------------------------------
 
-|DC_EX2_EN|
+	.. image::    _static/en/chapter2/DC_EX2.png
+		:scale: 80
+		:align: center
 
 Figure 2.12 DC example 1 with varying DC input voltage: demonstrating the use of a DC sweep simulation.
 
