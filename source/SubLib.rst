@@ -2,7 +2,7 @@
 Chapter 3. ``Spice4qucs`` subcircuits, macromodels and device libraries
 --------------------------------------------------------------------------
 
-3.1 ``Spice4qucs`` Subcircuits: with and without parameters
+``Spice4qucs`` Subcircuits: with and without parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Subcircuits are a concept that has been part of established circuit simulation practice since the early days of computer aided circuit design. 
 Today, all practical circuit simulators have subcircuits as part of their basic device compliment.  This is not surprising because they form 
@@ -14,7 +14,7 @@ extension is present is not allowed (see section 3.1.2).
 As a starting point ``spice4qucs`` subcircuits without parameters are considered first. This introduction is
 followed by a detailed description of the structure, and netlist syntax, of subcircuits with one or more parameters. 
 
-3.1.1 ``Spice4qucs`` subcircuits without parameters
+``Spice4qucs`` subcircuits without parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Figure 3.1 shows a Qucs subcircuit model for a 15MHz centre frequency band pass passive filter. Note that the three
@@ -23,7 +23,10 @@ connected components selected from Qucs pre-defined components and user designed
 (2) a subcircuit symbol, and (3) a Qucs netlist giving a list of the internal components, their connection nodes and  a wrapper which
 defines the subcircuit.  The syntax of the subcircuit netlist listed in Figure 3.1 is only understood by Qucs and cannot be read without error by external SPICE simulators. 
 
-|BPFCh3Fig1_EN|
+	.. image::     _static/en/chapter3/Ch3Fig1.png
+		:scale: 70
+		:align: center
+
 
 Figure 3.1 Qucs 15MHz centre frequency band pass passive filter subcircuit without parameters
 
@@ -34,21 +37,29 @@ capacitor voltage and inductor current initial conditions are not set as they ar
 the DC simulation icon shown in Figure 3.2 is not strictly necessary.  However, its a good idea to add it automatically to AC simulations because circuits with 
 semiconductor devices or other non-linear components must have their small signal AC properties calculated, at their DC bias conditions, prior to small signal AC simulation. 
 
-|BPFCh3Fig2_EN|
+	.. image::    _static/en/chapter3/QucsBPF.png  
+		:scale: 70
+		:align: center
 
 Figure 3.2 Qucs 15MHz centre frequency band pass passive filter test bench with 50 Ohm source and load matching
 
 Figure 3.3 to Figure 3.5 present AC simulation results for the band pass filter generated with the Ngspice, Xyce and SPICEOPUS circuit simulators.
 
-|BPFCh3Fig3_EN| 
+	.. image::     _static/en/chapter3/NgspiceBPF.png
+		:scale: 70
+		:align: center 
 
 Figure 3.3 Band pass filter Ngspice test results and SPICE netlist for test bench circuit.
 
-|BPFCh3Fig4_EN|
+	.. image::     _static/en/chapter3/XyceBPF.png
+		:scale: 70
+		:align: center
 
 Figure 3.4 Band pass filter Xyce test results and SPICE netlist for test bench circuit.
 
-|BPFCh3Fig5_EN| 
+	.. image::     _static/en/chapter3/SPICEOPUSBPF.png
+		:scale: 70
+		:align: center
 
 Figure 3.5 Band pass filter SPICEOPUS test results and SPICE netlist for test bench circuit.
 
@@ -62,7 +73,7 @@ This implies that Nutmeg style post simulation data processing is not possible w
 implemented in Xyce, allowing algebraic expressions for data processing to be embedded in .PRINT statements.  This topic and other aspects of Xyce post simulation data processing
 are covered in later sections of this help manual.
 
-3.1.2 ``Spice4qucs`` subcircuits with parameters
+``Spice4qucs`` subcircuits with parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Subcircuits which have component or physical parameter values set by a list of names and values attached to a schematic symbol add a significant "value added" 
@@ -76,14 +87,16 @@ signify a subcircuit with parameters.  As this is optional in Ngspice, and indee
 Qucsator, Ngspice, Xyce and SPICEOPUS all allow parameters to be attached to subcircuit symbols and to be used in design equation calculations.  
 As an introductory example Figure 3.6 illustrates  a circuit schematic and user generated symbol for a simple Qucs harmonic generator composed of a fundamental AC signal and three sinusoidal harmonic components.  Parameters :math:`f1` to :math:`f4` set the frequencies of the harmonics. The Qucs Equation block, at the subcircuit internal circuit level, is used to calculate the individual harmonic frequencies. In a similar fashion :math:`ph1` to :math:`ph4` represent the phases of the signal harmonics. 
 
-
-|QucsHgen_EN|
+	.. image::    _static/en/chapter3/QucsHGen.png
+		:scale: 80
+		:align: center
 
 Figure 3.6 Qucs subcircuit sinusoidal harmonic signal generator: :MATH:`f1` is the fundamental frequency and :math:`f2` to :math:`f4` the higher order harmonics;
 :math:`ph1` to :math:`ph4` the phases of the fundamental signal and its harmonics. For clarity long Qucs netlist lines have been spread over more than one line.
 
-
-|NgspiceHgen_EN|
+	.. image::     _static/en/chapter3/NgspiceHGen.png
+		:scale: 80
+		:align: center
 
 Figure 3.7 Ngspice subcircuit sinusoidal harmonic signal generator.
 
@@ -95,11 +108,13 @@ that all variables included in the right hand side of an equation have been allo
 To check that the Ngspice generated waveform is correctly generated a Fourier analysis of signal :math:`V(ngensig)` is displayed on Figure 3.7.  At frequencies above :math:`f4` the phase values have no meaning.
 The simulated signal waveform obtained with SPICE OPUS was found to be similar to that obtained with NGSPICE, see Figue 3.8.  Try simulating the sinusoidal harmonic generator waveform with SPICE OPUS to check this statement for your self.
 
-|XyceHgen_EN|
+	.. image::     _static/en/chapter3/XyceHGen.png
+		:scale: 80
+		:align: center
 
 Figure 3.8 Xyce subcircuit sinusoidal harmonic signal generator.
  
-3.1.3 A second more complex example of ``Spice4qucs`` subcircuits with parameters
+A second more complex example of ``Spice4qucs`` subcircuits with parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Variable assignment equations, defined in Qucs *Equation Eqn* 
@@ -121,8 +136,9 @@ These files can be found in the Qucs-S subdirectory ``examples\ngspice\``.
 
 Figure 3.9 shows the crystal resonator subcircuit. A brief introduction to the theory of crystal resonators can be found at https://en.wikipedia.org/wiki/Crystal_oscillator.
 
-
-|Quarz_SUBCKT_EN|
+	.. image::    _static/en/chapter3/quarz.png
+		:scale: 80
+		:align: center
 
 Figure 3.9 Equivalent circuit of Quartz crystal resonator.
 
@@ -150,8 +166,9 @@ This equation is placed in Qucs *Equation Eqn1* block inside the Quartz crystal 
 Performing an *AC simulation* with Ngspice and Xyce, using the test circuit given in Figure 3.10, yields the amplitude response data plotted in Figure 3.11, 
 Ngspice transfer coefficient ``K``  (``ac.k``) and Xyce voltage ``ac.V(OUT)``.  
 
-
-|Quarz_EN|
+	.. image::    _static/en/chapter3/quarz_test.png
+		:scale: 80
+		:align: center
 
 Figure 3.10 Test circuit for Quartz crystal resonator.
 
@@ -160,7 +177,9 @@ The only difference being that Xyce simulation result postprocessing is not impl
 Hence, only the Xyce output voltage can be plotted; this is done by choosing a logarithmic Y scale, then the Xyce plot 
 effectively displays a scaled decibel output. The two resonant frequencies :math:`f` and :math:`f_p` are clearly visible on these plots.
 
-|Quarz_Sim_EN|
+	.. image::    _static/en/chapter3/quarz_res.png
+		:scale: 80
+		:align: center
 
 Figure 3.11 Magnitude response of HC-49/U Quartz crystal.
 
@@ -202,7 +221,7 @@ placing them in the correct position within the SPICE netlist of the circuit bei
 
 ..  |SPICELIB_EN| image::  _static/en/chapter3/spicelib.png
 
-3.2 Component and circuit libraries
+Component and circuit libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Library components are supported in ``spice4qucs`` subsystem. You can use all 
@@ -212,7 +231,7 @@ with Spice simulation of Qucs schematics. The example of library component
 (IRFZ44 MOSFET from *MOSFETS* library) usage is 
 ``examples/ngspice/irfz44_switch.sch``
 
-3.3 Using manufacturers component data libraries
+Using manufacturers component data libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Electronic components manufacturers often provide spice models of components in 
@@ -235,7 +254,9 @@ It's need to note that SPICE-netlist of component **must not** be ended by
 
 The example of spice model usage (LM358 opamp) is shown in the Figure 3.12
 
-|LM358_EN|
+	.. image::    _static/en/chapter3/lm358.png
+		:scale: 80
+		:align: center
 
 Figure 3.12 AC Simulation of LM358 opamp with Ngspice. 
 
@@ -246,10 +267,10 @@ datasheet.
    :language: Bash
    :linenos:
 
-3.4 Usage of unmodified SPICE Libraries
+Usage of unmodified SPICE Libraries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-3.4.1 ``SpiceLibComp`` device
+``SpiceLibComp`` device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can use an unmodified SPICE libraries with new ``SpiceLibComp`` device. This
@@ -296,11 +317,14 @@ If symbol pattern is used, the first ``.SUBCKT`` entry port will be
 automatically mapped to the first symbol port, etc. Symbol port sequence is
 defined in the symbol pattern file (``*.sym``) in Port description lines. 
 
-|AD822_lib_EN|
+
+	.. image::   _static/en/chapter3/ad822_lib.png
+		:scale: 80
+		:align: center
 
 Figure 3.13 LM358 opamp library model usage with ``SpiceLibComp`` device
 
-3.4.2 Symbol pattern files format description
+Symbol pattern files format description
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Let's consider symbol files format. Symbols have ``*.sym`` extension and are
@@ -356,7 +380,7 @@ nodes will be mapped to component port in the following sequence:
 * Node ``50`` --- to Port ``4``
 * Node ``25`` --- to Port ``5``
 
-3.5 Usage of the whole SPICE library
+Usage of the whole SPICE library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Qucs-S supports usage of the whole SPICE libraries. Such libraries will be 
@@ -372,7 +396,9 @@ directory (for example ``/usr/share/qucs-s/library`` for Unix). Then you can
 get access to this newly added SPICE library via QucsLib tool or from the 
 left-side dock. You will see its name and component list (Figure 3.14). 
 
-|SPICELIB_EN|
+	.. image::   _static/en/chapter3/spicelib.png
+		:scale: 80
+		:align: center
 
 Figure 3.14 An example of a SPICE library view in the Qucs library manager.
 
@@ -418,7 +444,7 @@ Let's consider library and resource files tree: ::
 As you can see, resources are placed into ``ad822`` subdirectory. It contains 
 one default symbol file ``ad822.sym`` that is placed in resource subdirectory. 
 
-3.6 Libraries blacklisting
+Libraries blacklisting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Every library may consist of simulator-incompatible components. For example
