@@ -46,7 +46,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Qucs-S Help'
-copyright = u'Mike Brinson & Vadim Kuznetsov (2015 to 2018)'
+copyright = u'Mike Brinson  Vadim Kuznetsov (2015 to 2018)'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -208,7 +208,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   ('index', 'Qucs-SHelp.tex', u'Qucs-S Help Documentation',
-   u'Mike Brinson & Vadim Kuznetsov (2015 to 2018)', 'manual'),
+   u'Mike Brinson  Vadim Kuznetsov (2015 to 2018)', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
