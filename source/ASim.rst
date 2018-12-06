@@ -2,7 +2,7 @@
 Chapter 5. More advanced circuit simulation techniques.
 -----------------------------------------------------------
 
-5.1 Fourier simulation
+Fourier simulation
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The Qucs-S implementation of *Fourier simulation* allows users to perform a Fourier analysis of
@@ -35,33 +35,46 @@ Qucs-S allows each of these four display vectors to be plotted.
 Here is a small example of a *Fourier simulation* which demonstrates the main features introduced above 
 and the relation between small signal AC simulation and *Fourier simulation*.
 
-|four_EN|
+.. image::     _static/en/chapter5/Fourier.svg
+		:scale: 50
+		:align: center
+
 Figure 5.1 Fourier and small signal AC analysis of a single stage transistor amplifier. 
 
-.. |four_EN| image:: _static/en/chapter5/Fourier.svg
 
-5.1.1 Additional Ngspice, SPICE OPUS and Xyce *Fourier simulation* examples
+
+
+Additional Ngspice, SPICE OPUS and Xyce *Fourier simulation* examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: _static/en/chapter5/FourierSP.png
+
+.. image::     _static/en/chapter5/FourierSP.png
+		:scale: 50
+		:align: center
 
 Figure 5.1.1 SPICE OPUS *Fourier simulation* basic example.
 
-.. image:: _static/en/chapter5/FourierNgspice.png
+.. image::     _static/en/chapter5/FourierNgspice.png
+		:scale: 60
+		:align: center
 
 Figure 5.1.2 Ngspice *Fourier simulation* basic example: see section 17.5.25 of the Ngspice
 User Manual for an explanation of the Ngnutmeg *fouriermn* statement.
 
-.. image:: _static/en/chapter5/FourierXyceIcon.png
+.. image::   _static/en/chapter5/FourierXyceIcon.png
+		:scale: 60
+		:align: center
 
 Figure 5.1.3 Xyce *Fourier simulation* basic example: simulation controlled by *transient simulation* and *Fourier simulation* Icons.
 
-.. image:: _static/en/chapter5/FourierXyceScript.png
+.. image::   _static/en/chapter5/FourierXyceScript.png
+		:scale: 50
+		:align: center
 
 Figure 5.1.4 Xyce *Fourier simulation*: controlled by *Xyce script*; see section 2.1.6 of the Xyce
 Reference Guide for an explanation of the *.four* and associated *.print* statement.
 
-5.2 Distortion simulation
+Distortion simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 SPICE *Distortion analysis* provides a small signal distortion analysis of a circuit being simulated. 
@@ -80,15 +93,15 @@ with ngspice *Distortion analysis*.
 Here is an basic example of the application of SPICE *Distortion analysis* for estimating the distortion components of a 
 single stage transistor amplifier.
 
-|disto_EN|
+.. image::   _static/en/chapter5/distoBJT.png
+		:scale: 50
+		:align: center
 
 Figure 5.2 SPICE small signal distortion analysis of a single stage transistor amplifier.
+ 
 
 
-.. |disto_EN| image:: _static/en/chapter5/distoBJT.png
-
-
-5.3 Noise simulation
+Noise simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 SPICE noise simulation allows the calculation of total circuit noise over a specified frequency bandwidth. 
@@ -109,13 +122,14 @@ drop-down list:
 #. ``Output`` --- The output parameter name; this may be a node voltage or branch current.
 #. ``Source``           --- Name of the input voltage source. A standard Qucs voltage source is allowed in this context.
 
-|noise_EN|
+.. image::   _static/en/chapter5/noiseBJT.png
+		:scale: 50
+		:align: center
 
 Figure 5.3 Noise analysis of a single stage transistor amplifier.
 
-.. |noise_EN| image:: _static/en/chapter5/noiseBJT.png
 
-5.4 One and two parameter sweep controlled simulations
+One and two parameter sweep controlled simulations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Both one and two **Parameter sweep** simulations (in nested loops) are implemented with Ngspice, SPICE OPUS and Xyce. 
@@ -166,7 +180,9 @@ output data and theory. The schematic illustrated in Figure 5.4 also presents a 
 value in different simulation domains. In this example the same component value ( ``R2``) is changed by a **Parameter sweep**
 icon linked to individual simulation icons (``SW3+TR1`` and ``SW2+AC1``).   
 
-|modswp_EN|
+.. image::   _static/en/chapter5/NgspiceR2sweep.png
+		:scale: 50
+		:align: center
 
 Figure 5.4 Ngspice component sweep example.
 
@@ -178,32 +194,28 @@ only independent voltage and current source values and resistor values can be sw
 SPICE 3f5 simulator C code. In contrast to Ngspice and SPICE OPUS, Xyce includes a .STEP statement which supports an extended range 
 of swept component parameter features, making it similar to the original Qucs swept parameter simulation. 
 
-|BJT_swp_EN|
+.. image::   _static/en/chapter5/XyceC1sweep.png
+		:scale: 50
+		:align: center
 
 Figure 5.5 Xyce component sweep example two.
 
-.. |modswp_EN| image:: _static/en/chapter5/NgspiceR2sweep.png
-
-.. |BJT_swp_EN| image:: _static/en/chapter5/XyceC1sweep.png
-
-|Vx2_swp_EN|
+.. image::   _static/en/chapter5/Sweep2Variables.png
+		:scale: 50
+		:align: center
 
 Figure 5.6 Two variable nested loop parameter scan: Ngspice and Xyce BJT output characteristics.
 
-.. |Vx2_swp_EN| image:: _static/en/chapter5/Sweep2Variables.png
-
-|BF_swp_EN|
+.. image::    _static/en/chapter5/SweepBF.png
+		:scale: 50
+		:align: center
 
 Figure 5.7 Effects of BJT BF parameter scan on DC collector current: Xyce simualtion.
 
-.. |BF_swp_EN| image:: _static/en/chapter5/SweepBF.png
-
-
-
-5.5 Qucs and SPICE simulation of device and circuit temperature properties
+Qucs and SPICE simulation of device and circuit temperature properties
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-5.6 Spectrum analysis with Ngspice and Nutmeg scripting
+Spectrum analysis with Ngspice and Nutmeg scripting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Qucs-S have no unified simulation type **"Spectrum analysis"** for all simulation
@@ -212,7 +224,9 @@ Ngspice or SpiceOpus is selected as the default simulation kernel.
 
 Let's consider double balanced passive diode mixer circuit.
 
-.. image:: _static/en/chapter5/mixer.png
+.. image::  _static/en/chapter5/mixer.png
+		:scale: 60
+		:align: center
 
 Figure 5.8 Diode double balanced mixer simulation
 
@@ -284,14 +298,18 @@ postprocessing to it. For example we can express spectrum in decibels (dB) with
 ``dB()`` nutmeg function (line #4, ``S`` variable). You need to specify these
 two variables in the Nutmeg script properties (Figure 5.9)
 
-.. image:: _static/en/chapter5/spectr-setup.png
+.. image::  _static/en/chapter5/spectr-setup.png
+		:scale: 60
+		:align: center
 
 Figure 5.9 Nutmeg script properties setup
 
 Simulation results are shown in the Figure 5.10. Both spectrum and logarithmic
 spectrum (dB) are shown. 
 
-.. image:: _static/en/chapter5/spec.png
+.. image::   _static/en/chapter5/spec.png
+		:scale: 60
+		:align: center
 
 Figure 5.10 Spectrum simulation result.
 
