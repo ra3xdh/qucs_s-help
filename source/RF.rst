@@ -1,11 +1,9 @@
 ------------------------------------------------------------------
-Chapter 13. RF simulation with Ngspice, Xyce and SPICE OPUS
+RF simulation with Ngspice, Xyce and SPICE OPUS
 ------------------------------------------------------------------
 
-13.1 Introduction to capabilities
+Introduction to capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
 
 The original motivation behind the development of Qucs was the need for an open source
 RF circuit simulator which was freely available to all interested in RF and microwave
@@ -54,13 +52,9 @@ The S-parameter probes, templates and examples introduced in this chapter can be
 spice4qucs-helpChapter13_prj.
 
 
- 
-
-
-
-
-13.2 Small signal AC S-parameter simulation
+Small signal AC S-parameter simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 S-parameter two port RF and microwave circuit simulation is not implemented in traditional SPICE 2g6 and 3f5 simulators.
 This is a serious omission because at RF frequencies  S-parameter and other two-port network parameters are widely used in circuit analysis and design.
 To overcome this limitation four small signal AC analysis probes have been added to the spice4qucs RF extensions.  When combined with signal sources
@@ -87,8 +81,9 @@ and the source and load resistors (:math:`R_1`, :math:`R_2`, :math:`R_3` and :ma
 
 Figure 13.2 Extraction of a low pass filter small signal S-Parameters using a Qucs-S test-bench.
 
-13.3 Small signal AC two port network simulation/analysis
+Small signal AC two port network simulation/analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 The spice4qucs extensions introduce post-simulation data conversion for two-port networks centred 
 around Qucs-S **Nutmeg scripts** and Qucs-S **Nutmeg equation** blocks. These are designed specifically to
 work with Ngspice and Xyce. Conversion of two port parameters from
@@ -144,7 +139,7 @@ simulations, for example ac ......, and do not have the same named variable defi
 
 Figure 13.5 Qucs-S **Nutmeg** equation block templates for :math:`S` to :math:`Y` and :math:`Z` parameter conversion.
 
-13.4 Single tone large signal AC Harmonic Balance simulation
+Single tone large signal AC Harmonic Balance simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Spice4qucs subsystem supports Xyce single tone and multi-tone Harmonic Balance (HB). 
@@ -209,7 +204,7 @@ yielding, eight very similar magnitude harmonic spectra values to Qucs :math:`|H
 from the Xyce HB simulation data.
 
 
-13.5 Multi-tone Large signal AC HB simulation
+Multi-tone Large signal AC HB simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since Xyce release 6.3 the package has supported multi-tone HB simulation. Xyce multi-tone allows more 
@@ -241,8 +236,9 @@ Figure 13.9 Diode 2-tone Xyce HB simulation current spectra.
 
 .. |diode_HB_2t2_EN| image:: _static/en/chapter13/HBTTFig2.png
 
-13.6 The SPICE OPUS large signal AC steady state transient shooting method
+The SPICE OPUS large signal AC steady state transient shooting method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Fourier analysis of circuits driven by periodic AC input signals works well at low to moderate frequencies provided that they have a period similar to the circuit time constants. 
 Unfortunately, high frequency RF signals normally have very small periods, implying that an RF transient simulation has to 
 run for a very large number of signal cycles before a steady state circuit response is reached.  
@@ -338,14 +334,16 @@ Figure 13.23 Transient, Fourier and **ssse** semiconductor diode current plots i
 
 
  
-13.7 Emulation of Qucs RFEDD components
+Emulation of Qucs RFEDD components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 RFEDD passive components (RCL) and B-type sources could be represented using 
 ``hertz`` variable in equations. See official Ngspice manual for additional 
 information.
 
-13.8 RF device models
+RF device models
 ~~~~~~~~~~~~~~~~~~~~~~~
+
 Circuit simulators based on SPICE include a range of passive component and active device models. 
 Often the passive R, C and L models have ideal characteristics that only provide correct simulation data at low frequencies.  
 SPICE active device models are the opposite in that they operate correctly over a wide band of signal frequencies, from low frequencies
@@ -360,8 +358,9 @@ In this context the term lumped element is taken to mean an electrical equivalen
 where the physical size of a component is not greater than roughly 5% of the signal wavelength. 
 Lumped component models of this form also have the advantage that they can be simulated in the time domain by SPICE based circuit simulators.
 
-13.8.1  RF resistor models
+RF resistor models
 =============================
+
 The most common form of resistor used in the construction of circuits mounted on printed circuit boards (PCB) are:
 
 *   Carbon composite axial leaded resistors,
@@ -378,7 +377,7 @@ Figure 13.8.1 RF resistor cross sectional diagrams and electrical models for com
 
 
 
-13.8.2 Metal thin-film axial leaded resistors
+Metal thin-film axial leaded resistors
 ===============================================
 The values for the :math:`R`, :math:`C`, and :math:`L` components in Figure 13.8.1 are often given by manufacturers, having been 
 determined by measurement of the RF model small signal AC performance. For those components that do not have  
@@ -453,8 +452,9 @@ such as frequency dependent inductance changes due to high frequency "skin effec
 a minor error. It also allows the axial RF resistor model to be included in transient simulations without substantial changes.  It is also possible to add the frequency dependent
 "skin effect" to the axial RF resistor model.  However, such models are normally restricted to the AC simulation domain. 
 
-13.8.3 Surface mount chip resistors
+Surface mount chip resistors
 ====================================
+
 Figure 13.18.1 (b) shows the structure and a simulation model for a typical surface-mount resistor.
 Surface-mount resistors are intentionally made smaller than axial components in order to reduce their package L and C
 parasitics.  Table 13.1 lists a number of a current range of popular components that are regularly
@@ -517,7 +517,7 @@ Figure 13.18.7  A set of resistor impedance data generated using the test bench 
 
 
 
-13.9 More example RF circuit simulations
+More example RF circuit simulations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 

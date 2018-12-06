@@ -1,8 +1,8 @@
 ---------------------------------------------------------------------------------------------------------------
-Chapter 6.  Ngspice, Xyce and SPICE OPUS post-simulation data processing with Qucs-S and Octave
+Ngspice, Xyce and SPICE OPUS post-simulation data processing with Qucs-S and Octave
 ---------------------------------------------------------------------------------------------------------------
 
-6.1 Introduction to capabilities
+Introduction to capabilities
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this chapter the Ngspice, Xyce and SPICE OPUS post-simulation data processing and visualization capabilities are introduced and applied to a number of example simulation case studies.
@@ -50,7 +50,7 @@ named variables, functions, and mathematics operators defined in the "Qucs Help 
 all the functions in this list are only applicable to Qucs and ONLY a percentage are available with the Ngspice, Xyce and SPICE OPUS simulators.  The next few sections of this document provide more detail on
 the Qucs functions that can be used with Ngspice, Xyce and SPICE OPUS.
 
-6.2 Ngspice and SPICE OPUS output data post-processing
+Ngspice and SPICE OPUS output data post-processing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Ngspice and SPICE OPUS circuit simulators also use **Nutmeg Equation blocks** for output data post-processing. 
@@ -77,7 +77,7 @@ Figure 6.2 The basic RC test circuit introduced in Figure 6.1 with post-simulati
 
 
   
-6.3 Ngspice, SPICE OPUS and XYCE data post-processing operators and functions
+Ngspice, SPICE OPUS and XYCE data post-processing operators and functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Ngspice and SPICE OPUS both use extended versions of the SPICE 3f5 nutmeg software for manipulating
@@ -185,7 +185,7 @@ Figure 6.3 Test circuit for a single stage BJT common emitter amplifier and post
 Figure 6.4 Plots of the single stage common emitter amplifier, *Rin* (in OHM), *Xin* (in Ohm), *Zin* (in Ohm), voltage *gain* (in dB) and  *phase* (in degrees) against frequency.
 
   
-6.4 Xyce simulation output data post processing with the **Xyce script** component and SPICE .PRINT statements
+Xyce simulation output data post processing with the **Xyce script** component and SPICE .PRINT statements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Xyce simulation output data post processing uses an entirely different approach to that adopted by Ngspice and SPICE OPUS.
@@ -347,10 +347,10 @@ In the future it is possible that the Qucs-S developers will add to this documen
 uses of the **Xyce script**.  
 
 
-6.5 Ngspice and Xyce H SPICE style **.measurement** output data processing
+Ngspice and Xyce H SPICE style **.measurement** output data processing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-6.6 Qucs-S emulation of the Qucs **PlotVs()** function
+Qucs-S emulation of the Qucs **PlotVs()** function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Qucs PlotVs() function allows users to select a specific output data vector as a plot X variable
@@ -386,10 +386,10 @@ Figure 6.12 A simple RC low pass filter illustrating a number of different outpu
 Figure 6.13 The Qucs-S drop-down menu showing The **Edit Diagram Properties** output data list and key tabs for generating a list of *Y* variables,
 for plotting against the default *X* variable, and composite *Y@X* plot variables.
 
-6.7 Qucs-S output data processing with the Octave numerical analysis and visualization package
+Qucs-S output data processing with the Octave numerical analysis and visualization package
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-6.7.1 Introduction
+Introduction
 ~~~~~~~~~~~~~~~~~~~~
 
 The Qucs output data post-processing package provides a sophisticated, and very practical, computer aided tool for analysing, and reporting, simulated performance of electronic systems 
@@ -432,7 +432,7 @@ Figure 6.14 File :math:`->`  Edit Qucs Properties :math:`->` **Application Setti
     
 Figure 6.15  :math:`->` **Locations** menu.  
 
-6.7.2 Using Octave for numerical analysis and visualization of Qucs-S simulation output data
+Using Octave for numerical analysis and visualization of Qucs-S simulation output data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 By combining Qucs-S schematics with Octave script files (*name.m* style files) the post-simulation data processing
 provided by Qucs-S is extended to include significant extra facilities.  
@@ -510,7 +510,7 @@ users.  How this is done forms the central topic of the next part of this docume
    
 Figure 6.19 Qucs-S/Octave output data results for example circuit illustrated in Figure 6.16.
 
-6.7.3 The structure and content of Octave *xxxxxx.m* script files 
+The structure and content of Octave *xxxxxx.m* script files 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Octave *xxxxxx.m* script files are one of the principle tools available to Qucs-S users for controlling the post-processing of Qucs-S output data.
 They allow the resources provided by the Octave numerical analysis and visualization package, and its optional **Tool Boxes**, to be used as an advanced output data analysis tool, 
@@ -651,7 +651,7 @@ the Qucs-S simulation and modelling community develops further useful analysis a
 sends them to the Qucs-S Development Team for publication as GPL Octave software.
 
 
-6.7.4 A second  Octave *xxxxxx.m* script file 
+A second  Octave *xxxxxx.m* script file 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 

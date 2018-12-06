@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Chapter 4. Device and component modelling with algebraic equations 
+Device and component modelling with algebraic equations 
 --------------------------------------------------------------------------------
 
 The role of algebraic and numeric equations in circuit simulation

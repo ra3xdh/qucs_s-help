@@ -1,8 +1,8 @@
 ----------------------------------------
-Chapter 16. References
+References
 ----------------------------------------
 
-16.1 Introduction 
+Introduction 
 --------------------
 The first version of Qucs was released under the open source General Public Licence (GPL) in 2003.
 Since then members of the Development Team and indeed others interested in Qucs
@@ -16,7 +16,7 @@ The second section presents published work relating to Qucs-S.  A high percentag
 available on the web, giving every one access to an important archive of Qucs documented principles and circuit design applications.  
 As more documents are published the Qucs-S Development Team will endeavour to keep this list up to date.
 
-16.2 Background references
+Background references
 -----------------------------
 Mustafa Baser, "Promoting conceptual change through active learning using open source software for physics simulations", Australasian Journal of Educational Technology, 
 vol. 22, no. 3, Nov. 2006. Available from `<https://ajet.org.au/index.php/AJET/article/viewFile/1290/663>`_.
@@ -157,7 +157,7 @@ DOI: 10.1109/MIXDES.2014.6872155. Available from `<http://ieeexplore.ieee.org/ab
 Daniel Tomaszewski, Krzysztof Domański, Piotr Prokaryn, "Qucs-based Development of an Energy Harvester Compact Model", 2015 Proceedings of the 22st International 
 Conference Mixed Design of Integrated Circuits and Systems (MIXDES), Torun Ploand,  DOI: 10.1109/MIXDES.2015.7208510, Available from `<http://ieeexplore.ieee.org/abstract/document/7208510/>`_.
  
-16.3 Later Qucs/Qucs-S references
+Later Qucs/Qucs-S references
 ------------------------------------
 Mike Brinson, Richard Crozier, Clemens Novak, Bastien Roucaries, Frans Schreuder, and Guilherme Brondani Torri. Building a second generation Qucs GPL circuit simulator: package structure, 
 simulation features and compact device modelling capabilities,  MOS-AK Workshop on compact device modelling at London Metropolitan University on March 28 and 29, 2014, London, (UK). 

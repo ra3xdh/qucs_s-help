@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------
-Chapter 3. ``Spice4qucs`` subcircuits, macromodels and device libraries
+``Spice4qucs`` subcircuits, macromodels and device libraries
 --------------------------------------------------------------------------
 
 ``Spice4qucs`` Subcircuits: with and without parameters

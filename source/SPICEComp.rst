@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Chapter 7. Qucs and SPICE simulation models that work with Ngspice, Xyce and SPICE OPUS
+Qucs and SPICE simulation models that work with Ngspice, Xyce and SPICE OPUS
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-7.1 Introduction
+Introduction
 ~~~~~~~~~~~~~~~~~~
 For a circuit simulator to be a useful circuit design aid it must be able to simulate
 a range of analogue and digital circuits which include passive components, semiconductor devices, 
@@ -53,11 +53,11 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 	Figure 7.1. Qucs-0.0.18 models that work with Ngspice and (sometimes) Xyce.
 	
 	
-7.2 Spice4qucs component specifications and technical reference
+Spice4qucs component specifications and technical reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ^^^^^^^^^^^^^^^^^^^^^
-7.2.1 Capacitor (C)
+Capacitor (C)
 ^^^^^^^^^^^^^^^^^^^^^
 .. figure::  _static/en/chapter7/Capacitor.png
 	:align: center
@@ -68,7 +68,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 	
 
 ^^^^^^^^^^^^^^^^^^^^^
-7.2.2 Inductor (L)
+Inductor (L)
 ^^^^^^^^^^^^^^^^^^^^^
 
 .. figure::  _static/en/chapter7/Inductor.png
@@ -80,7 +80,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 
 
 ^^^^^^^^^^^^^^^^^^
-7.2.3 Resistor (R)
+Resistor (R)
 ^^^^^^^^^^^^^^^^^^
 
 .. figure::  _static/en/chapter7/Resistor.png
@@ -91,7 +91,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 	Linear resistor.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.4 Independent AC Current Source (I)
+Independent AC Current Source (I)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure::  _static/en/chapter7/ACCurrentSource.png
@@ -103,7 +103,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.5 Independent AC Voltage Source (V)
+Independent AC Voltage Source (V)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure:: _static/en/chapter7/ACVoltageSource.png
@@ -115,7 +115,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.6 Independent DC Current Source (I)
+Independent DC Current Source (I)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure::  _static/en/chapter7/DCCurrentSource.png
 	:align: center
@@ -125,7 +125,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 	Linear DC current source.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.7 Independent DC Voltage Source (V)
+Independent DC Voltage Source (V)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure::  _static/en/chapter7/DCVoltageSource.png
 	:align: center
@@ -135,7 +135,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 	Linear DC voltage source.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.8 Linear Current Controlled Current Source (F)
+Linear Current Controlled Current Source (F)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure::  _static/en/chapter7/ICIS.png
 	:align: center
@@ -146,7 +146,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.9 Linear Current Controlled Voltage Source (H)
+Linear Current Controlled Voltage Source (H)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure::  _static/en/chapter7/ICVS.png
 	:align: center
@@ -158,7 +158,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.10 Linear Voltage Controlled Current Source (G)
+Linear Voltage Controlled Current Source (G)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. figure::  _static/en/chapter7/VCIS.png
@@ -170,7 +170,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.11 Linear Voltage Controlled Voltage Source (E)
+Linear Voltage Controlled Voltage Source (E)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure::   _static/en/chapter7/VCVS.png
 	:align: center
@@ -181,7 +181,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 
 
 ^^^^^^^^^^^^^^^
-7.2.12 Probes
+Probes
 ^^^^^^^^^^^^^^^
 .. figure::   _static/en/chapter7/Probes.png
 	:align: center
@@ -192,7 +192,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 
 
 ^^^^^^^^^^^^^^^^^^^
-7.2.13 Qucs Netlist
+Qucs Netlist
 ^^^^^^^^^^^^^^^^^^^
 .. figure::   _static/en/chapter7/Probesb.png
 	:align: center
@@ -203,7 +203,7 @@ made to interface Qucs Verilog-A models with ngspice or Xyce. This task is sched
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.14 Ngspice Netlist
+Ngspice Netlist
 ^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure::  _static/en/chapter7/Probesc.png
 	:align: center
@@ -222,7 +222,7 @@ than a page width have been indented and continued on one or more lines after th
 adopted by Ngspice and SPICE OPUS. 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2 15 Relay (Voltage controlled switch) (S)
+Relay (Voltage controlled switch) (S)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure::   _static/en/chapter7/Relay.png
 	:align: center
@@ -233,7 +233,7 @@ adopted by Ngspice and SPICE OPUS.
 
 
 ^^^^^^^^^^^^^^^^^^
-7.2.16 Diode (D)
+Diode (D)
 ^^^^^^^^^^^^^^^^^^
 .. figure::   _static/en/chapter7/Diode.png
 	:align: center
@@ -244,7 +244,7 @@ adopted by Ngspice and SPICE OPUS.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.17 BJT npn (Qucs T, ngspice Q)
+BJT npn (Qucs T, ngspice Q)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure::   _static/en/chapter7/npn.png
 	:align: center
@@ -254,7 +254,7 @@ adopted by Ngspice and SPICE OPUS.
 	BJT npn (Qucs T, Ngspice, Xyce and SPICE OPUS Q).
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.18 Ngspice diode (D)
+Ngspice diode (D)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure::   _static/en/chapter7/ngspiceD.png
 	:align: center
@@ -266,7 +266,7 @@ adopted by Ngspice and SPICE OPUS.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.19 Ngspice linear resistor (R)
+Ngspice linear resistor (R)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure::   _static/en/chapter7/ngspiceR.png
 	:align: center
@@ -277,7 +277,7 @@ adopted by Ngspice and SPICE OPUS.
 	
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.20 Ngspice linear capacitor (C)
+Ngspice linear capacitor (C)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. figure::   _static/en/chapter7/ngspiceC.png
 	:align: center
@@ -288,24 +288,24 @@ adopted by Ngspice and SPICE OPUS.
 	
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.21 Ngspice linear inductor (L)
+Ngspice linear inductor (L)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |image22_EN|
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.22 Ngspice mutual inductor (K)
+Ngspice mutual inductor (K)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |image24_EN|
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.23 Ngspice independent AC voltage source (V)
+Ngspice independent AC voltage source (V)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |image23_EN|
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-7.2.24 Ngspice non-linear dependent voltage and current sources (B)
+Ngspice non-linear dependent voltage and current sources (B)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 |image25_EN|
 
@@ -321,7 +321,7 @@ B source example 2: Simulation of the properties of a high power half-wave recti
 |image28_EN|
 
 
-7.3 Linear and non-linear transformer models
+Linear and non-linear transformer models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Qucs release 0.0.18, and earlier versions of the software, includes a number of transformer and coupled inductance models. These
 models are linear with none of the important non-linear effects found in real transformers, including for example, winding resistance,
@@ -382,7 +382,7 @@ libraries called "Transformers" and "Cores" located in the spice4qucs system lib
 |image33_EN|
 |image34_EN|
 
-7.4 More complex circuit simulations that demonstrate the use of spice4qucs models
+More complex circuit simulations that demonstrate the use of spice4qucs models
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 

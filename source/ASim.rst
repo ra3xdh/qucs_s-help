@@ -1,5 +1,5 @@
 -----------------------------------------------------------
-Chapter 5. More advanced circuit simulation techniques.
+More advanced circuit simulation techniques.
 -----------------------------------------------------------
 
 Fourier simulation

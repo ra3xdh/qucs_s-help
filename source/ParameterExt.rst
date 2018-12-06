@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------------------------
-Chapter 14. Qucs-S/Octave circuit simulation and device parameter extraction interface
+Qucs-S/Octave circuit simulation and device parameter extraction interface
 -------------------------------------------------------------------------------------------------
 
 

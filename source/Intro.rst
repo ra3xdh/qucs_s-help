@@ -1,6 +1,6 @@
 
 --------------------------
-Chapter 1. Introduction                 
+Introduction                 
 --------------------------  
  
 Following the release of Qucs-0.0.18 in August 2014 the Qucs Development Team considered in detail a number of possible directions that 

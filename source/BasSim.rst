@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
-Chapter 2. Basic Ngspice, Xyce and SPICE OPUS simulation
+Basic Ngspice, Xyce and SPICE OPUS simulation
 ----------------------------------------------------------------
 
 Introduction
