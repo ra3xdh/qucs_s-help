@@ -107,7 +107,7 @@ of spice4qucs-help document.
 
     + mag(), ph(), cph(), unwrap(), j(), real(), imag(), db(), log(), ln(), 
     + exp(), abs() sqrt(), sin(). cos(), tan(), atan(), sinh(), cosh(), tanh(),
-    + floor(), ceil(), name(), mean(), arg(), group-delay(), vector(), initvec(), 
+    + floor(), ceil(), name(), mean(), arg(), group_delay(), vector(), initvec(), 
     + length(), interpolate(), deriv(), vecd(), vecmin(), minimum(),
     + vecmax(), maximum(), fft(), ifft(), sortorder(), rnd, 
     + sgauss(), sunif(), poisson(), exponential()
