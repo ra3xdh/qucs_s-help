@@ -1,5 +1,14 @@
 # QUCS-S Documentation
 
+[![ReadTheDocs Status for Master Branch](https://readthedocs.org/projects/qucs-s-help/badge/?version=latest&style=for-the-badge)](https://qucs-s-help.readthedocs.io/en/latest/?badge=latest)
+
+### Available Documentation Formats
+* [Searchable HTML Site](https://qucs-s-help.readthedocs.io/en/latest/)
+* [PDF Download](https://qucs-s-help.readthedocs.io/_/downloads/en/latest/pdf/)
+* [EPUB Download](https://qucs-s-help.readthedocs.io/_/downloads/en/latest/epub/)
+
+All of the above formats are built automatically from this repository, by ReadTheDocs.
+
 ## 02-2024: Starting fresh...
 
 As of February 2024, we're rewriting the docs since the old docs are woefully out of date, and the Sphinx project won't build correctly. See [issue 554 on the main QUCS source code repository](https://github.com/ra3xdh/qucs_s/issues/554).
