@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'QUCS-S Documentation'
-copyright = '2025, The QUCS-S Contributors'
+copyright = '2025, The QUCS-S Contributors. Licensed under GNU Free Documentation License v1.3.'
 author = 'The QUCS-S Contributors'
 
 # -- General configuration ---------------------------------------------------
