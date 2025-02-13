@@ -4,9 +4,10 @@
    contain the root `toctree` directive.
 
 ===============================================================
-Qucs-S Help documentation : User Manual and Reference Material
-=============================================================== 
+Qucs-S Legacy Help : User Manual and Reference Material
+===============================================================
 
+**Be advised that this legacy documentation branch is no longer actively maintained.** It is retained for archival/reference purposes, but may not accurately reflect the current features of QUCS-S. For the most up-to-date documentation, see `the latest version on ReadTheDocs <https://qucs-s-help.readthedocs.io/en/latest/>`.
 
 | **Authors**          Mike Brinson (mbrin72043@yahoo.co.uk) and Vadim Kusnetsov (ra3xdh@gmail.com)
 |
