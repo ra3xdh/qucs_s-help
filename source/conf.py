@@ -7,16 +7,25 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'QUCS-S Documentation'
-copyright = '2025, QUCS-S Contributors'
-author = 'QUCS-S Contributors'
+copyright = '2025, The QUCS-S Contributors'
+author = 'The QUCS-S Contributors'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ['myst_parser']
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
+}
 
 templates_path = ['_templates']
 exclude_patterns = []
+
+# This makes the EPUB output show all the URLs as footnotes, rather than directly inline where they're referenced.
+# Cuts down on clutter factor.
+epub_show_urls = 'footnote'
 
 
 
