@@ -1,0 +1,23 @@
+name: Read the Docs Pull Request Preview
+on:
+  pull_request_target:
+    types:
+      - opened
+    paths:
+      - "**"
+
+permissions:
+  pull-requests: write
+
+jobs:
+  pr-preview-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: readthedocs/actions/preview@v1
+        with:
+          project-slug: "source"
+          message-template: |
+            ---
+            :books: Documentation previews :books:
+
+            - User's documentation (\`source\`): {docs-pr-index-url}
