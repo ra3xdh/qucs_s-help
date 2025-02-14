@@ -12,6 +12,8 @@ documentation for details.
 
 This is a test to be sure ReadTheDocs is automatically building on commit, and automatically building PRs...
 
+And this text is another test to see if adjusting webhooks fixed PR builds with ReadTheDocs.
+
 Real content coming soon!
 
 
