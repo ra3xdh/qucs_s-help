@@ -4,7 +4,6 @@
 
 sphinx-autorun
 sphinx-jinja2
-sphinx-rtd-theme
 sphinx-notfound-page
 sphinx-hoverxref
 sphinx-tabs
