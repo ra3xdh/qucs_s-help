@@ -10,6 +10,7 @@ sphinx-tabs
 shot-scraper
 sphinxawesome-theme
 myst-parser
+sphinx-tags
 
 sphinx-js
 # Pin it because it fails otherwise

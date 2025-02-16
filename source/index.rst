@@ -14,8 +14,21 @@ This is a test to be sure ReadTheDocs is automatically building on commit, and a
 
 Real content coming soon!
 
+.. toctree::
+   :maxdepth: 2
+
+   self
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Section 1
+
+   /section-1/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Section 2
+
+   /section-2/index
 
