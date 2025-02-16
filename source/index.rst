@@ -11,12 +11,14 @@ This is a work in progress!
 .. toctree::
    :maxdepth: 4
    :caption: Introduction
+   :hidden:
 
    /introduction/what-is-qucs-s
 
 .. toctree::
    :maxdepth: 4
    :caption: Installation
+   :hidden:
 
    /installation/installing-qucs-s
    /installation/installing-sim-kernels
@@ -24,6 +26,7 @@ This is a work in progress!
 .. toctree::
    :maxdepth: 4
    :caption: Getting Started
+   :hidden:
 
    /getting-started/ui-overview
    /getting-started/choosing-a-sim-kernel
