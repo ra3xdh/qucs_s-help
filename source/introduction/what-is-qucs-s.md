@@ -21,6 +21,26 @@ In contrast to Qucs and QucsStudio, QUCS-S does not include its own simulation b
 * **[SpiceOpus](https://www.spiceopus.si/)**: A free general purpose circuit simulator, based on the Berkeley SPICE-3f5 codebas, specially suited for optimization loops.
 * **[QucsatorRF](https://github.com/ra3xdh/qucsator_rf)**: A new simulation engine, intended for RF simulation with microwave devices and microstrip lines. It is distinct from the Qucsator simulator used in the original Qucs project. It is not recommended for general-purpose circuit simulation.
 
+## Notable Features
+
+A few features of particular note are:
+
+* Basic and advanced simulation types: AC, DC, transient, S-parameter, FFT, distortion, pole-zero, parametric sweep.
+* Advanced RF simulation with Qucsator RF backend;
+* Quick switching of the simulation kernel without application restart;
+* Tuner simulation mode
+* Direct support of SPICE models from components datasheets;
+* Basic SPICE components: RCL, BJT, MOSFET, JFET, MESFET, switches;
+* Advanced SPICE components: Equation-defined sources and RCLs, transmission lines;
+* Parametric circuits (.PARAM) and SPICE postprocessor (Nutmeg)
+* Basic SPICE simulations: DC, AC, TRAN;
+* Advanced SPICE simulation: DISTO, NOISE, SENS (added in 0.0.20), Spectrum analysis;
+* Harmonic balance analysis with XYCE and Qucsator RF backends;
+* Nutmeg script simulation: direct access to the SPICE code and construct your own simulation;
+* XYCE script simulation type;
+* XYCE digital devices library;
+
+
 ## Supported Platforms
 
 QUCS-S is available for Windows and Mac OSX, as well as numerous Linux distributions.
