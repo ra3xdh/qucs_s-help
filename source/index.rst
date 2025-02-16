@@ -6,29 +6,27 @@
 Introduction
 ==================================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
-
-This is a test to be sure ReadTheDocs is automatically building on commit, and automatically building PRs...
-
-Real content coming soon!
+This is a work in progress!
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
+   :caption: Introduction
 
-   self
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Section 1
-
-   /section-1/index
+   /introduction/what-is-qucs-s
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Section 2
+   :maxdepth: 4
+   :caption: Installation
 
-   /section-2/index
+   /installation/installing-qucs-s
+   /installation/installing-sim-kernels
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Getting Started
+
+   /getting-started/ui-overview
+   /getting-started/choosing-a-sim-kernel
+   /getting-started/understanding-file-structure
+   /getting-started/simulation-types/index
 
