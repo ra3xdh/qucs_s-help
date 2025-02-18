@@ -31,6 +31,10 @@ QUCS-S can be installed on FreeBSD using either ports or a binary package.
 * To install ports: ``cd /usr/ports/cad/qucs-s/ && make install clean``
 * To install binary package: ``pkg install qucs-s``
 
+## Compiling from Source
+
+Of course, Qucs-S can be compiled from source if desired. See the main [Qucs-S GitHub repository's README](https://github.com/ra3xdh/qucs_s/blob/current/README.md) for the latest information on how to compile from source.
+
 ---
 
 Once you have installed QUCS-S, you will likely need to install simulation backends separately. This is covered in the next chapter.
