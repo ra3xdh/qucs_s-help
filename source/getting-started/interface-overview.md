@@ -117,4 +117,32 @@ Within this tab, component models come from 3 places:
 
 ## Selecting a Simulation Backend
 
+To select a simulation backend, use the drop-down menu at the top right of the Qucs-S window. Be advised that:
+* **The drop-down menu will only show simulators for which an executable has been found.** In other words, it will only show simulators which are _both_ installed on your system _and_ configured properly within Qucs-S (via the Simulation > Simulators Settings dialog).
+* **The drop-down menu will never show the digital-only simulation backends (FreeHDL and IVerilog).** These backends are called via a special object on the schematic page.
+
+```{figure} /getting-started/images/sim-selection-dropdown.png
+---
+class: with-border
+---
+
+The drop-down menu for choosing your simulation backend. Note that only simulators which are installed and properly configured with Qucs-S are shown in this menu, and the digital-only backends (FreeHDL and IVerilog) are never shown in this menu.
+```
+
+For more information on which simulation backend is appropriate for your situation, see [Choosing a Simulation Backend](/getting-started/choosing-a-sim-kernel).
+
 ### Incompatible Items on Page
+
+Normally, Qucs-S will not allow you to place components on the page which are incompatible with your _currently selected_ simulation backend. For example, if you have ngspice selected in the drop-down menu, the Components tab will only contain items compatible with the ngspice simulator.
+
+However, if you are changing between simulators frequently for your project, you may end up with incompatible components on your schematic. For instance, if you set the project up with ngspice selected as your backend, but you later change to Qucsator or Xyce, some components may not be compatible with the new backend.
+
+**In such cases, Qucs-S will warn you of the incompatibility by greying out the component.** You can still run a simulation, but **these incompatible components will be treated as open-circuits and completely excluded from the simulation.** An example is shown below.
+
+```{figure} /getting-started/images/incompatible-component-annotated.drawio.png
+---
+class: with-border
+---
+
+Qucs-S is indicating that the transmission line component is incompatible with the selected simulation backend (ngspice). In this example, this component was placed while Qucsator was selected as the backend, and will not be included in any simulation results produced with ngspice.
+```
