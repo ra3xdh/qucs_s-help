@@ -114,3 +114,7 @@ Within this tab, component models come from 3 places:
 1. **System Libraries**: These libraries come with QUCS-S upon installation.
 2. **User Libraries**: These libraries are configurable by the user, and persist across all projects on a given PC.
 3. **Project Libraries**: These libraries only exist within the active Qucs-S project.
+
+## Selecting a Simulation Backend
+
+### Incompatible Items on Page
