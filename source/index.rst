@@ -46,7 +46,7 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
    :caption: Getting Started
    :hidden:
 
-   /getting-started/ui-overview
+   /getting-started/interface-overview
    /getting-started/choosing-a-sim-kernel
    /getting-started/understanding-file-structure
    /getting-started/simulation-types/index
