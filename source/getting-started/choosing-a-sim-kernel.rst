@@ -1,2 +1,0 @@
-Choosing a Simulation Kernel
-==================================

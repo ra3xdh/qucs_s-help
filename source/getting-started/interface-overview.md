@@ -17,7 +17,7 @@ Here are the major controls to be aware of in the main Qucs-S window:
 2. **File Controls**: Use these buttons to create and save files (such as schematic pages) within your Qucs-S project.
 3. **Zoom Controls**: Use these controls to navigate the main page editor.
 4. **Page Editor Tools**: Use these buttons to place components and wires on your pages, and modify their position/orientation.
-5. **Simulation Controls**: Select your [simulation backend](/getting-started/choosing-a-sim-kernel) using the drop-down menu. Then push the gear icon to run your simulation.
+5. **Simulation Controls**: Select your [simulation backend](/getting-started/choosing-a-sim-backend) using the drop-down menu. Then push the gear icon to run your simulation.
 6. **Main Page Editor**: A tabbed navigation area in the center of the window. Each schematic page, data display page, and other resource in your Qucs-S project will appear as a tab here.
 
 ## Main Navigation Dock Tabs
@@ -32,7 +32,9 @@ This tab is used to choose a Qucs-S project to work in. It lists all the Qucs-S 
 
 See the [Understanding File Structure](/getting-started/understanding-file-structure) page for more information on how Qucs-S projects are stored.
 
-> **Warning: Qucs-S can only have one active project at a time.** In other words, you _cannot_ have a schematic open from project A, and also open a schematic from project B. If you try to do this, Qucs-S will simply close the first project's files.
+```{warning}
+**Qucs-S can only have one active project at a time.** In other words, you _cannot_ have a schematic open from project A, and also open a schematic from project B. If you try to do this, Qucs-S will simply close the first project's files.
+```
 
 This tab allows a few basic tasks:
 * To activate a project, either double-click it, or single-click it and choose "Open". Upon activating the project, you'll be taken to the Contents tab, summarizing that project.
@@ -75,7 +77,9 @@ This tab can be used to place various components onto a schematic page or displa
 * Equations
 * Paintings (non-intelligent, graphics-only elements such as text, lines, rectangles, etc)
 
-> All those things, and more, are components. However, specific real-world parts (e.g. "LM334 Current Source") are _NOT_ part of the Components tab. Rather, these models of real-world parts come from the separate Libraries tab.
+```{note}
+All those things, and more, are components. However, specific real-world parts (e.g. "LM334 Current Source") are _NOT_ part of the Components tab. Rather, these models of real-world parts come from the separate Libraries tab.
+```
 
 ```{figure} /getting-started/images/components-tab.png
 ---
@@ -92,7 +96,7 @@ An example of the Components tab.
 4. Move your mouse into the main page editor, and single-click to place the component. You can place multiple copies of the component by continuing to click.
 5. When you are done placing the component, push ``ESC``.
 
-> **Warning:** The contents of the components tab may change if you [select a different simulation backend.](/getting-started/choosing-a-sim-kernel) Not all components are compatible with all simulation backends.
+> **Warning:** The contents of the components tab may change if you [select a different simulation backend.](/getting-started/choosing-a-sim-backend) Not all components are compatible with all simulation backends.
 
 ### Libraries Tab
 
@@ -129,7 +133,7 @@ class: with-border
 The drop-down menu for choosing your simulation backend. Note that only simulators which are installed and properly configured with Qucs-S are shown in this menu, and the digital-only backends (FreeHDL and IVerilog) are never shown in this menu.
 ```
 
-For more information on which simulation backend is appropriate for your situation, see [Choosing a Simulation Backend](/getting-started/choosing-a-sim-kernel).
+For more information on which simulation backend is appropriate for your situation, see [Choosing a Simulation Backend](/getting-started/choosing-a-sim-backend).
 
 ### Incompatible Items on Page
 
