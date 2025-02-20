@@ -39,7 +39,7 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
    :hidden:
 
    /installation/installing-qucs-s
-   /installation/installing-sim-kernels
+   /installation/installing-sim-backends
 
 .. toctree::
    :maxdepth: 4
