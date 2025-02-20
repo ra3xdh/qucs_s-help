@@ -146,3 +146,11 @@ class: with-border
 
 Qucs-S is indicating that the transmission line component is incompatible with the selected simulation backend (ngspice). In this example, this component was placed while Qucsator was selected as the backend, and will not be included in any simulation results produced with ngspice.
 ```
+
+## Navigating Pages
+
+To move around within schematic/display pages, use the following controls:
+* **Pan by Dragging**: Middle mouse button
+* **Zoom In/Out**: CTRL + Scroll Wheel
+* **Pan by Scrolling**: Scroll for Vertical Pan, SHIFT + Scroll for Horizontal Pan
+* **Select Multiple Items**: Hold CTRL and single-click
