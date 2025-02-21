@@ -74,6 +74,10 @@ Qucs-S Home Directory (``$HOME/.qucs`` in this case):
 
 You may want to share Qucs-S projects between multiple computers. To do this, it's recommended to ZIP up the entire Project folder into an archive file, then unzip the archive into the Qucs-S Home Directory on the second computer. By doing this, Qucs-S will have access to all the needed files, and you will not have any broken references.
 
+```{warning}
+Remember that Qucs-S will only consider a folder a _Project_ if its name ends in ``_prj``! If you are unzipping a shared project on your system, be sure your unzipped folder still follows the ``_prj`` naming rule.
+```
+
 ### Working Outside a Project
 
 It is possible to work outside a Project folder, storing files outside the Qucs-S home directory. You can open any type of Qucs-S supported file (schematic, data display, symbol, etc) using the _Open_ button in the top right of the main window.
@@ -83,7 +87,7 @@ However, this may make files difficult to find on your system, since Qucs-S will
 If you'd like to open a ``.sch`` file and save it into a Project for continued work, simply open it with the Open command, then use the Save As button to save a copy in your Project folder. You can then open your Project and continue your work. 
 
 ```{warning}
-**If you open a ``.sch`` file in a directory where you do not have write access and attempt to run a simulation, Qucs-S will be unable to save the simulation Dataset, and therefore unable to render any diagrams or otherwise display the output of the simulation.**
+**If you open a ``.sch`` file in a directory where you do not have write access, you will not be able to display any simulation results!** When you attempt to run a simulation, Qucs-S will be unable to save the simulation _Dataset_ in the same directory as the _Schematic_, and therefore unable to render any _Diagrams_ or otherwise display the output of the simulation.
 
-**This usually applies to the built-in example schematics!** (accessible via ``File > Examples``) These files are stored in the Qucs-S program folder, which is not writeable by normal users on most operating systems.
+**This usually applies to the built-in example schematics!** (accessible via ``File > Examples``) These files are stored in the Qucs-S program folder, which is not writeable by normal users on most operating systems. To use these files, you'll need to open them and perform a ``File > Save As`` into a folder where you have write access.
 ```
