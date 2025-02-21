@@ -78,7 +78,7 @@ You may want to share Qucs-S projects between multiple computers. To do this, it
 Remember that Qucs-S will only consider a folder a _Project_ if its name ends in ``_prj``! If you are unzipping a shared project on your system, be sure your unzipped folder still follows the ``_prj`` naming rule.
 ```
 
-### Working Outside a Project
+## Working Outside a Project
 
 It is possible to work outside a Project folder, storing files outside the Qucs-S home directory. You can open any type of Qucs-S supported file (schematic, data display, symbol, etc) using the _Open_ button in the top right of the main window.
 
