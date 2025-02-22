@@ -28,7 +28,7 @@ It contains 4 tabs, described below (from top to bottom).
 
 ### Projects Tab
 
-This tab is used to choose a Qucs-S project to work in. It lists all the Qucs-S projects stored in the default directory (Typically, ``C:\Users\John Doe\.qucs`` or ``/home/johndoe/.qucs``).
+This tab is used to choose a Qucs-S project to work in. It lists all the Qucs-S projects stored in the default directory (Typically, ``C:\Users\John Doe\QucsWorkspace`` or ``/home/johndoe/QucsWorkspace``).
 
 See the [Understanding File Structure](/getting-started/understanding-file-structure) page for more information on how Qucs-S projects are stored.
 
@@ -40,7 +40,7 @@ This tab allows a few basic tasks:
 * To activate a project, either double-click it, or single-click it and choose "Open". Upon activating the project, you'll be taken to the Contents tab, summarizing that project.
 * To create a new project, click the "New" button.
 * To delete a project, click the "Delete" button.
-* If your ``.qucs`` folder contains subfolders to organize your projects, you can navigate the subfolders within the Projects tab by double-clicking (much like a typical file explorer view).
+* If your Qucs-S Home Directory contains subfolders to organize your projects, you can navigate the subfolders within the Projects tab by double-clicking (much like a typical file explorer view).
 
 ```{figure} /getting-started/images/projects-tab.png
 ---
