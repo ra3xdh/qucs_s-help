@@ -39,15 +39,15 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
    :hidden:
 
    /installation/installing-qucs-s
-   /installation/installing-sim-kernels
+   /installation/installing-sim-backends
 
 .. toctree::
    :maxdepth: 4
    :caption: Getting Started
    :hidden:
 
-   /getting-started/ui-overview
-   /getting-started/choosing-a-sim-kernel
+   /getting-started/interface-overview
    /getting-started/understanding-file-structure
+   /getting-started/choosing-a-sim-backend
    /getting-started/simulation-types/index
 
