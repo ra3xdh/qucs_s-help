@@ -8,7 +8,7 @@ To understand how Qucs-S stores files, you must understand at a basic level how 
 
 The figure below describes this process, and the files it references.
 
-```{figure} /getting-started/images/project-flowchart.drawio.png
+```{figure} /overview/images/project-flowchart.drawio.png
 ---
 class: with-border
 ---
@@ -28,7 +28,7 @@ The Qucs-S home directory will typically default to ``$HOME/QucsWorkspace``. If 
 
 It can be set to an arbitrary location by visiting ``File > Application Settings > Locations > Qucs Home``, as shown in the figure below.
 
-```{figure} /getting-started/images/qucs-s-home-settings.png
+```{figure} /overview/images/qucs-s-home-settings.png
 ---
 class: with-border
 ---
@@ -51,9 +51,9 @@ A Project may contain many different types of files, listed below:
 * **Datasets** (``.dat``, ``.dat.ngspice``, and ``.dat.xyce``): Raw output data from a simulation run. Extension and format will vary depending on the simulation backend used.
 * **Data Displays** (``.dpl``): Pages used only for displaying Diagrams showing simulation results. These are not created automatically, since you can simply place Diagrams directly on your schematics. You may still use them if you prefer.
 
-You can use the Contents tab in the Main Navigation Dock (see [Interface Overview](/getting-started/interface-overview)) to inspect all the files in your current open Qucs-S project. They will be displayed in groups based on the file types described above. An example of how this may look is shown below.
+You can use the Contents tab in the Main Navigation Dock (see [Interface Overview](/overview/interface-overview)) to inspect all the files in your current open Qucs-S project. They will be displayed in groups based on the file types described above. An example of how this may look is shown below.
 
-```{figure} /getting-started/images/contents-tab.png
+```{figure} /overview/images/contents-tab.png
 ---
 class: with-border
 ---

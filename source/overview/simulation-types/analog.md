@@ -15,7 +15,7 @@ There are two ways to make Qucs-S perform a DC operating point simulation:
 
 When any other simulation command (such as Transient, AC, etc) is called on your circuit, Qucs-S will _also_ perform a DC analysis automatically. To view this DC analysis data, either use the ``Simulation > Calculate DC Bias`` menu button, or push the ``F8`` key. This will cause the DC bias voltages and currents to display directly on your schematic page, as in the figure below.
 
-```{figure} /getting-started/images/dc-bias-with-transient.png
+```{figure} /overview/images/dc-bias-with-transient.png
 ---
 class: with-border
 ---
@@ -31,7 +31,7 @@ You will still need to use the ``Simulation > Calculate DC Bias`` button, or pus
 
 An example of a DC-only simulation is shown below.
 
-```{figure} /getting-started/images/dc-only-simulation.png
+```{figure} /overview/images/dc-only-simulation.png
 ---
 class: with-border
 ---
@@ -45,7 +45,7 @@ Another very common type of simulation is the Transient simulation. This is a si
 
 The example below shows a single square pulse exciting an LC filter, using a 5 millisecond transient simulation.
 
-```{figure} /getting-started/images/transient-example.png
+```{figure} /overview/images/transient-example.png
 ---
 class: with-border
 ---
@@ -61,7 +61,7 @@ Transient simulations have 4 major parameters:
 
 The figure below shows the most important parameters for a Transient Simulation. Additional parameters can be configured on the Properties tab, but that is currently outside the scope of this documentation.
 
-```{figure} /getting-started/images/transient-sim-properties.png
+```{figure} /overview/images/transient-sim-properties.png
 ---
 class: with-border
 ---
