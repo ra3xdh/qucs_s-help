@@ -71,6 +71,41 @@ An example of the major properties in a Transient Simulation.
 
 ## AC Analysis Simulation
 
-```{error}
-Still gotta write this section...
+Qucs-S can also perform small-signal AC analysis to characterize a circuit's performance in the frequency domain. This is analagous to the ``.ac`` command in LTSpice, and other common SPICE circuit simulators.
+
+This simulation sweeps fixed-magnitude sinusoidal source(s) (either voltage or current sources can be used) across a set frequency range, to test your circuit's frequency response.
+
+To do this, place an "AC Simulation" component on your schematic page, and configure the following parameters:
+* **Type**: This determines whether the frequency in the simulation proceeds linearly (``lin``), logarithmically (``log``), or via a user-defined list of discrete frequencies (``list``).
+* **Start**: Defines the start frequency.
+* **Stop**: Defines the stop frequency.
+* **Points**: Defines the number of discrete frequency points to simulate.
+
+In addition to placing the AC Simulation component, you must also make sure you have at least one AC source in your schematic. These are the only sources which will be frequency-swept by the AC Simulation - other source types will be unaffected. AC Voltage or AC Current sources are available in Qucs-S, as shown in the figure below.
+
+```{figure} /overview/images/ac-sources-choices.png
+---
+class: with-border
+---
+
+AC Current and AC Voltage sources, available via the "Sources" category in the "Components" tab, in the Main Navigation Dock. You must have at least one AC Source in your circuit to perform an AC Simulation, since these are the sources that will have their frequencies swept by the AC Simulation.
 ```
+
+An example of an AC Simulation is shown in the figure below.
+
+```{figure} /overview/images/ac-sim-example.png
+---
+class: with-border
+---
+
+An example of a simple AC simulation. Note that it is possible to graph magnitude in dB, graph phase, and other more advanced features by utilizing the [Equations feature](/overview/equations).
+```
+
+```{warning}
+In the example above, the absolute voltage at the circuit's output is being graphed directly. However, it is more common in AC analysis to graph the ratio of the output to the input, usually in dB. In this example, that would be ``dB( v(filter_out)/v(filter_in) )``.
+
+Qucs-S _can_ do this, but it requires an additional step of utilizing the Equations feature. Exactly how to do this depends on which simulation backend you are using.
+
+Equations also make it possible to graph in dB, graph the signal's phase in addition to the magnitude, and many other additional features. [See the documentation on Equations for more information.](/overview/equations)
+```
+
