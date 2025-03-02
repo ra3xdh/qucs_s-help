@@ -35,5 +35,5 @@ The _Parameter Sweep_ Simulation accepts 6 major inputs:
 ## Custom Parameter Sweeps (ngspice only!)
 
 ```{warning}
-**This section only applies to recent versions of ngspice!** This tactic does not apply to other available simulation backends.
+**This section only applies to recent versions of ngspice! ngspice prior to version 30 may not support this feature.** This tactic also does not apply to other available simulation backends.
 ```
