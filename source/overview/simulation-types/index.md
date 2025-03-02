@@ -14,6 +14,10 @@ class: with-border
 An example of how to place a Simulation Component in a Qucs-S schematic page, and how to configure the Simulation's parameters.
 ```
 
+## Learn More
+
+To learn more about Qucs-S's simulation capabilities, please see the specific pages below for common simulation types. Note that this is not exhaustive documentation - it only aims to cover the most frequently used Simulations.
+
 ```{toctree}
 ---
 maxdepth: 1
