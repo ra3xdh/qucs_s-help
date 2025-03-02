@@ -74,9 +74,27 @@ The value of a voltage source, current source, inductor, or capacitor could also
 
 ### DC Sweeps
 
-TODO:
-* It's possible to sweep sources and resistors in this mode (inductors and caps are not considered in DC simulation)
-* Is it now possible to use the ``.PARAM`` thing with ngspice in this situation? Or does that not work? The ``qucs-s-docs`` repo seems to suggest that _doesn't_ work but I'm not sure.
+In Qucs-S, a DC Sweep refers to a Parameter Sweep combined with a DC Simulation. This is often useful for determining how a resistor or power supply voltage affects DC bias points.
+
+For example, the circuit below is a simple resistive voltage divider connected to a DC voltage source. A standard DC Simulation can be used to calculate the output voltage of the divider. However, in this example, a Parameter Sweep has been added, sweeping the resistor ``R1`` from 1 kOhm to 4 kOhm.
+
+The resulting output voltage for each value of ``R1`` is displayed in a Table Diagram (although it could just as easily be graphed).
+
+```{figure} /overview/images/dc-sweep-example-annotated.drawio.png
+---
+class: with-border
+---
+
+An example of a "DC Sweep", which combines the Parameter Sweep Simulation with a DC Simulation. In this case, a resistor in a simple voltage divider is swept, and the resulting output voltages are shown in a Table.
+```
+
+```{warning}
+**Only resistors and sources can be swept as part of a DC Sweep.**
+
+Inductors and capacitors are not considered in DC sweeps (inductors become short-circuits while capacitors become open-circuits). Therefore, these components cannot be swept.
+
+**Sweeping custom parameters in a DC Simulation is _NOT_ possible, regardless of simulation backend!** Even the ``.PARAM`` feature in ngspice (see next section) does not apply to this case - it is simply not possible to sweep anything except a resistor or a source when performing a DC Simulation.
+```
 
 ## Sweeping Arbitrary Parameters
 
