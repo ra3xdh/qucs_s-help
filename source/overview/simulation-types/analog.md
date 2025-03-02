@@ -68,3 +68,9 @@ class: with-border
 
 An example of the major properties in a Transient Simulation.
 ```
+
+## AC Analysis Simulation
+
+```{error}
+Still gotta write this section...
+```
