@@ -24,7 +24,7 @@ maxdepth: 1
 ---
 analog
 sweeps
-digital
 tuning-mode
+digital
 rf
 ```
