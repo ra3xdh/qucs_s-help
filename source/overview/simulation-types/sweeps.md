@@ -2,12 +2,16 @@
 
 Often in circuit simulation, it is useful to repeat a similar simulation while varying one or more parameters. This makes it easy to see how specific parameters affect your circuit's behavior.
 
+```{tip}
+You may wish to interactively modify circuit parameters using sliders, rather than defining a range ahead of time and performing a traditional sweep. This is possible using the [Tuning Mode](/overview/simulation-types/tuning-mode) feature!
+```
+
 Qucs-S can support this type of simulation using the _Parameter Sweep_ Simulation. This component can sweep the value of a passive component (resistor, inductor, capacitor, or source), or with some additional configuration, can sweep a custom parameter. It accepts an existing Simulation Component as an input, and the Parameter Sweep will repeat that simulation for all the values of the swept parameter.
 
 ```{warning}
 **The standard Parameter Sweep Simulation can _only_ sweep the values of passive components!** (This includes resistors, capacitors, inductors, and voltage sources.) **On its own, it _cannot_ define and sweep an arbitrary variable in your schematic.**
 
-Defining and sweeping arbitrary variables _is possible_ for some simulation backends, but requires additional steps. See the section below on _Custom Parameter Sweeps_ to learn more.
+Defining and sweeping arbitrary variables _is possible_ for some simulation backends, but requires additional steps. See the section below on _Sweeping Arbitrary Parameters_ to learn more.
 ```
 
 An example of this Simulation Component is shown in the figure below. It's set up to sweep a resistor ``R1``'s value, and repeat the Transient Simulation ``TR1`` for each iteration of ``R1``.
@@ -28,12 +32,56 @@ The _Parameter Sweep_ Simulation accepts 6 major inputs:
 * **Stop**: Defines the end point for the swept device or parameter.
 * **Points**: Defines the number of points in the sweep (between the Start and Stop values).
 
-## Device Sweeps
+## Sweeping Passive Component Values (Device Sweeps)
 
-### Special Use Case: DC Sweeps
+The most basic way to utilize the _Parameter Sweep_ Simulation Component is to sweep the value of a passive device (resistor, capacitor, inductor, or source). This is possible using just the Simulation Component itself, no additional SPICE declarations or extra steps needed.
 
-## Custom Parameter Sweeps (ngspice only!)
+### Example: Capacitor Charging (Before Sweep)
+
+Before adding a sweep, let's consider an example circuit _without_ a sweep. In this circuit, a voltage source is being used to charge a capacitor. At the start of the simulation, the capacitor's voltage is zero. Then, the voltage source turns on and begins charging the capacitor. We can see the capacitor's charge voltage increase on the Cartesian diagram as it charges.
+
+```{figure} /overview/images/cap-charge-simulation-example.png
+---
+class: with-border
+---
+
+A simple capacitor, which is being charged through a resistor. Using a Transient simulation, we can see the capacitor's voltage increase over time, as it is charged by the voltage source.
+```
+
+In the next section, we'll look at how a Device Sweep could be performed to give more insight into this circuit.
+
+### Example: Capacitor Charging (With Device Sweep Added)
+
+In the previous example, we might wish to compare how the capacitor charges as we vary resistor ``R1`` (allowing more or less current to flow into the capacitor). This can be done by adding a Parameter Sweep simulation, as shown in the figure below.
 
 ```{warning}
-**This section only applies to recent versions of ngspice! ngspice prior to version 30 may not support this feature.** This tactic also does not apply to other available simulation backends.
+**Note that the Parameter Sweep should be added _in addition to_ the existing simulation. Do not delete or deactivate your original simulation component when you add a Sweep.** You must retain your original "unswept" simulation (regardless of what type of simulation it may be), since the Parameter Sweep will reference it.
 ```
+
+In this new example, 4 Transient Simulations are run, with 4 different values of resistor ``R1`` (200 Ohm, 800 Ohm, 1.4 kOhm, and 2 kOhm). As a result, the 4 distinct capacitor charging curves can be seen on the Cartesian diagram. No modification was required to the diagram's properties compared to the previous example - the complete set of curves was graphed automatically.
+
+```{figure} /overview/images/cap-charge-simulation-sweep-example.png
+---
+class: with-border
+---
+
+By adding a Parameter Sweep simulation component to the previous example, we can now observe the charging behavior of the capacitor as resistor ``R1`` is varied from 200 Ohms to 2 kOhms, in 600 Ohm increments.
+```
+
+```{tip}
+The value of a voltage source, current source, inductor, or capacitor could also be swept, in the same way as the resistor in the above example.
+```
+
+### DC Sweeps
+
+TODO:
+* It's possible to sweep sources and resistors in this mode (inductors and caps are not considered in DC simulation)
+* Is it now possible to use the ``.PARAM`` thing with ngspice in this situation? Or does that not work? The ``qucs-s-docs`` repo seems to suggest that _doesn't_ work but I'm not sure.
+
+## Sweeping Arbitrary Parameters
+
+```{warning}
+**This section only applies to recent versions of ngspice! ngspice prior to version 30 (released in 2018) may not support this feature.** This tactic also does not apply to other available simulation backends.
+```
+
+## Nesting Sweeps
