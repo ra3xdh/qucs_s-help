@@ -98,8 +98,65 @@ Inductors and capacitors are not considered in DC sweeps (inductors become short
 
 ## Sweeping Arbitrary Parameters
 
+In the sections above, only passive components and sources were swept. However, when using the [ngspice Simulation Backend](/overview/choosing-a-sim-backend), it is possible to use a SPICE ``.PARAM`` command to define and sweep _any_ arbitrary parameter within a circuit. When using this method, you are no longer limited to just passive components and sources.
+
 ```{warning}
 **This section only applies to recent versions of ngspice! ngspice prior to version 30 (released in 2018) may not support this feature.** This tactic also does not apply to other available simulation backends.
+```
+
+To do this, a ``.PARAM`` directive must be added to the SPICE netlist. To do this in Qucs-S, visit the "SPICE netlist sections" category of the Components tab. Add a _.PARAM Section_ component to your schematic page (circled in the figure below).
+
+```{figure} /overview/images/param-component-annotated.png
+---
+class: with-border
+---
+
+To add a ``.PARAM`` directive to your SPICE netlist, place a _.PARAM Section_ component on your schematic page.
+```
+
+### Example: Sweeping Filter Cutoff Frequency
+
+For example, the circuit below is a simple RC filter, being fed with an AC voltage source. It has an AC Simulation, to characterize the frequency response of the filter.
+
+```{figure} /overview/images/rc-filter-beforeparametersweep.png
+---
+class: with-border
+---
+
+Simple RC filter example, with an AC Simulation command.
+```
+
+Recall that for an RC filter, the "-3dB cutoff frequency" can be calculated with {math}`f_{cutoff} = \frac{1}{2\pi RC}`.
+
+It's possible to calculate the necessary capacitor for a given cutoff frequency by rearranging the equation, yielding {math}`C = \frac{1}{2\pi Rf_{cutoff}}`.
+
+For the sake of example, let's utilize the ``.PARAM`` feature to define ``C1``'s capacitance in terms of the filter's cutoff frequency ({math}`f_{cutoff}`), and then sweep {math}`f_{cutoff}` with a Parameter Sweep simulation. This will show the frequency response of RC filters across a number of cutoff frequencies.
+
+To do this, we'll perform the following modifications to the circuit:
+
+1. **Add a _.PARAM Section_ to the schematic, and define relevant variables.** You can define as many variables as you like in a single _.PARAM Section_ component - you do not need to add multiple components to the page to define multiple variables.
+2. **Modify the circuit to reference our new parameters.** In this case, we will modify ``R1`` and ``C1``. Be sure to encapsulate with ``{`` and ``}`` so the parameters and math is parsed properly by the simulator!
+3. **Add a Parameter Sweep component, and select the variable defined in the _.PARAM Section_ as the sweep parameter.**
+
+```{tip}
+There is no built-in Pi constant in ngspice. To easily utilize Pi ( {math}`\pi` ) in your schematics, put the following into a _.PARAM Section_:
+``pi=4*atan(1)``
+
+This allows you to use ``pi`` in your schematics.
+```
+
+```{warning}
+You must enclose parameters and math operations in curly braces, or ngspice will not parse them correctly!
+```
+
+After the modifications, and the addition of a Cartesian diagram to graph the results, the circuit looks like this:
+
+```{figure} /overview/images/parameter-sweep-results-annotated.drawio.png
+---
+class: with-border
+---
+
+RC filter example, with capacitance defined in terms of cutoff frequency. The cutoff frequency is parameterized (``f_cutoff``), and swept using a Parameter Sweep. This allows simulation of filters designed for varying cutoff frequencies.
 ```
 
 ## Nesting Sweeps
