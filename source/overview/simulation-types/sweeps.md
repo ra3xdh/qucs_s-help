@@ -159,4 +159,18 @@ class: with-border
 RC filter example, with capacitance defined in terms of cutoff frequency. The cutoff frequency is parameterized (``f_cutoff``), and swept using a Parameter Sweep. This allows simulation of filters designed for varying cutoff frequencies.
 ```
 
-## Nesting Sweeps
+## Double Sweeps (aka Nested Sweeps)
+
+You might wish to sweep _two_ parameters instead of just one. This is possible by nesting multiple Parameter Sweeps. Set the first Parameter Sweep up with the ``Sim`` property pointing to a normal simulation (for example, a transient simulation). Then, set the second Parameter Sweep up with the ``Sim`` property pointing to _the first parameter sweep_. This allows you to sweep multiple parameters, and see how the circuit's performance varies.
+
+For example, if you want to graph the {math}`V_{CE}` vs {math}`I_{c}` curves of a transistor, you'll need to sweep _two_ parameters. First, you need to sweep the collector-emitter voltage ({math}`V_{CE}`), and then repeat that sweep for a different value of base current - rinse and repeat. This is a great use case for "nested sweeps" in Qucs-S.
+
+An example of how to do this is shown in the figure below. Note that while Parameter Sweep ``SW1`` is sweeping the DC Simulation, Parameter Sweep ``SW2`` is sweeping ``SW1``!
+
+```{figure} /overview/images/double-sweep-bjt-mos.png
+---
+class: with-border
+---
+
+Example of a double/nested sweep, plotting the {math}`V_{CE}` vs {math}`I_{c}` curves of a transistor.
+```
