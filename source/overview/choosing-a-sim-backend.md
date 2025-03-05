@@ -14,7 +14,7 @@ But for new users, this myriad of options can be overwhelming. **To that end, he
 
 ```{tip}
 
-Remember, a simulation backend is not a long-term commitment. You can always change which simulation backend you're using for a given project. See [Interface Overview : Selecting a Simulation Backend](/getting-started/interface-overview).
+Remember, a simulation backend is not a long-term commitment. You can always change which simulation backend you're using for a given project. See [Interface Overview : Selecting a Simulation Backend](/overview/interface-overview).
 
 ```
 

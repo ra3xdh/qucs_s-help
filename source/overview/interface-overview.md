@@ -4,7 +4,7 @@ This page will introduce you to the basic controls in the Qucs-S user interface.
 
 ## Main Window Summary
 
-```{figure} /getting-started/images/main-ui-diagram.drawio.png
+```{figure} /overview/images/main-ui-diagram.drawio.png
 ---
 class: with-border
 ---
@@ -17,7 +17,7 @@ Here are the major controls to be aware of in the main Qucs-S window:
 2. **File Controls**: Use these buttons to create and save files (such as schematic pages) within your Qucs-S project.
 3. **Zoom Controls**: Use these controls to navigate the main page editor.
 4. **Page Editor Tools**: Use these buttons to place components and wires on your pages, and modify their position/orientation.
-5. **Simulation Controls**: Select your [simulation backend](/getting-started/choosing-a-sim-backend) using the drop-down menu. Then push the gear icon to run your simulation.
+5. **Simulation Controls**: Select your [simulation backend](/overview/choosing-a-sim-backend) using the drop-down menu. Then push the gear icon to run your simulation.
 6. **Main Page Editor**: A tabbed navigation area in the center of the window. Each schematic page, data display page, and other resource in your Qucs-S project will appear as a tab here.
 
 ## Main Navigation Dock Tabs
@@ -30,7 +30,7 @@ It contains 4 tabs, described below (from top to bottom).
 
 This tab is used to choose a Qucs-S project to work in. It lists all the Qucs-S projects stored in the default directory (Typically, ``C:\Users\John Doe\QucsWorkspace`` or ``/home/johndoe/QucsWorkspace``).
 
-See the [Understanding File Structure](/getting-started/understanding-file-structure) page for more information on how Qucs-S projects are stored.
+See the [Understanding File Structure](/overview/understanding-file-structure) page for more information on how Qucs-S projects are stored.
 
 ```{warning}
 **Qucs-S can only have one active project at a time.** In other words, you _cannot_ have a schematic open from project A, and also open a schematic from project B. If you try to do this, Qucs-S will simply close the first project's files.
@@ -42,7 +42,7 @@ This tab allows a few basic tasks:
 * To delete a project, click the "Delete" button.
 * If your Qucs-S Home Directory contains subfolders to organize your projects, you can navigate the subfolders within the Projects tab by double-clicking (much like a typical file explorer view).
 
-```{figure} /getting-started/images/projects-tab.png
+```{figure} /overview/images/projects-tab.png
 ---
 class: with-border
 ---
@@ -56,7 +56,7 @@ The Contents tab serves as an organized summary of all the files in your active 
 
 **To open a document within your project, double-click on it within the Contents tab.** For instance, double-clicking the schematic ``test1_bogatin.sch`` in the screenshot below will open that schematic page for editing, as a tab in the main page editor.
 
-```{figure} /getting-started/images/contents-tab.png
+```{figure} /overview/images/contents-tab.png
 ---
 class: with-border
 ---
@@ -64,7 +64,7 @@ class: with-border
 An example project, with its constituent files shown in the Contents tab.
 ```
 
-For more information on the types of files which make up a Qucs-S project, and how they are stored, see [Understanding File Structure](/getting-started/understanding-file-structure).
+For more information on the types of files which make up a Qucs-S project, and how they are stored, see [Understanding File Structure](/overview/understanding-file-structure).
 
 ### Components Tab
 
@@ -81,7 +81,7 @@ This tab can be used to place various components onto a schematic page or displa
 All those things, and more, are components. However, specific real-world parts (e.g. "LM334 Current Source") are _NOT_ part of the Components tab. Rather, these models of real-world parts come from the separate Libraries tab.
 ```
 
-```{figure} /getting-started/images/components-tab.png
+```{figure} /overview/images/components-tab.png
 ---
 class: with-border
 ---
@@ -96,7 +96,7 @@ An example of the Components tab.
 4. Move your mouse into the main page editor, and single-click to place the component. You can place multiple copies of the component by continuing to click.
 5. When you are done placing the component, push ``ESC``.
 
-> **Warning:** The contents of the components tab may change if you [select a different simulation backend.](/getting-started/choosing-a-sim-backend) Not all components are compatible with all simulation backends.
+> **Warning:** The contents of the components tab may change if you [select a different simulation backend.](/overview/choosing-a-sim-backend) Not all components are compatible with all simulation backends.
 
 ### Libraries Tab
 
@@ -104,7 +104,7 @@ This tab contains all the models of real-world parts that are configured with Qu
 
 For example: where the Components tab might contain an configurable, general model for PMOSFET, this tab contains numerous models for real-world, purchaseable PMOSFETs. This example is shown in the figure below.
 
-```{figure} /getting-started/images/libraries-tab.png
+```{figure} /overview/images/libraries-tab.png
 ---
 class: with-border
 ---
@@ -125,7 +125,7 @@ To select a simulation backend, use the drop-down menu at the top right of the Q
 * **The drop-down menu will only show simulators for which an executable has been found.** In other words, it will only show simulators which are _both_ installed on your system _and_ configured properly within Qucs-S (via the Simulation > Simulators Settings dialog).
 * **The drop-down menu will never show the digital-only simulation backends (FreeHDL and IVerilog).** These backends are called via a special object on the schematic page.
 
-```{figure} /getting-started/images/sim-selection-dropdown.png
+```{figure} /overview/images/sim-selection-dropdown.png
 ---
 class: with-border
 ---
@@ -133,7 +133,7 @@ class: with-border
 The drop-down menu for choosing your simulation backend. Note that only simulators which are installed and properly configured with Qucs-S are shown in this menu, and the digital-only backends (FreeHDL and IVerilog) are never shown in this menu.
 ```
 
-For more information on which simulation backend is appropriate for your situation, see [Choosing a Simulation Backend](/getting-started/choosing-a-sim-backend).
+For more information on which simulation backend is appropriate for your situation, see [Choosing a Simulation Backend](/overview/choosing-a-sim-backend).
 
 ### Incompatible Items on Page
 
@@ -143,7 +143,7 @@ However, if you are changing between simulators frequently for your project, you
 
 **In such cases, Qucs-S will warn you of the incompatibility by greying out the component.** You can still run a simulation, but **these incompatible components will be treated as open-circuits and completely excluded from the simulation.** An example is shown below.
 
-```{figure} /getting-started/images/incompatible-component-annotated.drawio.png
+```{figure} /overview/images/incompatible-component-annotated.drawio.png
 ---
 class: with-border
 ---
