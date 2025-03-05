@@ -1,2 +1,0 @@
-Simulating in Tuning Mode
-==================================
