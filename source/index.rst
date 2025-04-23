@@ -28,10 +28,10 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
 
 .. toctree::
    :maxdepth: 4
-   :caption: Introduction
+   :caption: Welcome
    :hidden:
 
-   /introduction/what-is-qucs-s
+   /welcome/what-is-qucs-s
 
 .. toctree::
    :maxdepth: 4
@@ -43,11 +43,12 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
 
 .. toctree::
    :maxdepth: 4
-   :caption: Getting Started
+   :caption: Overview
    :hidden:
 
-   /getting-started/interface-overview
-   /getting-started/understanding-file-structure
-   /getting-started/choosing-a-sim-backend
-   /getting-started/simulation-types/index
+   /overview/interface-overview
+   /overview/understanding-file-structure
+   /overview/choosing-a-sim-backend
+   /overview/simulation-types/index
+   /overview/equations
 
