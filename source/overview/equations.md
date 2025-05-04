@@ -64,7 +64,7 @@ First, it's necessary to understand that ngspice stores all data as a vector. Ev
 
 You can place comments anywhere you like in a _Nutmeg Equation_. Simply begin the line with ``;``, and that line will be considered a comment. There is no support for "inline" comments - comments must take an entire line. An example of commenting is shown below.
 
-```
+```text
 ;This line is a comment, and will be ignored
 y=x*log(a)
 ;The equation above will be parsed normally
