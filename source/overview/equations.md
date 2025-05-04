@@ -38,9 +38,7 @@ The Nutmeg equation syntax is relatively simple, and supports all the common mat
 
 First, it's necessary to understand that ngspice stores all data as a vector. Even scalars are vectors "under the hood", they simply have a length of 1.
 
-Next, understand that you can place comments anywhere you like in a _Nutmeg Equation_. Simply begin the line with ``;``, and that line will be considered a comment. There is no support for "inline" comments - comments must take an entire line.
-
-**Algebraic Operators:**
+#### Algebraic Operators
 * ``+`` : Addition
 * ``-`` : Subtraction
 * ``*`` : Multiplication
@@ -51,7 +49,7 @@ Next, understand that you can place comments anywhere you like in a _Nutmeg Equa
   * If it is used in the arguments list of a user-definable function, it separates the arguments (like most programming languages).
   * In all other cases, it serves as a way to express complex numbers/vectors. For example, ``x , y`` is synonymous with ``x + j(y)``.
 
-**Boolean/Relational Operators:**
+#### Boolean/Relational Operators
 * ``gt`` : Equivalent to {math}`>`
 * ``lt`` : Equivalent to {math}`<`
 * ``ge`` : Equivalent to {math}`>=`
@@ -62,10 +60,23 @@ Next, understand that you can place comments anywhere you like in a _Nutmeg Equa
 * ``not`` : Equivalent to {math}`!`
 * ``eq`` : Equivalent to {math}`=`
 
-**Built-In Constants:**
+#### Comments
 
-**Functions:**
+You can place comments anywhere you like in a _Nutmeg Equation_. Simply begin the line with ``;``, and that line will be considered a comment. There is no support for "inline" comments - comments must take an entire line. An example of commenting is shown below.
 
+```
+;This line is a comment, and will be ignored
+y=x*log(a)
+;The equation above will be parsed normally
+```
+
+#### Built-In Constants and Variables
+
+TODO: list constants from ngspice manual, and the ``TIME`` variable, and any other weird built-in variables you can use
+
+#### Functions
+
+TODO: list functions table from ngspice manual
 
 ### Example Circuit with Nutmeg Equations
 
