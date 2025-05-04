@@ -38,6 +38,8 @@ The Nutmeg equation syntax is relatively simple, and supports all the common mat
 
 First, it's necessary to understand that ngspice stores all data as a vector. Even scalars are vectors "under the hood", they simply have a length of 1.
 
+Next, understand that you can place comments anywhere you like in a _Nutmeg Equation_. Simply begin the line with ``;``, and that line will be considered a comment. There is no support for "inline" comments - comments must take an entire line.
+
 **Algebraic Operators:**
 * ``+`` : Addition
 * ``-`` : Subtraction
