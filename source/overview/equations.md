@@ -168,4 +168,16 @@ mag(fft(v(18)))
 
 ### Example Circuit with Nutmeg Equations
 
+For a simple demonstration, the example circuit below graphs the ratio of output to input voltage across a range of frequencies, for a simple RC filter. All that was necessary to achieve this was to add the _Nutmeg Equation_ block, write an equation to define our new variable (called ``K``, in this example), and then set the _Cartesian Diagram_ to graph ``K`` instead of a directly "measurable" variable from the circuit.
+
+```{figure} /overview/images/nutmeg-demo-circuit.png
+---
+class: with-border
+---
+
+An example of a _Nutmeg Equation_ block being used in a simple RC filter circuit.
+```
+
+Of course, using multiple lines in your _Nutmeg Equation_ block, and using the mathematical functions from the tables above, you can extend the functionality far beyond simple division.
+
 ## Using Equations with Qucsator
