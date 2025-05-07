@@ -50,5 +50,5 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
    /overview/understanding-file-structure
    /overview/choosing-a-sim-backend
    /overview/simulation-types/index
-   /overview/equations
+   /overview/equations-and-parameters/index
 

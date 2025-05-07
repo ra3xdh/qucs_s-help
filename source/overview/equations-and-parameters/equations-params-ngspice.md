@@ -1,10 +1,24 @@
-# Using Equations
+# Equations & Parameters with ngspice
 
-In many cases, you may wish to perform math operations on the output of a Qucs-S simulation. This is where the "Equations" feature comes into play. Unfortunately, since each [available simulation backend in Qucs-S](/overview/choosing-a-sim-backend) handles equations differently, the equation syntax varies based on which backend you are using.
+## Equations vs Parameters
 
-## Using Equations with ngspice (Nutmeg)
+ngspice has two complementary features: _Parameters_ and _Equations_. The _Parameters_ feature is for inputs to your simulation, while the _Equations_ feature is for outputs from your simulation.
 
-### Introduction to Nutmeg
+See the comparison table below for more details.
+
+|                | **Parameters**                                                      | **Equations**                                                                                    |
+|----------------|---------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| **Used for**   | parameterizing inputs to your simulation, such as component values. | Analyzing and manipulating outputs from your simulation, especially in preparation for graphing. |
+| **Powered by** | the SPICE ``.PARAM`` command.                                       | ngspice's Nutmeg postprocessor.                                                                  |
+| **Calculated** | _BEFORE_ each run of your simulation.                               | _AFTER_ each run of your simulation.                                                             |
+
+(parameters-in-ngspice)=
+## Parameters in ngspice with ``.PARAM``
+
+Test
+
+(equations-in-ngspice)=
+## Equations in ngspice with Nutmeg
 
 When using ngspice, Qucs-S leverages its built in "Nutmeg" postprocessor system for an "Equations" functionality.
 
@@ -180,4 +194,3 @@ An example of a _Nutmeg Equation_ block being used in a simple RC filter circuit
 
 Of course, using multiple lines in your _Nutmeg Equation_ block, and using the mathematical functions from the tables above, you can extend the functionality far beyond simple division.
 
-## Using Equations with Qucsator
