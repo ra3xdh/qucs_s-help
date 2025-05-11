@@ -2,15 +2,19 @@
 
 ## Equations vs Parameters
 
-ngspice has two complementary features: _Parameters_ and _Equations_. The _Parameters_ feature is for inputs to your simulation, while the _Equations_ feature is for outputs from your simulation.
+ngspice has two complementary features:
+* **Parameters** are computed _BEFORE_ your simulation executes. They can be used to manipulate component values or other circuit properties. This uses the SPICE ``.PARAM`` feature.
+* **Equations** are computed _AFTER_ your simulation is complete. They can be used to manipulate the results of your simulation, for graphing or further analysis.
 
-See the comparison table below for more details.
+The diagram below shows where _Parameters_ and _Equations_ each fit into the Simulation process.
 
-|                | **Parameters**                                                      | **Equations**                                                                                    |
-|----------------|---------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| **Used for**   | parameterizing inputs to your simulation, such as component values. | Analyzing and manipulating outputs from your simulation, especially in preparation for graphing. |
-| **Powered by** | the SPICE ``.PARAM`` command.                                       | ngspice's Nutmeg postprocessor.                                                                  |
-| **Calculated** | _BEFORE_ each run of your simulation.                               | _AFTER_ each run of your simulation.                                                             |
+```{figure} /overview/images/parameters-vs-equations-order-of-operations.drawio.png
+---
+class: with-border
+---
+
+A simplified diagram of the steps in the Qucs-S simulation process, highlighting the times where _Parameters_ and _Equations_ are computed.
+```
 
 (parameters-in-ngspice)=
 ## Parameters in ngspice with ``.PARAM``
