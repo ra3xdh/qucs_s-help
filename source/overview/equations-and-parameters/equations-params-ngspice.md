@@ -19,10 +19,133 @@ A simplified diagram of the steps in the Qucs-S simulation process, highlighting
 (parameters-in-ngspice)=
 ## Parameters in ngspice with ``.PARAM``
 
-Test
+The _Parameters_ feature can be used much like the Parametric Design features in many mechanical CAD packages. It allows you to describe your circuit elements using parameters, instead of being limited to "hardcoded" constant values. When you run your simulation, these Parameters will be computed _BEFORE_ the simulation actually executes.
+
+### Parameter Syntax Basics
+
+The ``.PARAM`` syntax is mostly common across all SPICE-compatible simulation engines.
+
+For a definitive reference, see [the ngspice manual](https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#magicparlabel-1362).
+
+You may also find [the LTSpice Wiki](https://ltwiki.org/LTspiceHelp/LTspiceHelp/_PARAM_User_defined_parameters.htm) helpful as a quick reference.
+
+#### Operators
+
+```{table} Operators available in SPICE .PARAM statements, with their "precedence" in the order of operations listed as well. Taken from [the ngspice manual](https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#magicparlabel-1362).
+
+| **Operator**   | **Alias**    | **Precedence** | **Description**    |
+|------------|----------|------------|------------------|
+| ``-``          |          | 1          | unary -          |
+| ``!``          |          | 1          | unary not        |
+| ``**``         | ^        | 2          | power, like pwr  |
+| ``*``          |          | 3          | multiply         |
+| ``/``          |          | 3          | divide           |
+| ``%``          |          | 3          | modulo           |
+| ``\``          |          | 3          | integer divide   |
+| ``+``          |          | 4          | add              |
+| ``-``          |          | 4          | subtract         |
+| ``==``         |          | 5          | equality         |
+| <code>!=</code>         | &lt;&gt; | 5          | non-equal        |
+| ``<=``      |          | 5          | less or equal    |
+| ``>=``      |          | 5          | greater or equal |
+| ``<``       |          | 5          | less than        |
+| ``>``       |          | 5          | greater than     |
+| ``&&`` |          | 6          | boolean and      |
+| <code>&#124;&#124;</code>         |          | 7          | boolean or       |
+| ``c?x:y``      |          | 8          | ternary operator |
+
+```
+
+#### Functions
+
+```{table} A list of functions available in SPICE .PARAM statements. Taken from [the ngspice manual](https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#magicparlabel-1362). 
+
+| **Built-in function**           | **Notes**                                                                                                                                     |
+|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ``sqrt(x)``                      | ``y = sqrt(x)``                                                                                                                                  |
+| ``sin(x)``, ``cos(x)``, ``tan(x)``       |                                                                                                                                               |
+| ``sinh(x)``, ``cosh(x)``, ``tanh(x)``    |                                                                                                                                               |
+| ``asin(x)``, ``acos(x)``, ``atan(x)``    |                                                                                                                                               |
+| ``asinh(x)``, ``acosh(x)``, ``atanh(x)`` |                                                                                                                                               |
+| ``arctan(x)``                    | ``atan(x)``, kept for compatibility                                                                                                               |
+| ``exp(x)``                       |                                                                                                                                               |
+| ``ln(x)``, ``log(x)``                |                                                                                                                                               |
+| ``abs(x)``                       |                                                                                                                                               |
+| ``nint(x)``                      | Nearest integer, half integers towards even                                                                                                   |
+| ``int(x)``                       | Nearest integer rounded towards 0                                                                                                             |
+| ``floor(x)``                     | Nearest integer rounded towards -∞                                                                                                            |
+| ``ceil(x)``                      | Nearest integer rounded towards +∞                                                                                                            |
+| ``pow(x,y)``                     | x raised to the power of y (pow from C runtime library)                                                                                       |
+| ``pwr(x,y)``                     | pow(fabs(x), y)                                                                                                                               |
+| ``min(x, y)``                    |                                                                                                                                               |
+| ``max(x, y)``                    |                                                                                                                                               |
+| ``sgn(x)``                       | 1.0 for x &gt; 0, 0.0 for x == 0, -1.0 for x &lt; 0                                                                                           |
+| ``ternary_fcn(x, y, z)``         | x ? y : z                                                                                                                                     |
+| ``gauss(nom, rvar, sigma)``      | nominal value plus variation drawn from Gaussian distribution with mean 0 and standard deviation rvar (relative to nominal), divided by sigma |
+| ``agauss(nom, avar, sigma)``     | nominal value plus variation drawn from Gaussian distribution with mean 0 and standard deviation avar (absolute), divided by sigma            |
+| ``unif(nom, rvar)``              | nominal value plus relative variation (to nominal) uniformly distributed between +/-rvar                                                      |
+| ``aunif(nom, avar)``             | nominal value plus absolute variation uniformly distributed between +/-avar                                                                   |
+| ``limit(nom, avar)``             | nominal value +/-avar, depending on random number in [-1, 1[ being &gt; 0 or &lt; 0                                                           |
+
+```
+
+#### Scaling Suffixes
+
+Typical [SI Suffixes](https://learn.sparkfun.com/tutorials/metric-prefixes-and-si-units/all) can be used to scale units. See the table below for syntax.
+
+```{table} Built-in keywords for scaling units according to the International System of Units (SI).
+
+| **Suffix** | **Name**  | **Value** |
+|----------------|-------|---------------|
+| ``g``      | Giga  | 1e9   |
+| ``meg``    | Mega  | 1e6   |
+| ``k``      | Kilo  | 1e3   |
+| ``m``      | Milli | 1e-3  |
+| ``u``      | Micro | 1e-6  |
+| ``n``      | Nano  | 1e-9  |
+| ``p``      | Pico  | 1e-12 |
+| ``f``      | Femto | 1e-15 |
+```
+
+### Example Circuit using Parameters (``.PARAM``)
+
+Consider a simple low-pass filter made up of a resistor and a capacitor. According to the well-known design equations for this type of filter, the half-power cutoff frequency can be described with the equation below:
+
+{math}`f_{c}=\frac{1}{2\pi RC}`
+
+With some algebra, we can define {math}`C` in terms of {math}`f_{c}` and {math}`R`:
+
+{math}`C=\frac{1}{2\pi f_{c} R}`
+
+At this point, we can use the _Parameters_ feature to calculate the value of C for a given cutoff frequency automatically.
+
+```{tip}
+If you need to use Pi ({math}`\pi`) in a SPICE ``.PARAM`` component, use the following code: ``pi={4*atan(1)}``
+```
+
+After adding the code to create the constant Pi, and adding the design equation from above, we arrive at this ``.PARAM`` code (with desired cutoff frequency set to 2kHz):
+
+```text
+R = 1k
+fc = 2k
+pi = {4*atan(1)}
+C = (1)/(2*pi*fc*R)
+```
+
+After building up the rest of the filter circuit using an AC Simulation, we can see the result is a success:
+
+```{figure} /overview/images/rc-filter-param-example.png
+---
+class: with-border
+---
+
+Example using the Parameters (``.PARAM``) feature, to automatically calculate the capacitor value in an RC Low-Pass filter based on a desired cutoff frequency.
+```
 
 (equations-in-ngspice)=
 ## Equations in ngspice with Nutmeg
+
+In contrast to the _Parameters_ feature from the previous section, _Equations_ are calculated _AFTER_ your simulation is complete. They are useful for analyzing results, and manipulating your simulation data for display on a _Diagram_ (graph).
 
 When using ngspice, Qucs-S leverages its built in "Nutmeg" postprocessor system for an "Equations" functionality.
 
