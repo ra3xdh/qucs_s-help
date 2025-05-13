@@ -6,8 +6,51 @@ However, unlike ngspice, QucsatorRF does _not_ separate things into _Parameters_
 
 The QucsatorRF _Equations_ feature is very similar to the _Equations_ feature in the upstream Qucs project. The QucsatorRF simulation backend is a fork of Qucsator, the only simulation backend supported by the upstream Qucs project. This means that most equations written for upstream Qucs will "just work" in Qucs-S, _when used with QucsatorRF as the backend._
 
-## Example
+## Example: RC Filter
 
+When showing how to utilize [_Parameters and Equations in ngspice_](/overview/equations-and-parameters/equations-params-ngspice), an RC filter was used an example circuit. In that example, _Parameters_ were used to manipulate component values before the simulation, while _Equations_ were used to manipulate the results for graphing.
+
+**With QucsatorRF, the pre-processing and post-processing features are combined into a single _Equations_ feature.** This is accessible via the _Qucsator Equation_ component, as shown below.
+
+```{figure} /overview/images/qucsator-equation-component.png
+---
+class: with-border
+---
+
+The _Qucsator Equation_ schematic component, shown in the component browser at left, and placed on the schematic page at right.
+```
+
+To demonstrate this, we'll use the same RC filter as the ngspice example. In Qucsator, it's possible to create a single _Equation_ component containing both the design equations (governing component values) _and_ the postprocessing equation (the ratio of output to input voltage). The text of this equation is shown below (note the syntax difference in QucsatorRF equations compared to ngspice _Nutmeg Equations_ and _Parameters_).
+
+```{warning}
+**Qucsator equations are case-sensitive!** This includes references to built-in functions.
+
+For example, ``db(foo)`` will not work, you need to call ``dB(foo)`` instead.
+```
+
+```text
+r_1 = 1k
+fc = 2k
+C = 1/(2*pi*fc*r_1)
+ratio_linear = out.v/in.v
+ratio_dB = dB(out.v/in.v)
+```
+
+Using the equation text from above, we can create the following circuit. Note the graphed results contain both dB and linear format, utilizing the ``dB()`` function in QucsatorRF to easily produce a graph in dB format.
+
+```{figure} /overview/images/qucsator-eqns-demo.png
+---
+class: with-border
+---
+
+An example circuit utilizing the _Equations_ feature with Qucsator.
+```
+
+## Additional Examples
+
+Since the syntax has remained unchanged since Qucs ``v0.0.19``, many of the tutorials for original Qucs still apply to Qucsator Equations in Qucs-S. For additional examples, you may wish to visit these references:
+* [A Tutorial: Component, compact device and circuit modeling using symbolic equations](https://qucs.sourceforge.net/docs/tutorial/equations.pdf)
+* [Measurement Expressions Reference Manual](https://qucs.sourceforge.net/docs/tutorial/functions.pdf)
 
 
 ## Syntax Basics
