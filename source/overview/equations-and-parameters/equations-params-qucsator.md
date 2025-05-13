@@ -1,6 +1,10 @@
 # Using Equations in QucsatorRF
 
-Introduction...need to compare to ngspice
+Like ngspice, QucsatorRF also has an Equations feature.
+
+However, unlike ngspice, QucsatorRF does _not_ separate things into _Parameters_ and _Equations_ based on when they are computed. In QucsatorRF, all variables/data are accessible from the _Equations_ feature. There is no need to use a different feature for pre-simulation and post-simulation computations.
+
+The QucsatorRF _Equations_ feature is very similar to the _Equations_ feature in the upstream Qucs project. The QucsatorRF simulation backend is a fork of Qucsator, the only simulation backend supported by the upstream Qucs project. This means that most equations written for upstream Qucs will "just work" in Qucs-S, _when used with QucsatorRF as the backend._
 
 ## Example
 
@@ -11,7 +15,7 @@ Introduction...need to compare to ngspice
 The following operations and functions can be applied in QucsatorRF equations. Parameters in brackets ``[...]`` are optional.
 
 ```{tip}
-For a more exhaustive reference, please see the [Measurement Expressions Reference Manual](https://qucs.sourceforge.net/docs/tutorial/functions.pdf), a document written by the original Qucs team. The syntax for QucsatorRF equations in Qucs-S is unchanged compared to upstream Qucs.
+**For a more exhaustive reference, please see the [Measurement Expressions Reference Manual](https://qucs.sourceforge.net/docs/tutorial/functions.pdf)**, a document written by the original Qucs team. The syntax for QucsatorRF equations in Qucs-S is unchanged compared to upstream Qucs.
 ```
 
 ### Operators
