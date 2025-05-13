@@ -98,7 +98,7 @@ An example of an AC Simulation is shown in the figure below.
 class: with-border
 ---
 
-An example of a simple AC simulation. Note that it is possible to graph magnitude in dB, graph phase, and other more advanced features by utilizing the [Equations feature](/overview/equations).
+An example of a simple AC simulation. Note that it is possible to graph magnitude in dB, graph phase, and other more advanced features by utilizing the [Equations feature](/overview/equations-and-parameters/index).
 ```
 
 ```{warning}
@@ -106,6 +106,6 @@ In the example above, the absolute voltage at the circuit's output is being grap
 
 Qucs-S _can_ do this, but it requires an additional step of utilizing the Equations feature. Exactly how to do this depends on which simulation backend you are using.
 
-Equations also make it possible to graph in dB, graph the signal's phase in addition to the magnitude, and many other additional features. [See the documentation on Equations for more information.](/overview/equations)
+Equations also make it possible to graph in dB, graph the signal's phase in addition to the magnitude, and many other additional features. [See the documentation on Equations for more information.](/overview/equations-and-parameters/index)
 ```
 
