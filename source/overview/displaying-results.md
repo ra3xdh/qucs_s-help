@@ -92,7 +92,7 @@ Variables may appear with a different naming convention when using other simulat
 
 After adding the ``ac.v(out)`` variable to this graph, the Properties dialog looks like this:
 
-```{figure} /overview/images/diagram-properties-annotated.drawio.png
+```{figure} /overview/images/successful-cartesian-properties-dialog.png
 ---
 class: with-border
 ---
