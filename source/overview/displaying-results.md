@@ -120,8 +120,6 @@ The example RC filter circuit, with a _Cartesian Diagram_ succesfully placed on 
 
 #### Configuring Axis Scales
 
-#### Configuring the Grid
-
 ## Exporting Diagrams
 
 ### Image Export
