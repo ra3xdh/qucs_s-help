@@ -36,7 +36,7 @@ See the [introduction to Digital Simulation.](/overview/simulation-types/digital
 * **Timing Diagram**
 * **Truth Table**
 
-## Creating a Diagram
+## Creating Diagrams
 
 In this example, we'll be using the simple RC circuit shown below to demonstrate the _Diagrams_ feature.
 
@@ -111,6 +111,16 @@ The example RC filter circuit, with a _Cartesian Diagram_ succesfully placed on 
 ```
 
 ### Customizing Diagrams
+
+#### Setting Trace Thickness/Color/Style
+
+#### Setting Graph Limits
+
+#### Setting Axis Labels
+
+#### Configuring Axis Scales
+
+#### Configuring the Grid
 
 ## Exporting Diagrams
 
