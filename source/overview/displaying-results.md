@@ -112,16 +112,84 @@ The example RC filter circuit, with a _Cartesian Diagram_ succesfully placed on 
 
 ### Customizing Diagrams
 
+A number of additional customizations can be made to the _Diagrams_, from within the Properties dialog. Available customizations may vary across the _Diagram_ types. The most common customizations are described in the sections below.
+
 #### Setting Trace Thickness/Color/Style
+
+Each trace on a graph can be set to any arbitrary color, thickness, or line style (solid, dashed, dotted, circles, stars, and more). This is all adjusted within the Data tab of the Properties dialog. First, select the trace you wish to adjust under the "Graph" section at the bottom right, then its settings will appear in the "Graph Input" section (top center of the window).
+
+```{figure} /overview/images/editing-trace-properties.drawio.png
+---
+class: with-border
+---
+
+Editing properties of a trace on a _Cartesian Diagram_.
+```
+
+Color can be set by clicking the "Color" rectangle in the "Graph Input" section. This opens an additional window (shown to the right of the main Properties window in the figure below). The color can be selected manually, from common presets, or specified numerically using hexadecimal, RGB, or HSV format. It can also be chosen with an eyedropper-style tool by clicking "Pick Screen Color".
+
+```{figure} /overview/images/editing-trace-color.drawio.png
+---
+class: with-border
+---
+
+Editing color of a trace on a _Cartesian Diagram_.
+```
 
 #### Setting Graph Limits
 
-#### Setting Axis Labels
+The limits/window of a graph can be set on the Limits tab of the Properties dialog. In most cases, Qucs-S will attempt to automatically select appropriate graph limits, unless you open the Properties dialog and override it. The exact settings present in this tab will vary depending on the type of _Diagram_ you are interacting with. The figure below shows the settings for a simple 2D _Cartesian Diagram_.
 
-#### Configuring Axis Scales
+```{figure} /overview/images/setting-graph-limits.png
+---
+class: with-border
+---
+
+The Limits section of the Properties dialog for a _Cartesian Diagram_. Here, you can manually select the limits of the graph.
+```
+
+#### Configuring Axis Labels and Scales
+
+The scaling for each axis, and the label applied to it, can be edited in the Properties tab of the Properties dialog. The figure below shows the settings for a 2D _Cartesian Diagram_, but of course the available settings will vary depending on which _Diagram_ type you are using.
+
+```{figure} /overview/images/setting-axis-labels-and-scales.drawio.png
+---
+class: with-border
+---
+
+The Properties section of the Properties dialog for a _Cartesian Diagram_. Here, you can add custom labels to each axis, and configure the scaling of each axis.
+```
 
 ## Exporting Diagrams
 
+There are two ways you can export a _Diagram_:
+* You can export _a single trace_ to a CSV file.
+* You can export _the entire graph_ to a PNG or SVG image file.
+
 ### Image Export
 
+Right-click anywhere on the graph's background (NOT on a trace line itself), and choose "Export to Image".
+
+```{tip}
+To change the image export type from ``SVG`` to ``PNG``, you must manually edit the file name in the "Save to file" box.
+```
+
+```{figure} /overview/images/export-graph-as-image.drawio.png
+---
+class: with-border
+---
+
+Exporting an entire graph to an image file.
+```
+
 ### CSV Export
+
+Right click _on a trace itself_ (NOT on the graph's background) and choose "Export to CSV". Note that this will NOT export the entire graph, but only the selected trace.
+
+```{figure} /overview/images/export-trace-to-csv.drawio.png
+---
+class: with-border
+---
+
+Exporting one trace from your graph to a CSV file.
+```
