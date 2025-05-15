@@ -29,7 +29,7 @@ Qucs-S supports numerous different simulation backends:
 ### Analog/Digital/RF Simulators
 * **[ngspice (recommended)](https://ngspice.sourceforge.io/)**: A powerful mixed-level/mixed-signal circuit simulator. Most SPICE models distributed across industry are compatible with it. It has excellent performance for time-domain simulation of switching circuits, and a powerful postprocessor. If you are unsure which simulation backend to use with QUCS-S, ngspice is recommended.
 * **[Xyce](https://xyce.sandia.gov/)**: A new SPICE-compatible circuit simulator, written from scratch by Sandia National Laboratory. Xyce has the notable advantage of supporting large-scale parallel computing platforms, making it a good fit for solving very large circuits (although it can run on an ordinary desktop platform as well).
-* **[SpiceOpus](https://www.spiceopus.si/)**: A free general purpose circuit simulator, based on the Berkeley SPICE-3f5 codebas, specially suited for optimization loops.
+* **[SpiceOpus](https://www.spiceopus.si/)**: A free general purpose circuit simulator, based on the Berkeley SPICE-3f5 codebase, specially suited for optimization loops.
 * **[QucsatorRF](https://github.com/ra3xdh/qucsator_rf)**: A fork of Qucsator, the built-in simulation engine from the original [Qucs](https://qucs.sourceforge.net) project. QucsatorRF shares the original Qucsator netlist syntax, and all RF features. It's primarily intended for RF simulation with microwave devices and microstrip lines. It is not generally recommended for general-purpose circuit simulation, since ngspice typically has better performance.
 
 ### Digital-Only Simulators
