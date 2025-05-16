@@ -123,14 +123,14 @@ Within this tab, component models come from 3 places:
 
 To select a simulation backend, use the drop-down menu at the top right of the Qucs-S window. Be advised that:
 * **The drop-down menu will only show simulators for which an executable has been found.** In other words, it will only show simulators which are _both_ installed on your system _and_ configured properly within Qucs-S (via the Simulation > Simulators Settings dialog).
-* **The drop-down menu will never show the digital-only simulation backends (FreeHDL and IVerilog).** These backends are called via a special object on the schematic page.
+* **The drop-down menu will never show the digital-only simulation backends (GHDL and IVerilog).** These backends are called via a special object on the schematic page.
 
 ```{figure} /overview/images/sim-selection-dropdown.png
 ---
 class: with-border
 ---
 
-The drop-down menu for choosing your simulation backend. Note that only simulators which are installed and properly configured with Qucs-S are shown in this menu, and the digital-only backends (FreeHDL and IVerilog) are never shown in this menu.
+The drop-down menu for choosing your simulation backend. Note that only simulators which are installed and properly configured with Qucs-S are shown in this menu, and the digital-only backends (GHDL and IVerilog) are never shown in this menu.
 ```
 
 For more information on which simulation backend is appropriate for your situation, see [Choosing a Simulation Backend](/overview/choosing-a-sim-backend).
