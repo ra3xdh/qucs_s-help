@@ -38,7 +38,7 @@ In this example, an oscillator is being simulated using inverters. The inverters
 Qucs-S also has the ability to utilize entirely-digital simulation backends (VHDL or Verilog). This feature does NOT facilitate mixing analog and digital components into a single circuit.
 
 ```{warning}
-To perform these simulations, you must install the ``iverilog`` or ``freehdl`` backend. See [Installing Simulation Backends](/installation/installing-sim-backends) for more information.
+To perform these simulations, you must install the ``iverilog`` or ``ghdl`` backend. See [Installing Simulation Backends](/installation/installing-sim-backends) for more information.
 ```
 
 To start a digital simulation, place the _Digital Simulation_ component on your schematic page. This block has 3 parameters:
@@ -56,7 +56,7 @@ The _Digital Simulation_ block, and the configurable parameters in its Propertie
 
 ```{note}
 
-**If the _Digital Simulation_ block is placed on your schematic page, Qucs-S will run the digital simulation regardless of which of the simulation backends is selected at the top of the window.** In other words, you do NOT need to select FreeHDL or IVerilog in the same place where you would select ngspice, Xyce, etc. Simply place the _Digital Simulation_ block on your schematic page.
+**If the _Digital Simulation_ block is placed on your schematic page, Qucs-S will run the digital simulation regardless of which of the simulation backends is selected at the top of the window.** In other words, you do NOT need to select GHDL or IVerilog in the same place where you would select ngspice, Xyce, etc. Simply place the _Digital Simulation_ block on your schematic page.
 ```
 
 The example below shows a Digital Simulation in TimeList (Timing Diagram) mode, simulating a 2-bit decoder/demultiplexer.
