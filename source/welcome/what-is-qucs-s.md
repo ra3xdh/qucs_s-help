@@ -24,7 +24,7 @@ In contrast to Qucs and QucsStudio, QUCS-S does not include its own simulation b
 
 ### Digital-Only Simulators
 * **[Icarus Verilog](https://steveicarus.github.io/iverilog/)**: A digital-only simulation backend for simulating Verilog devices.
-* **[FreeHDL](http://freehdl.seul.org/)**: A digital-only simulation backend for simulating VHDL devices.
+* **[GHDL](http://ghdl.free.fr/)**: A digital-only simulation backend for simulating VHDL devices. Fully supports the 1987, 1993, 2002 versions of the IEEE 1076 VHDL standard, and partially the latest 2008 revision (well enough to support fixed_generic_pkg or float_generic_pkg).
 
 ## Notable Features
 
