@@ -6,29 +6,29 @@
 
 The easiest way to add new components is to create a subcircuit. As an example, let's look at how to create a component representing a dynamic head. The latest version of Qucs-S includes the Loudspeakers library, which contains speaker models. Here we will analyze how this library is made. It is known that a speaker has a complex impedance dependence on frequency and is described by an equivalent circuit, which can be represented as an RCL circuit. In this article, we will use the model given [here](https://translate.google.com/website?sl=auto&tl=en&hl=en&client=webapp&u=https://circuitdigest.com/electronic-circuits/simulate-speaker-with-equivalent-rlc-circuit) :
 
-![alt text](website.png)
+![Equivalent circuit of the speaker](website.png)
 
 The components Rc and Lc can be measured directly, as they represent the nominal resistance and inductance of the speaker coil. The values ​​of the remaining components in the diagram depend on the geometric dimensions and mass of the diffuser and the mechanical parameters of the speaker design, and are calculated according to the formulas in the article above. To avoid cluttering this article, the mathematics are not presented here.
 
 To add a component representing a dynamic head, first create a new schematic document (menu File → New schematic) and draw an equivalent circuit in it. You need to place equations on the circuit. For this, use a special component .PARAM section, which sets the SPICE parameters and is located in the SPICE netlist sections or Equations group. In the SPICE netlist, parameters are called equations that are calculated before the simulation starts. If you want the new component to work with the Qucsator modeling engine as well as with SPICE, then instead of the .PARAM section, you should have a different type of equation, namely the Qucs legacy equation (located in the equations section). But in this case, only a limited set of mathematical functions is supported, which is compatible with both SPICE and Qucsator. It is also important to place the subcircuit ports, which can be inserted using the Insert → Port menu or via the button on the toolbar. The speaker has two ports P1 and P2. The result should be the following circuit, which we save as SPK.sch
 
-![alt text](website-1.png)
+![Equivalent circuit of speaker in Qucs-S with equations and ports](website-1.png)
 
 After the circuit is assembled and the equations are set, you need to create a UGO for the speaker. To do this, press F9 on the keyboard or in the menu File→ Edit circuit symbol. The symbol editor opens. By default, Qucs-S automatically creates a UGO in the form of a square, which should be edited. Using graphic primitives, you can draw a UGO.
 
-![alt text](website-2.png)
+![UGO dynamics in Qucs-S](website-2.png)
 
 There is some text next to the UGO blank. Double-clicking on this text opens a dialog where you should set the parameters of the subcircuit. The interface here is intuitive and allows you to enter parameter names, default values, and descriptions. For the speaker, you should set the parameters as shown in the following screenshot.
 
-![alt text](website-3.png)
+![Editing the subcircuit parameter list](website-3.png)
 
 The Qucs-S distribution includes UGO templates. They are located inside the directory where the program is installed in the subdirectory share/qucs-s/examples/symbols in the file schematic_symbols.sch. You can open the file and copy the template.
 
-![alt text](website-4.png)
+![UGO templates for subcircuits](website-4.png)
 
 After the UGO has been created and the parameters have been set, the document should be saved. Now you can test the subcircuit. To do this, create a new circuit and place the Subcircuit component on it, which is in the file components group. The first parameter of this component should be the path to the subcircuit file. In this case, it is SPK.sch. The UGO and the list of parameters will be loaded automatically. You should get the test circuit shown in the figure. In addition to the speaker, it has an AC source V1, simulation, and an equation that specifies the impedance calculation. The node where the speaker is connected to the source should be marked as n1. Run the simulation and get a graph of the speaker impedance Zd versus frequency in the range from 1 Hz to 20 kHz.
 
-![alt text](website-5.png)
+![Placing a subcircuit in the main circuit](website-5.png)
 
 ## Using SPICE Models in Qucs-S
 
@@ -45,7 +45,7 @@ Starting with version 24.3.0, the procedure for importing SPICE models has been 
 
 In the latest versions of the program, the Fill FromSPICE model button has been added to the properties dialog for all unified discrete semiconductor components (blue UGO symbol) . Clicking on the button opens a dialog box where you should insert the model text (.MODEL). The model (.SUBCKT) subcircuit is not accepted here. If you click OK, the program will automatically analyze the model and fill in the corresponding property fields for the component on the diagram. If you activate the Convert number notation option, the numbers will be converted to engineering notation (for example, 1.5e-12 to 1.5p). This procedure is illustrated by the screenshot. For field-effect transistors and diodes, everything is similar.
 
-![alt text](website-6.png)
+![Import SPICE model of transistor 2N2222](website-6.png)
 
 ### Importing chip models in version 24.3.0 and higher
 
@@ -55,15 +55,15 @@ Place the Spice Library Device component in the File components group on the cir
 
 Then, in the table, you should set the correspondence between the UGO pins and the SPICE subcircuit. The left column will contain the names of the subcircuit terminals from the .SUBCKT header, and the right column will contain the UGO pin numbers. So far, NC (not connected) is everywhere. Double-clicking on the NC field opens a drop-down list from which you can select the UGO pin number. The process is illustrated by the screenshot.
 
-![alt text](website-7.png)
+![Using the SPICE Library Device component](website-7.png)
 
 After the UGO and pins are set, click OK to update the component view. You can assemble the test circuit and run the simulation.
 
-![alt text](website-8.png)
+![Simulation of the circuit with the LM358 op-amp](website-8.png)
 
 If there is no suitable UGO template in the program, you can draw your own and use it by specifying it in the Symbol from file dialog. A new symbol can be created using the File->New symbol command and then saved as a file with the SYM extension. When editing a symbol, terminals should be added using the Inser->Insert port menu command.
 
-![alt text](website-9.png)
+![Example of editing the UGO symbol](website-9.png)
 
 ### Using Discrete Component Models
 
@@ -82,7 +82,7 @@ Let's look at an example of how to use a SPICE model together with the Qucs-S si
 
 Obviously, you can insert these parameters into the transistor model in Qucs-S manually. But the program also provides other ways to use the SPICE model. In the SPICE netlist section group, there is a special .MODEL component that allows you to place a model card on the circuit. You can copy the model text line by line into the properties of this component (Line_1, Line_2, etc.). This is what you should end up with:
 
-![alt text](website-10.png)
+![Placing the .MODEL on the diagram](website-10.png)
 
 Now, to use the model, you will need a special transistor component that supports the full SPICE specification. All components in Qucs-S are divided into two groups:
 
@@ -91,11 +91,11 @@ Now, to use the model, you will need a special transistor component that support
 
 We place a red transistor (Q NPN BJT) on the diagram and enter the model name 2N2222A into its properties. The screenshot shows a test circuit with such a transistor, which simulates a family of output I-V characteristics.
 
-![alt text](website-11.png)
+![Connecting a model to a component](website-11.png)
 
 In addition to using the .MODEL directive, you can include a text file with the entire models using the .INCLUDE directive. An example is shown in the screenshot. You can also place the file with the transistor models in the $HOME/.qucs/user_lib directory and copy the model to the circuit by dragging and dropping.
 
-![alt text](website-12.png)
+![Using a text file with models](website-12.png)
 
 ### Using Integrated Circuit Models
 
@@ -174,21 +174,21 @@ RL3 22 28 100K
 
 First, copy the model text and save it to the LM358.cir text file. To use SPICE models defined by subcircuits in Qucs-S, there is a SPICE file component. Immediately after placement on the circuit, this component looks like a square without pins. Double-clicking on the SPICE file component opens a properties dialog box, in which you should specify the path to the LM358.cir file. To do this, click the Browse button and select the file. Qucs-S reads the model file and fills the list of SPICE net nodes. These nodes should be moved to the Component ports list using the Add button. The result should be as shown in the screenshot.
 
-![alt text](website-13.png)
+![Setting the properties of the Spice File Component](website-13.png)
 
 Now we press OK and see that the component's appearance on the diagram has changed. It now has terminals. The op-amp model can be tested right now. To do this, we will assemble a non-inverting voltage follower. The result of the operating point simulation (called by pressing F8 or the Simulation→DC bias menu) is shown in the screenshot. It is clear that the voltage at the follower output is approximately equal to the voltage at the input.
 
-![alt text](website-14.png)
+![Voltage Follower](website-14.png)
 
 To create a UGO for a SPICE component, you need to wrap it in a subcircuit. Create the LM358.sch file and add the SPICE file component to it. Again, specify the path to the LM358.cir model file in the properties and fill in the Component ports list. Now you need to connect the subcircuit ports to the component pins, and then switch to the symbol editor mode by pressing F9. Draw the UGO using primitives and get the result shown in the screenshots. This component has no parameters, and you do not need to set them. Now save the LM358.sch file. The resulting component can be inserted into another circuit using the Subcircuit component.
 
-![alt text](website-15.png)
+![Subcircuit with SPICE Model](website-15.png)
 
-![alt text](website-16.png)
+![UGO of the new component](website-16.png)
 
 The screenshot below shows an example of modeling a non-inverting AC amplifier with a single-supply supply.
 
-![alt text](website-17.png)
+![Non-inverting amplifier](website-17.png)
 
 ### QucsConv Utility
 
@@ -196,7 +196,7 @@ The Qucsonv utility is a file converter that allows, among other things, to conv
 
 Starting with version 24.2.0, the qucsconv utility is again included with the program. It also has an improved graphical interface. The utility can be launched from the Tools menu by selecting Data File converter. The interface is intuitive. To convert a SPICE library to a Qucs library, select SPICE netlist and Qucs library from the drop-down lists, specify the input and output files, and then click the Convert button.
 
-![alt text](website-18.png)
+![Interface for the Qucsconv utility](website-18.png)
 
 ### SPICE Compatibility Modes
 
@@ -204,29 +204,33 @@ The netlist syntax in most modern simulators, including Ngspice, follows the SPI
 
 To enable compatibility mode in Qucs-S, use the special component Spiceinit section. The screenshot shows how to use it. Here we see a diagram with a model of the popular TDA2003 power amplifier chip. This model is created for LTSpice and requires setting the compatibility mode. The Spiceinit component contains the line set ngbehavior=ltpsa
 
-![alt text](website-19.png)
+![Example of installing compatibility modes](website-19.png)
 
 ### How to create your own library
 
 Libraries in Qucs-S have a text format close to XML. Files of system libraries with the extension *.lib are located in the directory share/qucs-s/libraries in the root of the program installation. To create your own library, you need to convert a project containing SCH files with subschemes. Let's consider this process using an example and create a NewLibrary project. To do this, click Project→New Project in the main menu. If you plan to create a library, then the necessary schemes can be created and saved immediately in the project.
 
-![alt text](website-20.png)
+![Dialog for creating a new project](website-20.png)
 
 Click Create, and an empty project will open. In the future, the created projects can be found in the Projects tab on the left side of the program window. Next, you need to copy the files that we created in the previous sections to the directory with the project. By default, projects are located in the directory in the user's home directory in the $HOME/.qucs subdirectory. The full path to the project is $HOME/.qucs/NewLibrary_prj. Open this directory in the file manager and copy the LM358.sch and SPK.sch files there. Next, you need to update the project tree. To do this, close the project (Project→Close), and then open it again by double-clicking on the NewLibrary_prj project in the list on the panel on the left side of the window on the Projects tab. Now we see two schemes in the Schematics item. You can proceed to creating the library.
 
-![alt text](website-21.png)
+![Example of a project with two subcircuits](website-21.png)
 
 To create a library, select the menu item Project→Create Library. A dialog box opens. In the field at the top, enter the name of the future library and select the subcircuits to be included in the library from the list. The result is shown in the screenshot.
 
-![alt text](website-22.png)
+![Create Library dialog box](website-22.png)
 
 When the library name is set and the subcircuits are selected, click Next. In the next dialog, you can set a description for the components. Enter something in the description text and when the components are finished, click Create.
 
-![alt text](website-23.png)
+![Setting the component description](website-23.png)
 
 The following dialog box is displayed, informing you that the library has been created. The "no digital model" errors can be ignored. They indicate that there is no Verilog/VHDL digital model for our components. An analog component does not require one.
 
+![Library Creation Summary](website-24.png)
+
 The new library is now displayed in the User Libraries list on the Libraries tab on the left side of the window. The library file can be found in the $HOME/.qucs/user_lib directory. This is the default search path for user libraries. Now you can replace the OU component in the test circuit with a component from the newly created library. We see that the simulation result did not change after replacing the component.
+
+![Using a component from a custom library](website-25.png)
 
 ## Conclusion
 
