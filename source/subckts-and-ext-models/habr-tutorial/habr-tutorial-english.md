@@ -1,6 +1,7 @@
 # Qucs-S: A Guide to Using SPICE Models and Creating Libraries
 
-> Translated from original Russian tutorial, [here](https://habr.com/ru/articles/805963/)
+> Translated from original Russian tutorial, [here](https://habr.com/ru/articles/805963/).
+> Translation predominately accomplished with Google Translate, with some cross-referencing against DeepL's translation, and some manual editing.
 
 ## Working with Subcircuits
 
