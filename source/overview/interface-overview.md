@@ -89,14 +89,35 @@ class: with-border
 An example of the Components tab.
 ```
 
-**To place a component on a page:**
+```{warning}
+The contents of the components tab may change if you [select a different simulation backend.](/overview/choosing-a-sim-backend) Not all components are compatible with all simulation backends.
+```
+
+#### Component Color Coding
+
+All Qucs-S components can be classified as one of two types:
+
+1. **Universal (Colored Blue)**: These components are compatible with both Qucsator and ngspice simulation backends. This allows easy simulation of the same circuit across multiple backends, however, the downside is that the full set of special features in the SPICE models may not be leveraged.
+2. **SPICE-Only (Colored Red)**: These components are ONLY compatible with the SPICE-based backends (ngspice recommended). However, the full SPICE model specification is accessible, allowing more advanced customization of device models. This is useful when modeling real-world semiconductor devices, based on manufacturer-provided model parameters. These components will only be visible when a SPICE-compatible backend is selected (such as ngspice).
+
+See the figure below for examples of each component type.
+
+```{figure} /overview/images/universal-vs-spice-only-components.drawio.png
+---
+class: with-border
+---
+
+Comparison of "Universal" components (blue color) and "SPICE-only" components (red color).
+```
+
+The same colors remain when these components are placed on a schematic page.
+
+#### Placing a Component
 1. Select a component category, using the drop-down at the top of the tab. For instance, "Nonlinear Components."
 2. Find the component you want, either by scrolling or by using the "Search Components" feature at the bottom of the tab.
 3. Single-click the component to select it for placement.
 4. Move your mouse into the main page editor, and single-click to place the component. You can place multiple copies of the component by continuing to click.
 5. When you are done placing the component, push ``ESC``.
-
-> **Warning:** The contents of the components tab may change if you [select a different simulation backend.](/overview/choosing-a-sim-backend) Not all components are compatible with all simulation backends.
 
 ### Libraries Tab
 
