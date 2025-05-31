@@ -53,3 +53,10 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
    /overview/equations-and-parameters/index
    /overview/displaying-results
 
+.. toctree::
+   :maxdepth: 4
+   :caption: Using Subcircuits & External Models
+   :hidden:
+
+   /subckts-and-ext-models/working-with-subcircuits.md
+
