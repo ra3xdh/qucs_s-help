@@ -15,19 +15,19 @@ To add a component representing a dynamic head, first create a new schematic doc
 
 ![Equivalent circuit of speaker in Qucs-S with equations and ports](website-1.png)
 
-After the circuit is assembled and the equations are set, you need to create a UGO for the speaker. To do this, press F9 on the keyboard or in the menu File→ Edit circuit symbol. The symbol editor opens. By default, Qucs-S automatically creates a UGO in the form of a square, which should be edited. Using graphic primitives, you can draw a UGO.
+After the circuit is assembled and the equations are set, you need to create a component symbol for the speaker. To do this, press F9 on the keyboard or in the menu File→ Edit circuit symbol. The symbol editor opens. By default, Qucs-S automatically creates a component symbol in the form of a square, which should be edited. Using graphic primitives, you can draw a component symbol.
 
-![UGO dynamics in Qucs-S](website-2.png)
+![component symbol dynamics in Qucs-S](website-2.png)
 
-There is some text next to the UGO blank. Double-clicking on this text opens a dialog where you should set the parameters of the subcircuit. The interface here is intuitive and allows you to enter parameter names, default values, and descriptions. For the speaker, you should set the parameters as shown in the following screenshot.
+There is some text next to the component symbol blank. Double-clicking on this text opens a dialog where you should set the parameters of the subcircuit. The interface here is intuitive and allows you to enter parameter names, default values, and descriptions. For the speaker, you should set the parameters as shown in the following screenshot.
 
 ![Editing the subcircuit parameter list](website-3.png)
 
-The Qucs-S distribution includes UGO templates. They are located inside the directory where the program is installed in the subdirectory share/qucs-s/examples/symbols in the file schematic_symbols.sch. You can open the file and copy the template.
+The Qucs-S distribution includes component symbol templates. They are located inside the directory where the program is installed in the subdirectory share/qucs-s/examples/symbols in the file schematic_symbols.sch. You can open the file and copy the template.
 
-![UGO templates for subcircuits](website-4.png)
+![component symbol templates for subcircuits](website-4.png)
 
-After the UGO has been created and the parameters have been set, the document should be saved. Now you can test the subcircuit. To do this, create a new circuit and place the Subcircuit component on it, which is in the file components group. The first parameter of this component should be the path to the subcircuit file. In this case, it is SPK.sch. The UGO and the list of parameters will be loaded automatically. You should get the test circuit shown in the figure. In addition to the speaker, it has an AC source V1, simulation, and an equation that specifies the impedance calculation. The node where the speaker is connected to the source should be marked as n1. Run the simulation and get a graph of the speaker impedance Zd versus frequency in the range from 1 Hz to 20 kHz.
+After the component symbol has been created and the parameters have been set, the document should be saved. Now you can test the subcircuit. To do this, create a new circuit and place the Subcircuit component on it, which is in the file components group. The first parameter of this component should be the path to the subcircuit file. In this case, it is SPK.sch. The component symbol and the list of parameters will be loaded automatically. You should get the test circuit shown in the figure. In addition to the speaker, it has an AC source V1, simulation, and an equation that specifies the impedance calculation. The node where the speaker is connected to the source should be marked as n1. Run the simulation and get a graph of the speaker impedance Zd versus frequency in the range from 1 Hz to 20 kHz.
 
 ![Placing a subcircuit in the main circuit](website-5.png)
 
@@ -44,27 +44,27 @@ Starting with version 24.3.0, the procedure for importing SPICE models has been 
 
 ### Discrete Component Models in Version 24.3.0 and Later
 
-In the latest versions of the program, the Fill FromSPICE model button has been added to the properties dialog for all unified discrete semiconductor components (blue UGO symbol) . Clicking on the button opens a dialog box where you should insert the model text (.MODEL). The model (.SUBCKT) subcircuit is not accepted here. If you click OK, the program will automatically analyze the model and fill in the corresponding property fields for the component on the diagram. If you activate the Convert number notation option, the numbers will be converted to engineering notation (for example, 1.5e-12 to 1.5p). This procedure is illustrated by the screenshot. For field-effect transistors and diodes, everything is similar.
+In the latest versions of the program, the Fill FromSPICE model button has been added to the properties dialog for all unified discrete semiconductor components (blue component symbol symbol) . Clicking on the button opens a dialog box where you should insert the model text (.MODEL). The model (.SUBCKT) subcircuit is not accepted here. If you click OK, the program will automatically analyze the model and fill in the corresponding property fields for the component on the diagram. If you activate the Convert number notation option, the numbers will be converted to engineering notation (for example, 1.5e-12 to 1.5p). This procedure is illustrated by the screenshot. For field-effect transistors and diodes, everything is similar.
 
 ![Import SPICE model of transistor 2N2222](website-6.png)
 
 ### Importing chip models in version 24.3.0 and higher
 
-Starting with version 24.3.0, the Spice Library Device component has been reworked. Now this component allows you to connect a SPICE model, set the UGO symbol and pin correspondence in a convenient way. As an example, we import the model of the popular LM358 op amp: https://github.com/rene-dev/stmbl/blob/master/hw/spice/LM358.lib
+Starting with version 24.3.0, the Spice Library Device component has been reworked. Now this component allows you to connect a SPICE model, set the component symbol symbol and pin correspondence in a convenient way. As an example, we import the model of the popular LM358 op amp: https://github.com/rene-dev/stmbl/blob/master/hw/spice/LM358.lib
 
-Place the Spice Library Device component in the File components group on the circuit diagram and double-click it to open its properties dialog box. In the SPICE library field , specify the path to the LM358.lib file containing the model. Select the subcircuit name from the Subcircuit drop-down list . There is only one subcircuit in the LM358.lib file, but this method allows you to use libraries from several subcircuits. You can see the source code of the model in the preview window. Then you should specify the UGO. Select the Symbol from template option and select the opamp5t UGO template from the list on the right. This is an op amp with five pins.
+Place the Spice Library Device component in the File components group on the circuit diagram and double-click it to open its properties dialog box. In the SPICE library field , specify the path to the LM358.lib file containing the model. Select the subcircuit name from the Subcircuit drop-down list . There is only one subcircuit in the LM358.lib file, but this method allows you to use libraries from several subcircuits. You can see the source code of the model in the preview window. Then you should specify the component symbol. Select the Symbol from template option and select the opamp5t component symbol template from the list on the right. This is an op amp with five pins.
 
-Then, in the table, you should set the correspondence between the UGO pins and the SPICE subcircuit. The left column will contain the names of the subcircuit terminals from the .SUBCKT header, and the right column will contain the UGO pin numbers. So far, NC (not connected) is everywhere. Double-clicking on the NC field opens a drop-down list from which you can select the UGO pin number. The process is illustrated by the screenshot.
+Then, in the table, you should set the correspondence between the component symbol pins and the SPICE subcircuit. The left column will contain the names of the subcircuit terminals from the .SUBCKT header, and the right column will contain the component symbol pin numbers. So far, NC (not connected) is everywhere. Double-clicking on the NC field opens a drop-down list from which you can select the component symbol pin number. The process is illustrated by the screenshot.
 
 ![Using the SPICE Library Device component](website-7.png)
 
-After the UGO and pins are set, click OK to update the component view. You can assemble the test circuit and run the simulation.
+After the component symbol and pins are set, click OK to update the component view. You can assemble the test circuit and run the simulation.
 
 ![Simulation of the circuit with the LM358 op-amp](website-8.png)
 
-If there is no suitable UGO template in the program, you can draw your own and use it by specifying it in the Symbol from file dialog. A new symbol can be created using the File->New symbol command and then saved as a file with the SYM extension. When editing a symbol, terminals should be added using the Inser->Insert port menu command.
+If there is no suitable component symbol template in the program, you can draw your own and use it by specifying it in the Symbol from file dialog. A new symbol can be created using the File->New symbol command and then saved as a file with the SYM extension. When editing a symbol, terminals should be added using the Inser->Insert port menu command.
 
-![Example of editing the UGO symbol](website-9.png)
+![Example of editing the component symbol symbol](website-9.png)
 
 ### Using Discrete Component Models
 
@@ -181,11 +181,11 @@ Now we press OK and see that the component's appearance on the diagram has chang
 
 ![Voltage Follower](website-14.png)
 
-To create a UGO for a SPICE component, you need to wrap it in a subcircuit. Create the LM358.sch file and add the SPICE file component to it. Again, specify the path to the LM358.cir model file in the properties and fill in the Component ports list. Now you need to connect the subcircuit ports to the component pins, and then switch to the symbol editor mode by pressing F9. Draw the UGO using primitives and get the result shown in the screenshots. This component has no parameters, and you do not need to set them. Now save the LM358.sch file. The resulting component can be inserted into another circuit using the Subcircuit component.
+To create a component symbol for a SPICE component, you need to wrap it in a subcircuit. Create the LM358.sch file and add the SPICE file component to it. Again, specify the path to the LM358.cir model file in the properties and fill in the Component ports list. Now you need to connect the subcircuit ports to the component pins, and then switch to the symbol editor mode by pressing F9. Draw the component symbol using primitives and get the result shown in the screenshots. This component has no parameters, and you do not need to set them. Now save the LM358.sch file. The resulting component can be inserted into another circuit using the Subcircuit component.
 
 ![Subcircuit with SPICE Model](website-15.png)
 
-![UGO of the new component](website-16.png)
+![component symbol of the new component](website-16.png)
 
 The screenshot below shows an example of modeling a non-inverting AC amplifier with a single-supply supply.
 
