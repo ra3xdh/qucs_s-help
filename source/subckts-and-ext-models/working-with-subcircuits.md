@@ -1,5 +1,9 @@
 # Working with Subcircuits
 
+```{error}
+**TODO: Add example of pretty hierarchical design using multiple subcircuits**
+```
+
 Complex electrical circuits are often difficult to manage on a single schematic page. You may also wish to reuse the same circuit across multiple situations, following a hierarchical design paradigm. For these reasons, Qucs-S provides a "Subcircuits" feature.
 
 Subcircuits are simply references to another standard Qucs-S Schematic file (``.sch``). Any standard ``.sch`` can be used as a subcircuit, as long as at least one "port" is added to the schematic.
