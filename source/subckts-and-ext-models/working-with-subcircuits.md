@@ -1,10 +1,16 @@
 # Working with Subcircuits
 
-```{error}
-**TODO: Add example of pretty hierarchical design using multiple subcircuits**
-```
-
 Complex electrical circuits are often difficult to manage on a single schematic page. You may also wish to reuse the same circuit across multiple situations, following a hierarchical design paradigm. For these reasons, Qucs-S provides a "Subcircuits" feature.
+
+```{figure} /subckts-and-ext-models/images/hierarchical-design-example.png
+---
+class: with-border
+---
+
+An example of a "hierarchical design" utilizing Qucs-S subcircuits.
+
+The design uses a subcircuit for a resistive voltage divider, and then uses a parameterized subcircuit for a simple RC low-pass filter. Note that the cutoff frequency and resistance values of the filter are set in the top-level context with the ``f_c`` and ``Rfilter`` parameters, instead of being "hardcoded" into the subcircuit itself.
+```
 
 Subcircuits are simply references to another standard Qucs-S Schematic file (``.sch``). Any standard ``.sch`` can be used as a subcircuit, as long as at least one "port" is added to the schematic.
 
@@ -17,7 +23,7 @@ This page refers to a different feature from the SPICE ``.SUBCKT`` directive! Qu
 The standard Qucs-S schematic editing tools are also used when creating subcircuits (since subcircuits are really just standard ``.sch`` files being referenced in another schematic). However, there are a couple steps to take when preparing a circuit to be used as a subcircuit in a larger schematic.
 
 1. **You MUST create at least one _Subcircuit Port_.** This is your circuit's interface to higher-level schematic files - it is a bidirectional component that allows you to pass signals in and out of your subcircuit. Note that it is NOT necessary to create a port for Ground.
-2. **Optionally, you can create a custom symbol for your circuit.** Qucs-S will automatically generate a simple symbol, so this is not a requirement, but it can improve the usability/readability of your schematic.
+2. **Optionally, you can create a custom symbol for your circuit.** Qucs-S will automatically generate a simple symbol, so this is not a requirement, but it usually improves the usability and readability of your schematic.
 
 #### Creating Ports
 
