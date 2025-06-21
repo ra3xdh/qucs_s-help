@@ -20,10 +20,20 @@ This page refers to a different feature from the SPICE ``.SUBCKT`` directive! Qu
 
 ### Preparing a Schematic for use as a Subcircuit
 
-The standard Qucs-S schematic editing tools are also used when creating subcircuits (since subcircuits are really just standard ``.sch`` files being referenced in another schematic). However, there are a couple steps to take when preparing a circuit to be used as a subcircuit in a larger schematic.
+The standard Qucs-S schematic editing tools are also used when creating subcircuits (since subcircuits are really just standard ``.sch`` files being referenced in another schematic). However, there are a few steps to take when preparing a circuit to be used as a subcircuit in a larger schematic.
 
 1. **You MUST create at least one _Subcircuit Port_.** This is your circuit's interface to higher-level schematic files - it is a bidirectional component that allows you to pass signals in and out of your subcircuit. Note that it is NOT necessary to create a port for Ground.
 2. **Optionally, you can create a custom symbol for your circuit.** Qucs-S will automatically generate a simple symbol, so this is not a requirement, but it usually improves the usability and readability of your schematic.
+3. **Optionally, you may add parameters to your subcircuit.** Qucs-S allows you to pass parameters through into an instance of your subcircuit, from the parent context. This can be useful when reusing a common design multiple times, with slight variations.
+
+Below is a diagram showing the underlying ``.sch`` files, and their schematics and custom symbols, for the voltage divider/RC filter example from earlier in this tutorial.
+
+```{figure} /subckts-and-ext-models/images/hierarchical-design-diagrammed-example.drawio.png
+---
+class: with-border
+---
+A diagram showing the underlying files, circuits, and custom symbols involved in the voltage divider/RC filter example.
+```
 
 #### Creating Ports
 
