@@ -29,7 +29,11 @@ source_suffix = {
 }
 
 templates_path = ['_templates']
-exclude_patterns = []
+
+# For the moment, /source/subckts-and-ext-models/habr-tutorial serves as a useful reference for developers while working on additional docs content.
+# However, to avoid confusing users we do not want this to show up in docs site search results (since it's not part of the table of contents). So I am putting it in exclude_patterns to fix this.
+# Once the content on subcircuits, SPICE models, and Libraries is written, the translated tutorial can probably just be deleted from master.
+exclude_patterns = ['**/habr-tutorial']
 
 # This makes the EPUB output show all the URLs as footnotes, rather than directly inline where they're referenced.
 # Cuts down on clutter factor.
