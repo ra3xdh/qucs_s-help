@@ -15,6 +15,12 @@ For example, below is a model of the popular 2N2222 NPN transistor.
 
 Models like these are commonly distributed by electronics manufacturers. Read on to learn how to use them in QUCS-S simulations.
 
+```{tip}
+**A model for the component you want to use may already exist in the out-of-the-box library!** QUCS-S ships with a robust library of models for common parts - check it out before importing additional models.
+
+See the [documentation section on Libraries](/libraries/index) for more information on this part of QUCS-S.
+```
+
 (importing-with-fill-from-spice)=
 ## Importing with "Populate Parameters from SPICE File" (recommended)
 

@@ -61,3 +61,10 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
    /subckts-and-ext-models/working-with-subcircuits
    /subckts-and-ext-models/spice-models/index
 
+.. toctree::
+   :maxdepth: 4
+   :caption: Using and Managing Libraries
+   :hidden:
+
+   /libraries/index
+
