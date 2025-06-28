@@ -28,6 +28,12 @@ source_suffix = {
     '.md': 'markdown',
 }
 
+# MyST Parser Settings
+myst_heading_anchors = 5 # I found this to be necessary even when manually specifying header IDs for use in links. See this page: https://myst-parser.readthedocs.io/en/latest/syntax/cross-referencing.html#heading-target
+
+# I've been using non-consecutive heading levels, but MyST really doesn't like that by default. This just suppresses the warnings.
+suppress_warnings = ["myst.header"]
+
 templates_path = ['_templates']
 
 # For the moment, /source/subckts-and-ext-models/habr-tutorial serves as a useful reference for developers while working on additional docs content.

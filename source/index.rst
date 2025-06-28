@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to the Qucs-S Documentation!
-==================================
+==========================================
 
 Qucs-S is a circuit simulation program, forked from the original `Qucs circuit simulator. <https://qucs.sourceforge.net/>`_
 
