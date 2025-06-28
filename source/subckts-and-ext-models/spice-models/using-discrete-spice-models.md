@@ -1,5 +1,6 @@
 # Using SPICE Discrete Component Models (.MODEL Directive)
 
+(what-is-the-spice-model-directive)=
 ## What is the SPICE .MODEL Directive?
 
 The SPICE ``.MODEL`` directive allows you to specify the parameters necessary to accurately model simple discrete semiconductor devices. This feature allows you to tune the parameters of a device model that's intrinsically understood by SPICE, such as NPN/PNP transistors, diodes, and various MOSFETs.
@@ -59,5 +60,51 @@ All these components are accessible via the _Nonlinear Components_ section of th
 
 (importing-with-manual-spice-netlist-addition)=
 ## Importing with Manual SPICE Netlist Addition
-TODO: Massage [relevant part](https://github.com/ra3xdh/qucs_s-help/blob/master/source/subckts-and-ext-models/habr-tutorial/habr-tutorial-english.md#using-discrete-component-models) of existing tutorial into here.
 
+Let's consider the example of the popular 2N2222A NPN transistor. [The SPICE model for this device is shown in an earlier section.](#what-is-the-spice-model-directive)
+
+You could manually copy and paste each parameter from the SPICE ``.MODEL`` text into the appropriate place in the QUCS-S component properties. Obviously, this is tedious and error-prone. A more desirable method might be to use special QUCS-S components that can inject additional text into the SPICE Netlist. Two such methods are described in the following sections.
+
+### Embedding a Model into a Schematic with _.MODEL Section_
+
+Instead of manually copying/pasting each parameter, you can use the _.MODEL Section_ from the _SPICE Netlist Sections_ category of components. Placing this on your schematic allows you to define an arbitrary SPICE model for a given device ID.
+
+To use this method, place a _.MODEL Section_ on your schematic, and populate it with the text from your model, as shown below.
+
+```{figure} /subckts-and-ext-models/images/spice-model-section-placed.png
+---
+class: with-border
+---
+
+Example of the _SPICE .MODEL Section_ component, placed on the schematic with the model text for the 2N2222A transistor.
+```
+
+Now, to use the model, you will need a special transistor component that supports the full SPICE specification (color-coded red). The blue _Universal_ components will NOT work here. See [the Interface Overview section](/overview/interface-overview.md#component-color-coding) if you're not familiar with this distinction.
+
+We place a red transistor (Q NPN BJT) on the diagram and enter the model name 2N2222A into its properties. The screenshot shows a test circuit with such a transistor, which simulates a family of output I-V characteristics.
+
+```{figure} /subckts-and-ext-models/images/spice-model-section-inuse.png
+---
+class: with-border
+---
+
+Example of the _SPICE .MODEL Section_ component being used in a schematic. Note that the transistor ``Q1`` references the model ID ``2N2222A`` - this is what links the schematic component to the SPICE ``.MODEL`` text.
+```
+
+### Referencing an External File with .INCLUDE or .LIB
+
+If you have many models to import, your schematic could quickly get cluttered with _SPICE .MODEL Section_ components. To avoid this, you can reference an external SPICE file with one of two methods:
+* **_.LIB Section_ (Recommended)**: This inserts a SPICE ``.LIB`` directive, which causes SPICE to _ONLY_ parse the ``.MODEL`` directives in the referenced text file (other directives will be ignored). This is recommended since it limits the possibility for unintended modifications to your circuit with other SPICE directives.
+* **_.INCLUDE Section_**: This inserts a SPICE ``.INCLUDE`` directive, which respects the full set of SPICE directives in the referenced file. This will work, but risks confusing behavior if the referenced file contains additional SPICE directives that modify the behavior of your circuit.
+
+Whichever method you choose to use, place the text file containing your model in ``$HOME/QucsWorkspace/user_lib`` (see [QUCS-S Home Directory](/overview/understanding-file-structure.md#qucs-s-home-directory) for more details on this location). Then, place either a _.INCLUDE Section_ or _.LIB Section_ on your schematic, and set it up to reference your text file, similar to the example below.
+
+Once you've done this, you can reference the ``.MODEL`` identifiers in your schematic components, just like in the ``2N2222A`` example from the preceding section.
+
+```{figure} /subckts-and-ext-models/images/spice-include-model-example.png
+---
+class: with-border
+---
+
+Example of including an external text file containing a SPICE model (in this case, using the _.INCLUDE Section_ component). Note that the transistors ``J1`` and ``J2`` reference the model ID ``J2P307G``, referring to the ``.MODEL`` text in the ``jm.lib`` file.
+```
