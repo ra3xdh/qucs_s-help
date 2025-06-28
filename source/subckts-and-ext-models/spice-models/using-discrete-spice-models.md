@@ -18,10 +18,37 @@ Models like these are commonly distributed by electronics manufacturers. Read on
 ## Importing with Fill from SPICE feature (recommended)
 
 ```{warning}
-**This feature was not added until QUCS-S ``v24.3.0`` (released July 2024).** If you are using an older version of QUCS-S, this feature is not available! You will need to use [the more manual method described in the next section.](#importing-with-manual-spice-netlist-addition)
+This section depends on a feature that was not added until QUCS-S ``v24.3.0`` (released July 2024).
+
+**If you are using a QUCS-S version older than ``v24.3.0``, this feature is not available!** You will need to use [the more manual method described in the next section.](#importing-with-manual-spice-netlist-addition)
 ```
 
+For many of [the blue _Universal Components_ (see here if you're not sure what this means)](/overview/interface-overview.md#component-color-coding), a SPICE model can be directly imported after placing the component on your schematic. To do this, double-click on the component to open the _Edit Properties_ dialog.
 
+```{figure} /subckts-and-ext-models/images/populate-parameters-from-spice-file.drawio.png
+---
+class: with-border
+---
+
+Annotated screenshots showing how to import a SPICE discrete device model (.MODEL directive) using the new _Populate Parameters from SPICE File_ feature (available in QUCS-S ``v24.3.0`` and later).
+
+This specific example shows how to import the model for the popular 2N2222A for an NPN transistor component.
+```
+
+### Applicable Components
+
+Out of all the [blue _Universal Components_](/overview/interface-overview.md#component-color-coding) in QUCS-S, only the semiconductor devices include the _Populate Parameters from SPICE File_ feature. At the time of this writing (July 2025), the latest release is QUCS-S ``v25.1.2``, so the following components include this feature:
+
+* ``Diode``
+* ``npn transistor`` (with and without substrate connection)
+* ``pnp transistor`` (with and without substrate connection)
+* ``n-JFET`` (with and without substrate connection)
+* ``p-JFET`` (with and without substrate connection)
+* ``n-MOSFET`` (with and without substrate connection)
+* ``p-MOSFET`` (with and without substrate connection)
+* ``depletion MOSFET`` (with and without substrate connection)
+
+All these components are accessible via the _Nonlinear Components_ section of the [_Components Tab_.](/overview/interface-overview.md#components-tab)
 
 (importing-with-manual-spice-netlist-addition)=
 ## Importing with Manual SPICE Netlist Addition
