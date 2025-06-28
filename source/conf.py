@@ -36,10 +36,12 @@ suppress_warnings = ["myst.header"]
 
 templates_path = ['_templates']
 
-# For the moment, /source/subckts-and-ext-models/habr-tutorial serves as a useful reference for developers while working on additional docs content.
-# However, to avoid confusing users we do not want this to show up in docs site search results (since it's not part of the table of contents). So I am putting it in exclude_patterns to fix this.
-# Once the content on subcircuits, SPICE models, and Libraries is written, the translated tutorial can probably just be deleted from master.
-exclude_patterns = ['**/habr-tutorial']
+# I've often found it useful to include previously-written tutorial content, or developer-only documentation in Markdown format.
+# If you do that, it won't show in the table of contents, but Sphinx will (usually) still find the document and include it in search results.
+# This can be very confusing for users, obviously.
+# I'm choosing to get around this by changing the extension of "non public-facing" files to .exclude.md or .exclude.rst.
+# This setting just makes Sphinx respect that (at all levels of the folder hierarchy).
+exclude_patterns = ['**/*.exclude.md', '**/*.exclude.rst']
 
 # This makes the EPUB output show all the URLs as footnotes, rather than directly inline where they're referenced.
 # Cuts down on clutter factor.
