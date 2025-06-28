@@ -15,7 +15,8 @@ For example, below is a model of the popular 2N2222 NPN transistor.
 
 Models like these are commonly distributed by electronics manufacturers. Read on to learn how to use them in QUCS-S simulations.
 
-## Importing with Fill from SPICE feature (recommended)
+(importing-with-fill-from-spice)=
+## Importing with "Populate Parameters from SPICE File" (recommended)
 
 ```{warning}
 This section depends on a feature that was not added until QUCS-S ``v24.3.0`` (released July 2024).
@@ -53,3 +54,4 @@ All these components are accessible via the _Nonlinear Components_ section of th
 (importing-with-manual-spice-netlist-addition)=
 ## Importing with Manual SPICE Netlist Addition
 TODO: Massage [relevant part](https://github.com/ra3xdh/qucs_s-help/blob/master/source/subckts-and-ext-models/habr-tutorial/habr-tutorial-english.md#using-discrete-component-models) of existing tutorial into here.
+
