@@ -15,13 +15,11 @@ None of these examples will work in the QucsatorRF backend (it is not SPICE-comp
 ## Modeling Methods
 
 There are essentially two methods for modeling real devices in SPICE-based simulators:
-1. **For discrete semiconductors and passives (FETs, BJTs, diodes, etc), you can use a _Device Model_.**
+1. **For discrete semiconductors and passives (FETs, BJTs, diodes, etc), you can [use a _Device Model_.](using-discrete-spice-models)**
    * This is most often done with the ``.MODEL`` directive, although sometimes ``.INCLUDE`` may be used as well.
-   * For details, see [Using Discrete Component Models](using-discrete-spice-models).
-2. **For complex devices (like integrated circuits), you can use a _Subcircuit Model_.**
+2. **For complex devices (like integrated circuits), you can [use a _Subcircuit Model_.](using-spice-subckt-models)**
    * This is done with the SPICE ``.SUBCKT`` directive.
    * Note that this is NOT the same thing as a [QUCS-S Subcircuit!](/subckts-and-ext-models/working-with-subcircuits)
-   * For details, see [Using Subcircuit Models for Complex Devices](using-spice-subckt-models).
 
 ## Additional Reading
 
