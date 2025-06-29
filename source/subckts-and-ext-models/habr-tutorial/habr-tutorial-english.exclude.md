@@ -66,7 +66,9 @@ If there is no suitable component symbol template in the program, you can draw y
 
 ![Example of editing the component symbol symbol](website-9.png)
 
-### Using Discrete Component Models
+### Using Discrete Component Models (Prior to ``v24.3.0``)
+
+> If you're on QUCS-S version ``v24.3.0`` or later, the previous section describes a faster/easier way to do this!
 
 The Qucs-S library contains quite a lot of models of bipolar and field-effect transistors and even domestic components. But sometimes it is necessary to use a third-party model found on the Internet. The necessary actions for this are considered below.
 
@@ -98,7 +100,9 @@ In addition to using the .MODEL directive, you can include a text file with the 
 
 ![Using a text file with models](website-12.png)
 
-### Using Integrated Circuit Models
+### Using Integrated Circuit Models (Prior to ``v24.3.0``)
+
+> If you're on QUCS-S version ``v24.3.0`` or later, the previous section describes a faster/easier way to do this!
 
 Models of complex microcircuits are usually supplied as subcircuits. To obtain such a SPICE model, it is necessary to carry out measurements and extract parameters. Here again, if the manufacturer has not provided a model, then nothing will help. As an example, let's consider how to use the LM358 operational amplifier model in Qucs-S. This component is available in the program library, but was chosen because the model is not very complex. Below is the source code of the model that needs to be integrated into Qucs-S. The correspondence between the subcircuit nodes and the op amp output is given in the comments in the model file header. Comments in SPICE netlist files begin with the * symbol.
 
