@@ -6,6 +6,7 @@ TODO: Explain:
 * Distinct/different from QUCS-S Subcircuit feature
 * What SUBCKT can be used for
 * Typically distributed as a .LIB file
+* All SPICE SUBCKTs have their own internal port numbers, and these are often labeled with comments at the top of the SPICE file
 * Files may even contain multiple hierarchical SUBCKTs, depending on the complexity of the device
 
 ## Importing .SUBCKT Models with "SPICE Library Device" (recommended)
