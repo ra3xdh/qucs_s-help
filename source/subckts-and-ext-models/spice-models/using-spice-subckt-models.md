@@ -160,6 +160,37 @@ This section depends on a feature that was not added until QUCS-S ``v24.3.0`` (r
 **If you are using a QUCS-S version older than ``v24.3.0``, this feature is not available!** You will need to use [the more manual method described in the next section.](#TODO-update-this-link)
 ```
 
+With ``.SUBCKT``-based models, you can use the _SPICE Library Device_ component to quickly import your model and select a symbol. This component includes templates for common electronics symbols, and the option to input a custom symbol file if you desire.
+
+To get started, navigate to the _File Components_ section of the _Components_ tab, and place a _SPICE Library Device_ on your schematic. Initially, the symbol will be a simple square with no pins, as shown in the screenshot below.
+
+```{figure} /subckts-and-ext-models/images/new-spice-library-device.drawio.png
+---
+class: with-border
+---
+
+Annotated screenshot showing how to place a _SPICE Library Device_ on a schematic. Note that a new instance of this component will appear as a simple square symbol with no terminals, until you configure it with a real SPICE model and choose a symbol.
+```
+
+To configure the _SPICE Library Device_, double-click the symbol to open its _Properties_ dialog. Then:
+1. **Select your SPICE model file** (typically ``.lib`` extension).
+2. **If your file contains multiple ``.SUBCKT`` directives, use the bottom right section of the dialog to select the appropriate one.**
+3. **Configure a symbol.** Select from the following options:
+    * **Automatic Symbol**: This will generate a rectangular symbol, with pin names matching the SPICE ``.SUBCKT``. This is usually a good fit for complex integrated circuits which are hard to describe with traditional symbols.
+    * **Symbol from Template**: This will let you choose from a list of common electronics symbols, including op-amps, transistors, logic gates, and diodes. You can configure the mapping between symbol pins and SPICE ``.SUBCKT`` pins in the bottom left portion of the window.
+    * **Symbol from File**: If the previous options are insufficient, you can specify a custom QUCS-S Symbol file (``.sym`` extension). [See the next section for instructions on how to create such a file.](#creating-a-custom-symbol-file)
+4. **Map your symbol's pins to the appropriate pins in your ``.SUBCKT`` model.** It is often necessary to read the comments in the SPICE netlist to determine the function of each pin, so a preview of the SPICE model is provided in the bottom right of the window for your convenience.
+
+The annotated screenshot below highlights each of the major sections of the configuration dialog, with an example LM386 op-amp model selected.
+
+```{figure} /subckts-and-ext-models/images/spice-library-device-properties-annotated.drawio.png
+---
+class: with-border
+---
+
+Annotated screenshot showing the configuration options for a _SPICE Library Device_, using the common LM386 op-amp as an example.
+```
+
 ### Creating a Custom Symbol File
 
 TODO show how to make a custom .sym file for use with Spice Library Device
