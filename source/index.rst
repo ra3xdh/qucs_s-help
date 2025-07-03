@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to the Qucs-S Documentation!
-==================================
+==========================================
 
 Qucs-S is a circuit simulation program, forked from the original `Qucs circuit simulator. <https://qucs.sourceforge.net/>`_
 
@@ -58,5 +58,13 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
    :caption: Using Subcircuits & External Models
    :hidden:
 
-   /subckts-and-ext-models/working-with-subcircuits.md
+   /subckts-and-ext-models/working-with-subcircuits
+   /subckts-and-ext-models/spice-models/index
+
+.. toctree::
+   :maxdepth: 4
+   :caption: Using and Managing Libraries
+   :hidden:
+
+   /libraries/index
 
