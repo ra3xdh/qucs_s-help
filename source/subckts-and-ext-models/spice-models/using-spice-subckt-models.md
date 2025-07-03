@@ -157,7 +157,7 @@ RL3 22 28 100K
 ```{warning}
 This section depends on a feature that was not added until QUCS-S ``v24.3.0`` (released July 2024).
 
-**If you are using a QUCS-S version older than ``v24.3.0``, this feature is not available!** You will need to use [the more manual method described in the next section.](#TODO-update-this-link)
+**If you are using a QUCS-S version older than ``v24.3.0``, this feature is not available!** You will need to use [the more manual method described in the next section.](#importing-subckt-models-with-spice-file-component)
 ```
 
 With ``.SUBCKT``-based models, you can use the _SPICE Library Device_ component to quickly import your model and select a symbol. This component includes templates for common electronics symbols, and the option to input a custom symbol file if you desire.
@@ -181,19 +181,41 @@ To configure the _SPICE Library Device_, double-click the symbol to open its _Pr
     * **Symbol from File**: If the previous options are insufficient, you can specify a custom QUCS-S Symbol file (``.sym`` extension). [See the next section for instructions on how to create such a file.](#creating-a-custom-symbol-file)
 4. **Map your symbol's pins to the appropriate pins in your ``.SUBCKT`` model.** It is often necessary to read the comments in the SPICE netlist to determine the function of each pin, so a preview of the SPICE model is provided in the bottom right of the window for your convenience.
 
-The annotated screenshot below highlights each of the major sections of the configuration dialog, with an example LM386 op-amp model selected.
+The annotated screenshot below highlights each of the major sections of the configuration dialog, with an example LM358 op-amp model selected.
 
 ```{figure} /subckts-and-ext-models/images/spice-library-device-properties-annotated.drawio.png
 ---
 class: with-border
 ---
 
-Annotated screenshot showing the configuration options for a _SPICE Library Device_, using the common LM386 op-amp as an example.
+Annotated screenshot showing the configuration options for a _SPICE Library Device_, using the common LM358 op-amp as an example.
+```
+
+In the case of the LM386, the ``opamp5t`` symbol in the "Use Symbol from Template" feature is a good fit. After mapping the terminals and clicking _OK_ to exit the _SPICE Library Device_ configuration dialog, the schematic symbol now looks like an op-amp, and the device is usable in the schematic.
+
+```{figure} /subckts-and-ext-models/images/lm358-placed.png
+---
+class: with-border
+---
+
+The _SPICE Library Device_ from the previous examples, after configuring with the LM358 model file, appropriate symbol, and appropriate symbol pin mapping. This device is now usable within the QUCS-S schematic.
 ```
 
 ### Creating a Custom Symbol File
 
-TODO show how to make a custom .sym file for use with Spice Library Device
+In some cases, you may wish to create a custom symbol for a _SPICE Library Device_ instead of relying on the auto-generated symbols or the pre-made templates. To do this, create a new _Symbol File_ using the button on the toolbar. This will open a new document, as shown below, with a default square symbol (the same as the default symbol for a [QUCS-S subcircuit](/subckts-and-ext-models/working-with-subcircuits)).
+
+```{figure} /subckts-and-ext-models/images/creating-custom-symbol.drawio.png
+---
+class: with-border
+---
+
+Creating a custom symbol document in QUCS-S. These symbols can be used with SPICE library devices (among other use cases).
+```
+
+Use the "Paintings" components to create the graphics of your symbol. To add electrical ports, use the _Insert Port_ button, just like when you [edit a QUCS-S subcircuit symbol.](/subckts-and-ext-models/working-with-subcircuits.md#customizing-a-schematics-symbol)
+
+When you are happy with the symbol, save it, and return to your main schematic. Open the configuration for your _SPICE Library Device_, and point it to your new custom symbol file. [See the earlier section on configuring SPICE Library Devices for more details.](#importing-subckt-models-with-spice-library-device-recommended)
 
 ## Importing .SUBCKT Models with "SPICE File Component"
 
