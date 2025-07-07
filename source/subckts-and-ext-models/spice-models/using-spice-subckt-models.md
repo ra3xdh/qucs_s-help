@@ -180,6 +180,9 @@ To configure the _SPICE Library Device_, double-click the symbol to open its _Pr
     * **Symbol from Template**: This will let you choose from a list of common electronics symbols, including op-amps, transistors, logic gates, and diodes. You can configure the mapping between symbol pins and SPICE ``.SUBCKT`` pins in the bottom left portion of the window.
     * **Symbol from File**: If the previous options are insufficient, you can specify a custom QUCS-S Symbol file (``.sym`` extension). [See the next section for instructions on how to create such a file.](#creating-a-custom-symbol-file)
 4. **Map your symbol's pins to the appropriate pins in your ``.SUBCKT`` model.** It is often necessary to read the comments in the SPICE netlist to determine the function of each pin, so a preview of the SPICE model is provided in the bottom right of the window for your convenience.
+5. **(Optional) If your model accepts parameters, pass the appropriate parameters in using the "Component Parameters" text box.**
+    * Not all models require parameters. You can tell if your ``.SUBCKT`` accepts parameters by looking for parameter definitions right after the main ``.SUBCKT portname1 portname2`` portion of the SPICE file. See [the relevant sections of the ngspice manual](https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#magicparlabel-1362) for examples of a ``.SUBCKT`` with parameters.
+    * The standard SPICE parameter syntax applies. [See the section on Equations and Parameters for more information.](/overview/equations-and-parameters/equations-params-ngspice#parameters-in-ngspice-with-param)
 
 The annotated screenshot below highlights each of the major sections of the configuration dialog, with an example LM358 op-amp model selected.
 
