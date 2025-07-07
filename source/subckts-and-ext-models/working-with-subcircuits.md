@@ -60,6 +60,7 @@ The port name (e.g. ``P1``, ``P2``, etc) is NOT exposed externally. However, if 
 **It is not necessary to create a _Subcircuit Port_ for your main ground.** The standard _Ground_ component is considered one single net across the entire simulation; it automatically crosses the boundaries of a subcircuit.
 ```
 
+(customizing-symbol)=
 ### Customizing a Schematic's Symbol
 
 When used as a subcircuit, a Qucs-S schematic file (``.sch``) does not show its entire contents on the parent schematic page where it's referenced. Instead, it exposes a symbol to represent it. If you do not intervene, Qucs-S will automatically generate a simple rectangular symbol, and distribute the _Subcircuit Ports_ across it, as shown in the example below.

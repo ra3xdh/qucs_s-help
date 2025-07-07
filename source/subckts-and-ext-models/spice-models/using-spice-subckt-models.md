@@ -182,7 +182,7 @@ To configure the _SPICE Library Device_, double-click the symbol to open its _Pr
 4. **Map your symbol's pins to the appropriate pins in your ``.SUBCKT`` model.** It is often necessary to read the comments in the SPICE netlist to determine the function of each pin, so a preview of the SPICE model is provided in the bottom right of the window for your convenience.
 5. **(Optional) If your model accepts parameters, pass the appropriate parameters in using the "Component Parameters" text box.**
     * Not all models require parameters. You can tell if your ``.SUBCKT`` accepts parameters by looking for parameter definitions right after the main ``.SUBCKT portname1 portname2`` portion of the SPICE file. See [the relevant sections of the ngspice manual](https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#magicparlabel-1362) for examples of a ``.SUBCKT`` with parameters.
-    * The standard SPICE parameter syntax applies. [See the section on Equations and Parameters for more information.](/overview/equations-and-parameters/equations-params-ngspice#parameters-in-ngspice-with-param)
+    * The standard SPICE parameter syntax applies. [See the section on Equations and Parameters for more information.](/overview/equations-and-parameters/equations-params-ngspice.md#parameters-in-ngspice-with-param)
 
 The annotated screenshot below highlights each of the major sections of the configuration dialog, with an example LM358 op-amp model selected.
 
@@ -223,13 +223,46 @@ When you are happy with the symbol, save it, and return to your main schematic. 
 ## Importing .SUBCKT Models with "SPICE File Component"
 
 ```{warning}
-TODO: Link to the previous section, warn people that this way still works, but it's not fast/efficient like the new way.
+**If you are using QUCS-S version ``v24.3.0`` (released July 2024) or later, see [the previous section](#importing-subckt-models-with-spice-library-device-recommended) for a much more efficient method of using ``.SUBCKT`` models!** The method described below will still work in newer versions of QUCS-S, but it generally offers no advantage over the new _SPICE Library Device_ method.
+
+If you are using a version of QUCS-S prior to ``v24.3.0``, the method described in this section is the _only_ method of using ``.SUBCKT`` models.
 ```
 
 ### Part 1: Using "SPICE File Component"
 
-TODO show how to place just a SPICE file component
+The first part of the process is to place a _SPICE File Component_ in your schematic. Generally, you'll want to create a new, empty schematic (``.sch``) for this purpose, since you'll need to use this schematic as a subcircuit if you wish to customize the symbol.
+
+1. Ensure your SPICE model file is saved in a convenient location on your filesystem. In this example, it's saved in ``/home/vvk/LM358.cir``.
+2. Using the _File Components_ section of [the _Components_ tab](/overview/interface-overview.md#components-tab), place a _SPICE File Component_ on your schematic page. Once you place it, it should appear as a square symbol with no pins.
+3. Double-click the newly-placed _SPICE File Component_ symbol to open its _Component Properties_ dialog. Specify the path to your SPICE model file by clicking the _Browse_ button.
+4. Once you select your model, you'll see a list of the model's ports appear in the _Component Properties_ dialog. In most cases, you'll want to simply add all the model's ports to the "Component Ports" list, which makes them appear in the QUCS-S symbol. After completing steps 1-4, your _Component Properties_ dialog should look like the screenshot below.
+
+![](/subckts-and-ext-models/images/spice-file-component-properties.png)
+
+5. Once the component is configured, click OK to exit. The symbol should have changed - it should now be showing all the terminals you added to the "Component Ports" list. At this point, the model is usable in simulations. A simple [DC operating point simulation](/overview/simulation-types/analog.md#dc-operating-point-simulation) has been performed in the screenshot below, which confirms the model is functioning correctly.
+
+![](/subckts-and-ext-models/images/example-circuit-with-spice-file-component.png)
+
+At this point, the model is usable for simulations. However, if you wish to create a customized symbol, continue on to the next section.
 
 ### Part 2: Custom Symbol by Wrapping in a QUCS-S Subcircuit
 
-TODO show how to get a custom symbol by wrapping a SPICE File Component in a subckt
+The _SPICE File Component_ offers no direct provision for customizing its symbol. It simply auto-generates a basic rectangular symbol. To create a custom symbol, the _SPICE File Component_ will need to be wrapped in a [QUCS-S Subcircuit,](/subckts-and-ext-models/working-with-subcircuits) and then the subcircuit's symbol can be customized to suit your needs.
+
+To do this, first ensure your _SPICE File Component_ is the only component on your schematic. Then add the necessary QUCS-S Ports for it to function as a subcircuit. The end result will be something like the screenshot below.
+
+![](/subckts-and-ext-models/images/lm358-spice-file-subcircuit.png)
+
+After doing that, press ``F9`` to enter the symbol editor for your ``.sch`` file. Draw your desired symbol here ([see the subcircuit documentation for more details on how to do this](/subckts-and-ext-models/working-with-subcircuits.md)). An example op-amp symbol is shown below.
+
+![](/subckts-and-ext-models/images/lm358-spice-subcircuit-symbol.png)
+
+After doing that, simply place an instance of your new subcircuit anywhere you want to use your SPICE model. It will appear with your custom symbol, and under the hood it will still be referencing the SPICE model you configured in the _SPICE File Component_. An example simulation using this method is shown below.
+
+```{figure} /subckts-and-ext-models/images/finished-lm358-example-old-method.png
+---
+class: with-border
+---
+
+An example of a simulation using an external SPICE model, achieved with the "_SPICE File Component_ wrapped in a QUCS-S subcircuit" method.
+```
