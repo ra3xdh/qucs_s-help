@@ -140,6 +140,8 @@ Within this tab, component models come from 3 places:
 2. **User Libraries**: These libraries are configurable by the user, and persist across all projects on a given PC.
 3. **Project Libraries**: These libraries only exist within the active Qucs-S project.
 
+For more information, see the section on [Managing Libraries in QUCS-S](/libraries/index).
+
 ## Selecting a Simulation Backend
 
 To select a simulation backend, use the drop-down menu at the top right of the Qucs-S window. Be advised that:
