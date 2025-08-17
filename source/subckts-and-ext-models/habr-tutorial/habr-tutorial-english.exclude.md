@@ -96,7 +96,7 @@ We place a red transistor (Q NPN BJT) on the diagram and enter the model name 2N
 
 ![Connecting a model to a component](website-11.png)
 
-In addition to using the .MODEL directive, you can include a text file with the entire models using the .INCLUDE directive. An example is shown in the screenshot. You can also place the file with the transistor models in the $HOME/.qucs/user_lib directory and copy the model to the circuit by dragging and dropping.
+In addition to using the .MODEL directive, you can include a text file with the entire models using the .INCLUDE directive. An example is shown in the screenshot. You can also place the file with the transistor models in the $HOME/QucsWorkspace/user_lib directory and copy the model to the circuit by dragging and dropping.
 
 ![Using a text file with models](website-12.png)
 
@@ -217,7 +217,7 @@ Libraries in Qucs-S have a text format close to XML. Files of system libraries w
 
 ![Dialog for creating a new project](website-20.png)
 
-Click Create, and an empty project will open. In the future, the created projects can be found in the Projects tab on the left side of the program window. Next, you need to copy the files that we created in the previous sections to the directory with the project. By default, projects are located in the directory in the user's home directory in the $HOME/.qucs subdirectory. The full path to the project is $HOME/.qucs/NewLibrary_prj. Open this directory in the file manager and copy the LM358.sch and SPK.sch files there. Next, you need to update the project tree. To do this, close the project (Project→Close), and then open it again by double-clicking on the NewLibrary_prj project in the list on the panel on the left side of the window on the Projects tab. Now we see two schemes in the Schematics item. You can proceed to creating the library.
+Click Create, and an empty project will open. In the future, the created projects can be found in the Projects tab on the left side of the program window. Next, you need to copy the files that we created in the previous sections to the directory with the project. By default, projects are located in the directory in the user's home directory in the $HOME/QucsWorkspace subdirectory. The full path to the project is $HOME/QucsWorkspace/NewLibrary_prj. Open this directory in the file manager and copy the LM358.sch and SPK.sch files there. Next, you need to update the project tree. To do this, close the project (Project→Close), and then open it again by double-clicking on the NewLibrary_prj project in the list on the panel on the left side of the window on the Projects tab. Now we see two schemes in the Schematics item. You can proceed to creating the library.
 
 ![Example of a project with two subcircuits](website-21.png)
 
@@ -233,7 +233,7 @@ The following dialog box is displayed, informing you that the library has been c
 
 ![Library Creation Summary](website-24.png)
 
-The new library is now displayed in the User Libraries list on the Libraries tab on the left side of the window. The library file can be found in the $HOME/.qucs/user_lib directory. This is the default search path for user libraries. Now you can replace the OU component in the test circuit with a component from the newly created library. We see that the simulation result did not change after replacing the component.
+The new library is now displayed in the User Libraries list on the Libraries tab on the left side of the window. The library file can be found in the $HOME/QucsWorkspace/user_lib directory. This is the default search path for user libraries. Now you can replace the OU component in the test circuit with a component from the newly created library. We see that the simulation result did not change after replacing the component.
 
 ![Using a component from a custom library](website-25.png)
 

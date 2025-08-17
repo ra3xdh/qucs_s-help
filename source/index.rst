@@ -67,4 +67,6 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
    :hidden:
 
    /libraries/index
+   /libraries/creating/index
+   /libraries/using-libraries
 
