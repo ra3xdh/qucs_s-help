@@ -8,7 +8,7 @@ The SPICE ``.MODEL`` directive allows you to specify the parameters necessary to
 For example, below is a model of the popular 2N2222 NPN transistor.
 
 ```text
-.model 2N2222A NPN (Is=14.34f Xti=3 Eg=1.11 Vaf=74.03 Bf=255.9 Ne=1.307 
+.model 2N2222A NPN (Is=14.34f Xti=3 Eg=1.11 Vaf=74.03 Bf=255.9 Ne=1.307
 + Ise=14.34f Ikf=.2847 Xtb=1.5 Br=6.092 Nc=2 Isc=0 Ikr=0 Rc=1 Cjc=7.306p
 + Mjc=.3416 Vjc=.75 Fc=.5 Cje=22.01p Mje=.377 Vje=.75 Tr=46.91n Tf=411.1p
 + Itf=.6Vtf=1.7 Xtf=3 Rb=10 Vceo=40)
@@ -81,7 +81,7 @@ Example of the _SPICE .MODEL Section_ component, placed on the schematic with th
 
 Now, to use the model, you will need a special transistor component that supports the full SPICE specification (color-coded red). The blue _Universal_ components will NOT work here. See [the Interface Overview section](/overview/interface-overview.md#component-color-coding) if you're not familiar with this distinction.
 
-We place a red transistor (Q NPN BJT) on the diagram and enter the model name 2N2222A into its properties. The screenshot shows a test circuit with such a transistor, which simulates a family of output I-V characteristics.
+We place a red transistor (Q NPN BJT) on the diagram and enter the model name 2N2222A into its properties. This transistor could be found in _microelectronics_ group on the left panel. The screenshot shows a test circuit with such a transistor, which simulates a family of output I-V characteristics.
 
 ```{figure} /subckts-and-ext-models/images/spice-model-section-inuse.png
 ---

@@ -18,7 +18,7 @@ In contrast to the ``.MODEL`` directive, which can only adjust the parameters of
 Most electronics manufacturers will provide SPICE ``.SUBCKT`` models for their integrated circuits (ICs), and even sometimes for complete pluggable electronic modules. These models are simply textual SPICE netlists containing the necessary ``.SUBCKT`` and other directives, typically with the ``.lib`` or ``.cir`` extension.
 
 ```{tip}
-Many commercial SPICE-based simulators (such as LTspice or PSPICE) include their own extensions to the standard SPICE netlist syntax. 
+Many commercial SPICE-based simulators (such as LTspice or PSPICE) include their own extensions to the standard SPICE netlist syntax.
 
 Unfortunately, some manufacturer-provided SPICE models are designed specifically for one of these commercial simulators, and utilize some of their non-standard syntax.
 
@@ -27,19 +27,19 @@ If you try to run these models in QUCS-S (with ngspice/Xyce/SpiceOpus backends),
 
 #### Example Model
 
-Below is a model for the popular LM386 [operational amplifier](https://en.wikipedia.org/wiki/Operational_amplifier).
+Below is a model for the popular LM358 [operational amplifier](https://en.wikipedia.org/wiki/Operational_amplifier).
 
-Note that the identifier of the ``.SUBCKT`` directive is ``LM386``, and the exposed ports are ``1``, ``2``, ``99``, ``50``, and ``28``. The functions of each port are described in the comments above the ``.SUBCKT`` directive.
+Note that the identifier of the ``.SUBCKT`` directive is ``LM358``, and the exposed ports are ``1``, ``2``, ``99``, ``50``, and ``28``. The functions of each port are described in the comments above the ``.SUBCKT`` directive.
 
 ```text
 *//////////////////////////////////////////////////////////////////////
 * (C) National Semiconductor, Inc.
 * Models developed and under copyright by:
-* National Semiconductor, Inc.  
+* National Semiconductor, Inc.
 
 */////////////////////////////////////////////////////////////////////
 * Legal Notice: This material is intended for free software support.
-* The file may be copied, and distributed; however, reselling the 
+* The file may be copied, and distributed; however, reselling the
 *  material is illegal
 
 *////////////////////////////////////////////////////////////////////
@@ -122,7 +122,7 @@ C5 98 15 7.9577E-14
 *********COMMON-MODE ZERO STAGE*********
 *
 *Fpcm=10 KHz
-G4 98 16 3 49 5.6234E-8               
+G4 98 16 3 49 5.6234E-8
 L2 98 17 15.9M
 R13 17 16 1K
 *
@@ -194,7 +194,7 @@ class: with-border
 Annotated screenshot showing the configuration options for a _SPICE Library Device_, using the common LM358 op-amp as an example.
 ```
 
-In the case of the LM386, the ``opamp5t`` symbol in the "Use Symbol from Template" feature is a good fit. After mapping the terminals and clicking _OK_ to exit the _SPICE Library Device_ configuration dialog, the schematic symbol now looks like an op-amp, and the device is usable in the schematic.
+In the case of the LM358, the ``opamp5t`` symbol in the "Use Symbol from Template" feature is a good fit. After mapping the terminals and clicking _OK_ to exit the _SPICE Library Device_ configuration dialog, the schematic symbol now looks like an op-amp, and the device is usable in the schematic.
 
 ```{figure} /subckts-and-ext-models/images/lm358-placed.png
 ---
