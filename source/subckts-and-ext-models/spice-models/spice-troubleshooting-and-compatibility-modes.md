@@ -44,11 +44,7 @@ A screenshot of the _Simulator Settings_ dialog, with the dropdown to choose an 
 
 #### Enabling for a Particular Schematic
 
-To add an [ngspice compatibility mode command](#ngspice-compatibility-modes) to a particular QUCS-S schematic, place a _.spiceinit_ component on your schematic. This component is available from the _SPICE netlist sections_ category of the [Components Tab](/overview/interface-overview.md#components-tab).
-
-```{warning}
-If you are using hierarchical design/QUCS-S subcircuits, place the _.spiceinit_ component in the top-level schematic (not the lower-level subcircuit schematics) or you may get unpredictable behavior.
-```
+To add an [ngspice compatibility mode command](#ngspice-compatibility-modes) to a particular QUCS-S schematic, place a _.spiceinit_ component on your schematic and add the command to it. See [Using .spiceinit Files](using-spiceinit) for where to find this component, hierarchical-design placement notes, and how QUCS-S regenerates this file at simulation time.
 
 An example is shown below, using a model of the TDA2003 amplifier which is designed for the LTspice simulator.
 
@@ -58,19 +54,4 @@ class: with-border
 ---
 
 An example of a simulation with an ngspice Compatibility Mode enabled. The model for the TDA2003 amplifier is designed for the LTspice simulator, and will not work in ngspice unless Compatibility Modes are used. Note the ``set ngbehavior=ltpsa`` command (enabling both LTspice and PSPICE compatibility mode for the entire simulation netlist) in the special _.spiceinit_ component, on the right side of the schematic.
-```
-
-#### How QUCS-S Regenerates .spiceinit at Simulation Time
-
-```{warning}
-Before each simulation, QUCS-S deletes any existing ``.spiceinit`` file in the ngspice working directory. It then writes a new local ``.spiceinit`` there only if there is content to include: a selected Compatibility Mode directive, an active _.spiceinit_ schematic component, or both. If neither is present, no local ``.spiceinit`` is written.
-
-* When QUCS-S writes a local ``.spiceinit``, ngspice loads that file instead of ``$HOME/.spiceinit``.
-* When QUCS-S writes no local ``.spiceinit``, ngspice falls back to its normal startup-file lookup, which may include ``$HOME/.spiceinit``.
-```
-
-If your model files depend on additional ngspice startup commands beyond a Compatibility Mode — for example, a ``sourcepath`` entry so a bare ``.include`` or ``.lib`` reference can be resolved — add those commands to the schematic's _.spiceinit_ component so they are included whenever QUCS-S writes a local ``.spiceinit``, rather than relying on ``$HOME/.spiceinit``.
-
-```{tip}
-Environment variables are unaffected by this behavior: QUCS-S launches ngspice with the environment it was itself started in, so any environment variables referenced from within included SPICE files are still inherited normally.
 ```

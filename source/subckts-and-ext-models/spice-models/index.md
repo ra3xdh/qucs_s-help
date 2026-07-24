@@ -29,5 +29,6 @@ maxdepth: 1
 ---
 Discrete Component Models (.MODEL) <using-discrete-spice-models>
 Subcircuit Models for Complex Devices (.SUBCKT) <using-spice-subckt-models>
+Using .spiceinit Files <using-spiceinit>
 SPICE Model Compatibility Modes/Troubleshooting <spice-troubleshooting-and-compatibility-modes>
 ```
