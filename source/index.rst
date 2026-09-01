@@ -70,3 +70,11 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
    /libraries/creating/index
    /libraries/using-libraries
 
+.. toctree::
+   :maxdepth: 4
+   :caption: Simulator-Specific Features
+   :hidden:
+
+   /simulator-specific-features/default-working-directories
+   /simulator-specific-features/classic-spice-engines/index
+
