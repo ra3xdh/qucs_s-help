@@ -44,11 +44,7 @@ A screenshot of the _Simulator Settings_ dialog, with the dropdown to choose an 
 
 #### Enabling for a Particular Schematic
 
-To add an [ngspice compatibility mode command](#ngspice-compatibility-modes) to a particular QUCS-S schematic, place a _.spiceinit_ component on your schematic. This component is available from the _SPICE netlist sections_ category of the [Components Tab](/overview/interface-overview.md#components-tab).
-
-```{warning}
-If you are using hierarchical design/QUCS-S subcircuits, place the _.spiceinit_ component in the top-level schematic (not the lower-level subcircuit schematics) or you may get unpredictable behavior.
-```
+To add an [ngspice compatibility mode command](#ngspice-compatibility-modes) to a particular QUCS-S schematic, place a _.spiceinit_ component on your schematic and add the command to it. See [Using .spiceinit Files](/simulator-specific-features/classic-spice-engines/using-spiceinit) for where to find this component, hierarchical-design placement notes, and how QUCS-S regenerates this file at simulation time.
 
 An example is shown below, using a model of the TDA2003 amplifier which is designed for the LTspice simulator.
 
