@@ -20,6 +20,7 @@ There are essentially two methods for modeling real devices in SPICE-based simul
 2. **For complex devices (like integrated circuits), you can [use a _Subcircuit Model_.](using-spice-subckt-models)**
    * This is done with the SPICE ``.SUBCKT`` directive.
    * Note that this is NOT the same thing as a [QUCS-S Subcircuit!](/subckts-and-ext-models/working-with-subcircuits)
+3. **For custom device models, you can use Verilog-A models compiled with OpenVAF and loaded into ngspice as OSDI modules.**
 
 ## Additional Reading
 
@@ -30,4 +31,5 @@ maxdepth: 1
 Discrete Component Models (.MODEL) <using-discrete-spice-models>
 Subcircuit Models for Complex Devices (.SUBCKT) <using-spice-subckt-models>
 SPICE Model Compatibility Modes/Troubleshooting <spice-troubleshooting-and-compatibility-modes>
+Verilog-A Models with OpenVAF and ngspice <using-verilog-a-models>
 ```
