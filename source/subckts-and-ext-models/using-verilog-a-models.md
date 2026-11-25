@@ -132,7 +132,7 @@ class: with-border
 Subcircuit schematic with external ports connected to the SPICE Generic device, .MODEL and .spiceinit components.
 ```
 
-After configuring the schematic, create a graphical symbol for it using the [QUCS-S symbol editor](../working-with-subcircuits#customizing-a-schematics-symbol). Arrange the symbol pins to match the subcircuit's external ports and save the symbol. The subcircuit can then be reused in other schematics as a regular component, without manually placing the SPICE Generic device, `.MODEL`, and other supporting elements each time.
+After configuring the schematic, create a graphical symbol for it using the [QUCS-S symbol editor](/subckts-and-ext-models/working-with-subcircuits.md#customizing-a-schematics-symbol). Arrange the symbol pins to match the subcircuit's external ports and save the symbol. The subcircuit can then be reused in other schematics as a regular component, without manually placing the SPICE Generic device, `.MODEL`, and other supporting elements each time.
 
 The QUCS-S distribution includes templates for schematic symbols. These can be found in the directory where the program is installed, under the subdirectory `share/qucs-s/examples/symbols`, in a file named `schematic_symbols.sch`. You can open this file and copy the desired template.
 
