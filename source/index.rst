@@ -60,6 +60,7 @@ Otherwise, continue on through this documentation to learn more about QUCS-S.
 
    /subckts-and-ext-models/working-with-subcircuits
    /subckts-and-ext-models/spice-models/index
+   /subckts-and-ext-models/using-verilog-a-models
 
 .. toctree::
    :maxdepth: 4
